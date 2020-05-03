@@ -1,0 +1,100 @@
+$asset-base-path: '/../../../images/' !default;
+
+// Core
+
+//@import "styles-react/custom/functions";
+@import "styles-react/bootstrap/functions";
+
+//@import "styles-react/custom/variables";
+@import "styles-react/bootstrap/variables";
+
+//@import "styles-react/custom/mixins";
+@import "styles-react/bootstrap/mixins";
+
+// Bootstrap components
+
+@import "styles-react/bootstrap/root";
+@import "styles-react/bootstrap/reboot";
+@import "styles-react/bootstrap/type";
+@import "styles-react/bootstrap/images";
+@import "styles-react/bootstrap/code";
+@import "styles-react/bootstrap/grid";
+@import "styles-react/bootstrap/tables";
+@import "styles-react/bootstrap/forms";
+@import "styles-react/bootstrap/buttons";
+@import "styles-react/bootstrap/transitions";
+@import "styles-react/bootstrap/dropdown";
+@import "styles-react/bootstrap/button-group";
+@import "styles-react/bootstrap/input-group";
+@import "styles-react/bootstrap/custom-forms";
+@import "styles-react/bootstrap/nav";
+@import "styles-react/bootstrap/navbar";
+@import "styles-react/bootstrap/card";
+@import "styles-react/bootstrap/breadcrumb";
+@import "styles-react/bootstrap/pagination";
+@import "styles-react/bootstrap/badge";
+@import "styles-react/bootstrap/jumbotron";
+@import "styles-react/bootstrap/alert";
+@import "styles-react/bootstrap/progress";
+@import "styles-react/bootstrap/media";
+@import "styles-react/bootstrap/list-group";
+@import "styles-react/bootstrap/close";
+@import "styles-react/bootstrap/modal";
+@import "styles-react/bootstrap/tooltip";
+@import "styles-react/bootstrap/popover";
+@import "styles-react/bootstrap/carousel";
+@import "styles-react/bootstrap/utilities";
+@import "styles-react/bootstrap/print";
+
+// Custom components
+//
+//@import "styles-react/custom/alerts.scss";
+//@import "styles-react/custom/buttons.scss";
+//@import "styles-react/custom/dropdown.scss";
+//@import "styles-react/custom/footer.scss";
+//@import "styles-react/custom/forms.scss";
+//@import "styles-react/custom/images.scss";
+//@import "styles-react/custom/modal.scss";
+//@import "styles-react/custom/navbar.scss";
+//@import "styles-react/custom/type.scss";
+//@import "styles-react/custom/icons.scss";
+//@import "styles-react/custom/tables";
+//@import "styles-react/custom/checkboxes-radio";
+//@import "styles-react/custom/fixed-plugin";
+//@import "styles-react/custom/pagination.scss";
+//@import "styles-react/custom/misc.scss";
+//@import "styles-react/custom/rtl.scss";
+//@import "styles-react/custom/input-group.scss";
+@import "styles-react/custom/example-pages.scss";
+//@import "styles-react/custom/progress.scss";
+//@import "styles-react/custom/badge.scss";
+//@import "styles-react/custom/pills.scss";
+//@import "styles-react/custom/tabs.scss";
+//@import "styles-react/custom/info-areas.scss";
+
+// Sections
+//@import "styles-react/custom/sections.scss";
+
+// Vendor / Plugins
+
+//@import "styles-react/custom/vendor/plugin-perfect-scrollbar.scss";
+//@import "styles-react/custom/vendor/plugin-animate-bootstrap-notify.scss";
+//@import "styles-react/custom/vendor/plugin-bootstrap-switch.scss";
+//@import "styles-react/custom/vendor/plugin-nouislider.scss";
+//@import "styles-react/custom/vendor/plugin-datetimepicker.scss";
+
+// Cards
+//
+//@import "styles-react/custom/card";
+//@import "styles-react/custom/cards/card-chart";
+//@import "styles-react/custom/cards/card-map";
+//@import "styles-react/custom/cards/card-user";
+//@import "styles-react/custom/cards/card-task";
+//@import "styles-react/custom/cards/card-plain";
+//@import "styles-react/custom/cards/card-register";
+//@import "styles-react/custom/cards/card-stats";
+//@import "styles-react/custom/cards/card-chart";
+
+// React Differences
+
+@import "styles-react/react/react-differences";
