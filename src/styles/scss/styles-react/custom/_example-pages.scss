@@ -901,7 +901,20 @@ $fontOnThemeColor: #fff;
 .branding__logo {
   img {
     width: 130px;
-    padding: 5px 0;
+
+    @media (min-width: 944px) {
+      width: 85px;
+    }
+
+    @media (min-width: 1009px) {
+      width: 101px;
+      padding: 2px 0;
+    }
+
+    @media (min-width: 1038px) {
+      width: 130px;
+      padding: 5px 0;
+    }
   }
 }
 
@@ -940,7 +953,16 @@ $fontOnThemeColor: #fff;
 
 .nav-links {
   height: 60px;
-  grid-template-columns: 2.3fr 0.8fr !important;
+  grid-template-columns: 2.7fr 0.8fr !important;
+
+  @media (min-width: 943px) {
+    grid-template-columns: 3.3fr 0.7fr !important;
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 2.3fr 0.8fr !important;
+  }
+
 }
 
 .nav-links__group.left {
@@ -951,10 +973,18 @@ $fontOnThemeColor: #fff;
   padding: 0 0 !important;
 
   .lang {
-    padding: 19px 0;
+    padding: 10px 0;
     vertical-align: middle;
     margin-right: 5px;
     text-transform: uppercase;
+
+    @media (min-width: 943px) {
+      padding: 10px 0;
+    }
+
+    @media (min-width: 1000px) {
+      padding: 19px 0;
+    }
 
     .flag + span {
       margin-left: 10px;
@@ -1004,8 +1034,12 @@ $fontOnThemeColor: #fff;
 .header-search {
   height: 55px;
   margin-left: 0px;
-  width: 115px;
+  width: 99px;
   margin-right: -32px;
+
+  @media (min-width: 840px) {
+    width: 115px;
+  }
 
   .input-group {
     height: 100%;
@@ -1030,5 +1064,59 @@ $fontOnThemeColor: #fff;
       border: none;
       color: #b6c1ca;
     }
+  }
+}
+
+@media (max-width: 943px) {
+  .burger {
+
+    display: block !important;
+  }
+
+  .nav-links__group {
+    flex-direction: column !important;
+    align-items: flex-end !important;
+  }
+  .nav-links__group.left, .nav-links__group.right {
+    max-width: unset !important;
+  }
+
+  .nav-links.animate {
+    transition: height 200ms ease-in, width 200ms ease-in, border-radius ease-in 200ms;
+    border-bottom-left-radius: 150%;
+  }
+
+  .nav-links {
+    @media (min-width: 769px) {
+      display: none !important;
+    }
+    flex-direction: column;
+    position: fixed;
+    top: var(--height);
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    padding: 0 2em;
+    background-color: var(--menu-bg-color);
+    overflow: hidden;
+  }
+
+  .nav-links__group a {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+  }
+
+  .nav-links.animate.show {
+    @media (min-width: 769px) {
+      display: grid !important;
+    }
+    border-bottom-left-radius: 0;
+    transition: height 300ms ease-out, width 300ms ease-out, border-radius ease-out 300ms;
+  }
+
+  .nav-links--show, .nav-links.animate.show, .nav-links {
+    width: var(--slider-width, 100%);
+    height: calc(100vh - var(--height));
   }
 }

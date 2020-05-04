@@ -37,8 +37,8 @@ const Header = ({siteTitle}) => {
 
 
     const navTheme = {
-        mainColor: '#52b788',
-        menuBgColor: '#edf7f3'
+        mainColor: '#ca0072',
+        menuBgColor: '#26bbea'
     };
 
     const navBrand = <div className="branding__logo">
