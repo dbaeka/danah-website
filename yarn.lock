@@ -1399,6 +1399,11 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
+"@ovie/react-navbar@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@ovie/react-navbar/-/react-navbar-2.3.2.tgz#ea052d9f3964f90f32600e97e7119829e28a0fed"
+  integrity sha512-nbP283TwLPADPTanL/SOHOSdBpAUXoMn7ImO9KmuEDCd4+lKAfoXgDr9VEZ4QYX0m6b+ROHSHOPgQG+9U1GWfA==
+
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
   resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"
