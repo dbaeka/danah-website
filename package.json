@@ -33,7 +33,8 @@
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
-    "prettier": "2.0.4"
+    "prettier": "2.0.4",
+    "react-router-dom": "^5.1.2"
   },
   "keywords": [
     "gatsby"
@@ -49,6 +50,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "compile-sass": "node-sass src/styles/scss/style-react.scss src/styles/css/style-react.css",
+    "compile-sass2": "node-sass src/styles/scss/additional_modular/now-ui-kit.scss src/styles/css/style-react.module.css",
     "minify-sass": "node-sass src/styles/scss/style-react.scss src/styles/css/style-react.min.css --output-style compressed",
     "map-sass": "node-sass src/styles/scss/style-react.scss src/styles/css/style-react.css --source-map true"
   },

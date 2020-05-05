@@ -69,3 +69,4 @@ yarn-error.log
 .yarn-integrity
 .idea
 style-react.css
+style-react.module.css

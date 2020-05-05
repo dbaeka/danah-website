@@ -29,7 +29,7 @@ const DefaultLayout = ({children}) => {
 
             <div>{children}</div>
 
-            {/*<Footer/>*/}
+            <Footer siteTitle={data.site.siteMetadata.title}/>
         </div>
     )
 };
