@@ -70,3 +70,6 @@ yarn-error.log
 .idea
 style-react.css
 style-react.module.css
+src/lib/rev-slider/assets/gridimages
+src/lib/rev-slider/assets/images
+src/lib/rev-slider/revolution/images
