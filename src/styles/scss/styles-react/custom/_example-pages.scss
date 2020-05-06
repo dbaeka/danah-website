@@ -1560,3 +1560,223 @@ $danger-color-alert: rgba(255, 54, 54, .8) !default;
   opacity: 80%;
   transition: all .25s cubic-bezier(.645, .045, .355, 1);
 }
+
+.section-vid {
+  border-radius: $border-radius-large;
+  background-color: black;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+
+  .vid-thumb {
+    transition: all .50s cubic-bezier(.645, .045, .355, 1);
+  }
+
+  &:hover .vid-thumb {
+    transform: scale(1.1);
+    transition: all .50s cubic-bezier(.645, .045, .355, 1);
+  }
+}
+
+.course-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 30px 35px;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  transition: all .50s cubic-bezier(.645, .045, .355, 1);
+}
+
+.course-caption-main {
+  -webkit-transform: translateY(-100%) translateY(-60px);
+  -ms-transform: translateY(-100%) translateY(-60px);
+  transform: translateY(-100%) translateY(-60px);
+  transition: all .50s cubic-bezier(.645, .045, .355, 1);
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  transition: all .50s cubic-bezier(.645, .045, .355, 1);
+
+  &:hover .course-info {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    transition: all .50s cubic-bezier(.645, .045, .355, 1);
+  }
+
+  &:hover .course-caption-main {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    transition: all .50s cubic-bezier(.645, .045, .355, 1);
+  }
+}
+
+.bg-overlay {
+  border-radius: $border-radius-large;
+  width: 92%;
+  height: 420px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 14px;
+  opacity: 40%;
+}
+
+.course-title {
+  a {
+    text-decoration: none;
+  }
+}
+
+.course-excerpt {
+  p {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+
+.videos-entry {
+  background-color: #efefef;
+}
+
+.jet-posts__inner-box {
+  padding: 0 0 60px 0;
+  overflow: hidden;
+}
+
+.post-thumbnail {
+  padding: 0 0 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: #ECE4D3;
+  background-repeat: no-repeat;
+
+  img {
+    height: auto;
+    max-width: 100%;
+    border: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.entry-title {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.4em;
+  text-align: left;
+  padding: 20px 0 5px 0;
+  margin: 0 0 0 0;
+  word-wrap: break-word;
+
+  a {
+    -webkit-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
+  a:hover {
+    color: #b70067;
+  }
+}
+
+.post-meta {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  margin: 0 0 4px 0;
+  text-align: left;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: #a9a9a9;
+
+  a {
+    color: #c1c1c1;
+  }
+
+  .post-meta__item {
+    display: inline-block;
+    text-decoration: inherit;
+  }
+}
+
+.entry-excerpt {
+  font-family: "Roboto", Sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7em;
+  text-align: left;
+  margin: 0 0 4px 0;
+  padding-bottom: 15px;
+}
+
+.jet-more-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.elementor-button {
+  display: inline-block;
+  line-height: 1;
+  background-color: #818a91;
+  font-size: 15px;
+  padding: 12px 24px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #fff;
+  fill: #fff;
+  text-align: center;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+
+.jet-more:hover {
+  color: #b70067;
+  text-decoration: none;
+  background-color: rgba(0, 120, 255, 0);
+  border-color: #b70067;
+}
+
+.jet-more {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #161616;
+  text-decoration: none;
+  padding: 0 0 7px 0;
+  border-radius: 0 0 0 0;
+  border-style: solid;
+  border-width: 0 0 3px 0;
+  align-self: flex-start;
+  border-color: #4f4f4f;
+}
+
