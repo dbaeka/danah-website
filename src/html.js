@@ -31,6 +31,8 @@ export default function HTML(props) {
 
             {/* REVOLUTION NAVIGATION STYLES */}
             <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"></link>
+            <link rel="stylesheet" type="text/css"
+                  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
             {/* FONT AND STYLE FOR BASIC DOCUMENTS, NO NEED FOR FURTHER USAGE IN YOUR PROJECTS*/}
             <link href="http://fonts.googleapis.com/css?family=Roboto%3A700%2C300"
