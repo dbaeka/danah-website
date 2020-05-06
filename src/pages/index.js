@@ -7,6 +7,7 @@ import Carousel from "../components/Carousel"
 import AboutSection from "../components/sections/aboutSection";
 import ExploreSection from "../components/sections/exploreSection";
 import YoutubeSection from "../components/sections/youtubeSection";
+import BookSection from "../components/sections/bookSection";
 
 const IndexPage = () => (
     <DefaultLayout>
@@ -15,6 +16,7 @@ const IndexPage = () => (
         <AboutSection/>
         <ExploreSection/>
         <YoutubeSection/>
+        <BookSection/>
     </DefaultLayout>
 );
 
