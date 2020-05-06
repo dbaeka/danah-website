@@ -3,7 +3,7 @@ import React from 'react';
 class CarouselEngine extends React.Component {
     componentDidMount() {
         const script = document.createElement("script");
-        script.src = "/js/overexposure.js";
+        script.src = "/danah-website/js/overexposure.js";
         script.async = true;
         script.onload = () => this.scriptLoaded();
         document.body.appendChild(script);
