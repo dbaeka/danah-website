@@ -44,6 +44,7 @@ const ExploreSection = () => {
                                             <div className="subtext">Spiritual intelligence (SQ) is unfortunately often
                                                 overlooked in coaching and development. It is the trigger and key to
                                                 great leadership, which motivates us to lead from higher motivations.
+                                            <br/><br/>
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +88,7 @@ const ExploreSection = () => {
 
                                     <div className="slide-layer-wrap description-wrap">
                                         <div className="slide-layer">
-                                            <div className="subtext">
+                                            <div className="subtext text-justify">
                                                 Spiritual intelligence (SQ), spiritual capital, and sustainability are
                                                 crucially linked. Spiritual capital reflects what an individual or an
                                                 organization exists for, believes in, aspires to, and takes
@@ -135,12 +136,11 @@ const ExploreSection = () => {
 
                                     <div className="slide-layer-wrap description-wrap">
                                         <div className="slide-layer">
-                                            <div className="subtext">
+                                            <div className="subtext text-justify">
                                                 Executive coaches, HR personnel and leaders themselves have started
                                                 playing a key role in leading the way in raising the motivations that
-                                                drive business culture. They have a moral mission to help others become
-                                                more conscious of their negative motivations and behaviors, and by
-                                                instilling healthier ones that will result in sustainable success.
+                                                drive business culture. They have a moral mission to help others...
+
                                             </div>
                                         </div>
                                     </div>

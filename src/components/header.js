@@ -94,7 +94,7 @@ const Header = ({siteTitle}) => {
                     <li className="leaf">
                        <img
                            className="flag"
-                           src="https://maxcoach.thememove.com/main/wp-content/themes/maxcoach-child-demo/assets/images/flags/en.png"
+                           src={require("../images/china.png")}
                            alt="en" title="English"/>
                     <span className="ls-native">CN</span>
                     </li>
@@ -182,6 +182,7 @@ const Header = ({siteTitle}) => {
                       onMouseLeave={() => setShow3(false)}
                       toggle={() => {
                       }}
+                      style={{height: "57px"}}
             >
                 <DropdownToggle nav caret>
                     <img
@@ -194,7 +195,7 @@ const Header = ({siteTitle}) => {
                     <DropdownItem>
                         <img
                             className="flag"
-                            src="https://maxcoach.thememove.com/main/wp-content/themes/maxcoach-child-demo/assets/images/flags/en.png"
+                            src={require("../images/china.png")}
                             alt="zh-cn" title="Chinese"/>
                         <span className="ls-native">Chinese</span>
                     </DropdownItem>

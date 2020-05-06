@@ -10,6 +10,8 @@ import YoutubeSection from "../components/sections/youtubeSection";
 import BookSection from "../components/sections/bookSection";
 import VideoSection from "../components/sections/videoSection";
 import LatestSection from "../components/sections/latestSection";
+import TestimonialSection from "../components/sections/testimonialSection";
+import GallerySection from "../components/sections/gallerySection";
 
 const IndexPage = () => (
     <DefaultLayout>
@@ -21,6 +23,8 @@ const IndexPage = () => (
         <BookSection/>
         <VideoSection/>
         <LatestSection/>
+        <TestimonialSection/>
+        <GallerySection/>
     </DefaultLayout>
 );
 

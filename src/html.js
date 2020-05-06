@@ -23,14 +23,14 @@ export default function HTML(props) {
             <link rel="stylesheet" type="text/css"
                   href="/assets/fonts/font-awesome/css/font-awesome.css"></link>
 
-            <link rel="stylesheet" type="text/css" href="/assets/css/settings.css"></link>
+            <link rel="stylesheet" type="text/css" href="/assets/revcss/settings.css"></link>
             {/* REVOLUTION LAYERS STYLES */}
 
 
-            <link rel="stylesheet" type="text/css" href="/assets/css/layers.css"></link>
+            <link rel="stylesheet" type="text/css" href="/assets/revcss/layers.css"></link>
 
             {/* REVOLUTION NAVIGATION STYLES */}
-            <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"></link>
+            <link rel="stylesheet" type="text/css" href="/assets/revcss/navigation.css"></link>
             <link rel="stylesheet" type="text/css"
                   href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
@@ -45,11 +45,11 @@ export default function HTML(props) {
                     src="/js/jquery.themepunch.revolution.min.js"></script>
 
             {/* PARTICLES ADD-ON FILES */}
-            <link rel='stylesheet'
-                  href='/js/revolution-addons/particles/css/revolution.addon.particles.css?ver=1.0.3'
-                  type='text/css' media='all'></link>
-            <script type='text/javascript'
-                    src='/js/revolution-addons/particles/js/revolution.addon.particles.min.js?ver=1.0.3'></script>
+            {/*<link rel='stylesheet'*/}
+            {/*      href='/js/revolution-addons/particles/css/revolution.addon.particles.css?ver=1.0.3'*/}
+            {/*      type='text/css' media='all'></link>*/}
+            {/*<script type='text/javascript'*/}
+            {/*        src='/js/revolution-addons/particles/js/revolution.addon.particles.min.js?ver=1.0.3'></script>*/}
 
             {/* SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) */}
             <script type="text/javascript"

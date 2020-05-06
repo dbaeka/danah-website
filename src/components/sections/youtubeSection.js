@@ -18,7 +18,7 @@ const YoutubeSection = () => {
                         <Col xs="12" lg="6" className="mb-5">
                             <div className="video-container">
                                 <iframe className="video" allowFullScreen
-                                        frameborder="0"
+                                        frameBorder="0"
                                         title="youtube Video Player"
                                         src="https://www.youtube.com/embed/FaO2aPBJgZA"
                                         id="fitvid0">

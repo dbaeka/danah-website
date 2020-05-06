@@ -61,7 +61,7 @@ const LatestSection = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs="12" md="6" lg="4" className="mb-5">
+                        <Col xs="12" md="6" lg="4" className="">
                             <div className="jet-posts__inner-box">
                                 <div className="post-thumbnail">
                                     <a
@@ -106,7 +106,6 @@ const LatestSection = () => {
                             <a href="/" className="link-purple">View more</a>
                         </Col>
                     </Row>
-
 
                 </div>
             </Container>

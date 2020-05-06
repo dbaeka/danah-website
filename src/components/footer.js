@@ -103,6 +103,9 @@ const Footer = ({siteTitle}) => {
                                     <Col xs="12" md="6">
                                         <a href="">Activities</a>
                                     </Col>
+                                    <Col xs="12" md="6">
+                                        <a href="">Gallery</a>
+                                    </Col>
                                 </Row>
                             </div>
                         </div>

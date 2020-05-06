@@ -10,7 +10,7 @@ import CarouselEngine from "./CarouselEngine";
 const Carousel = () => {
     return (
         <>
-            <div className={addedStyle.pageHeader + " " + addedStyle.pageHeaderSmall}>
+            <div className="">
                 <CarouselEngine/>
             </div>
         </>

@@ -907,7 +907,7 @@ $fontOnThemeColor: #fff;
   .dropdown-menu {
     top: 15px !important;
     left: -11px;
-    border-bottom: 2px solid #970dff;
+    border-bottom: 2px solid #a60055;
     border-radius: 0;
     box-shadow: 0 4px 5px -2px;
     border-top: none;
@@ -980,6 +980,7 @@ $fontOnThemeColor: #fff;
 
     .dropdown-menu {
       border-bottom: none;
+        top: 16px !important;
 
       .flag {
         width: 20px;
@@ -1780,3 +1781,18 @@ $danger-color-alert: rgba(255, 54, 54, .8) !default;
   border-color: #4f4f4f;
 }
 
+
+.testimony-title {
+  margin-left: 20px;
+  margin-top: 16px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.tp-revslider-mainul {
+  padding-left: 0;
+}
+
+.uranus {
+  background-color: black !important;
+}
