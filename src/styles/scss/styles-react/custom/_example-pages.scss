@@ -1542,6 +1542,22 @@ $danger-color-alert: rgba(255, 54, 54, .8) !default;
   }
 }
 
+.book-small-image {
+  margin-top: 30px;
+  width: 7vw;
+  //box-shadow: rgba(0, 0, 0, 0.85) 4px 3px 20px 1px;
+
+  //@media(max-width: 991px) {
+  //  width: 30vw;
+  //}
+  @media(max-width: 767px) {
+    width: 20vw;
+  }
+  //@media(max-width: 479px) {
+  //  width: 30vw;
+  //}
+}
+
 .text-block {
   margin-bottom: 25px;
   font-size: 28px;
@@ -1550,6 +1566,40 @@ $danger-color-alert: rgba(255, 54, 54, .8) !default;
   @media (max-width: 991px) {
     font-size: 24px;
     line-height: 29px;
+  }
+}
+
+.book-small-text {
+  .text-title {
+    //margin-bottom: 25px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+
+    & a {
+      color: #161616;
+
+      &:hover {
+        color: #b70067;
+      }
+    }
+
+    @media (max-width: 991px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  .text-link {
+    color: #b70067;
+  }
+
+  .text-author {
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 767px) {
+    text-align: center !important;
   }
 }
 
@@ -1822,7 +1872,7 @@ $opacity-8: rgba(255, 255, 255, 0.8) !default;
   }
 
   &:before {
-     background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .3);
   }
 
   > .container {
@@ -2217,10 +2267,37 @@ $opacity-8: rgba(255, 255, 255, 0.8) !default;
   }
 }
 
-.nav-align-center{
+.nav-align-center {
   text-align: center;
 
-  .nav-pills{
+  .nav-pills {
     display: inline-flex;
+  }
+}
+
+.contact-intro {
+  text-align: left;
+  font-family: "Jost";
+
+  h6 {
+    color: #9b9b9b;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.2em;
+    color: #222222;
+  }
+
+  p {
+    color: #222222;
+    line-height: 1.7;
+    font-weight: 400;
   }
 }

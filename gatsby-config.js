@@ -28,6 +28,17 @@ module.exports = {
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `books`,
+                path: `${__dirname}/src/data/`,
+                // ignore: [`**/\.*`], // ignore files starting with a dot
+                plugins: [
+                    `gatsby-transformer-json`
+                ]
+            },
+        },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

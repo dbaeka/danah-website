@@ -6,3 +6,37 @@
 
 // You can delete this file if you're not using it
 
+exports.createPages = async ({actions, graphql, reporter}) => {
+    const {createPage} = actions
+
+    const bookTemplate = require.resolve(`./src/templates/bookTemplate.js`);
+
+    const result = await graphql(`
+    {
+      allBooksJson {
+        edges {
+          node {
+             slug
+          }
+        }
+      }
+    }
+  `)
+
+    // Handle errors
+    if (result.errors) {
+        reporter.panicOnBuild(`Error while running GraphQL query.`)
+        return
+    }
+
+    result.data.allBooksJson.edges.forEach(({node}) => {
+        createPage({
+            path: node.slug,
+            component: bookTemplate,
+            context: {
+                // additional data can be passed via context
+                slug: node.slug,
+            },
+        })
+    })
+}
