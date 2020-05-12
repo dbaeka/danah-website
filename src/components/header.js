@@ -101,7 +101,7 @@ const Header = ({siteTitle}) => {
                 </ul>
             </span>
             <span className="nav-link-span"><a className="nav-a-link" href="">Home</a></span>
-            <span className="nav-link-span"><a className="nav-a-link" href="">About</a></span>
+            <span className="nav-link-span"><a className="nav-a-link" href="/about">About</a></span>
             <Dropdown className="" nav isOpen={isShow1}
                       onMouseEnter={() => setShow1(true)}
                       onMouseLeave={() => setShow1(false)}

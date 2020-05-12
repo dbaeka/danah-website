@@ -16,7 +16,7 @@ import GallerySection from "../components/sections/gallerySection";
 const IndexPage = () => (
     <DefaultLayout>
         <SEO title="Home"/>
-        <Carousel/>
+        {/*<Carousel/>*/}
         <AboutSection/>
         <ExploreSection/>
         <YoutubeSection/>
