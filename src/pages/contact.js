@@ -184,7 +184,8 @@ class Contact extends React.Component {
                                             icon={faTwitter}/> Twitter</a>
                                     </p>
                                     <p>
-                                        <a href=""><FontAwesomeIcon icon={faLinkedin}/> LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/danah-zohar-6750044/"><FontAwesomeIcon
+                                            icon={faLinkedin}/> LinkedIn</a>
                                     </p>
                                 </Col>
                             </Row>

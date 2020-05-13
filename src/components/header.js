@@ -23,7 +23,7 @@ import {
     Input
 } from "reactstrap"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faInstagram, faFacebookSquare, faTwitter} from '@fortawesome/free-brands-svg-icons'
+import {faLinkedin, faFacebookSquare, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 const Header = ({siteTitle}) => {
@@ -70,16 +70,16 @@ const Header = ({siteTitle}) => {
             <span className="social-menu">
                 <ul className="menu left">
                     <li className="first leaf">
-                        <a href="https://www.instagram.com/usinterior/">
-                            <FontAwesomeIcon icon={faInstagram}/>
+                        <a href="https://www.linkedin.com/in/danah-zohar-6750044/">
+                            <FontAwesomeIcon icon={faLinkedin}/>
                         </a>
                     </li>
                     <li className="leaf">
-                        <a href="https://www.facebook.com/USInterior"><FontAwesomeIcon
+                        <a href="https://www.facebook.com/danah.zohar.1"><FontAwesomeIcon
                             icon={faFacebookSquare}/></a>
                     </li>
                     <li className="last leaf">
-                        <a href="https://twitter.com/interior"><FontAwesomeIcon
+                        <a href="https://twitter.com/DanahZohar/"><FontAwesomeIcon
                             icon={faTwitter}/></a>
                     </li>
                 </ul>
@@ -87,7 +87,7 @@ const Header = ({siteTitle}) => {
                     <li className="first leaf active">
                        <img
                            className="flag"
-                           src="https://maxcoach.thememove.com/main/wp-content/themes/maxcoach-child-demo/assets/images/flags/en.png"
+                           src={require("../images/en.png")}
                            alt="en" title="English"/>
                     <span className="ls-native">EN</span>
                     </li>
@@ -100,8 +100,21 @@ const Header = ({siteTitle}) => {
                     </li>
                 </ul>
             </span>
-            <span className="nav-link-span"><a className="nav-a-link" href="">Home</a></span>
-            <span className="nav-link-span"><a className="nav-a-link" href="/about">About</a></span>
+            <span className="nav-link-span"><a className="nav-a-link text-link" href="/">Home</a></span>
+            {/*<span className="nav-link-span"><a className="nav-a-link text-link" href="/about">About</a></span>*/}
+            <Dropdown className="" nav isOpen={isShow4}
+                      onMouseEnter={() => setShow4(true)}
+                      onMouseLeave={() => setShow4(false)}
+                      toggle={() => {
+                      }}
+            >
+                <DropdownToggle nav caret tag="a" href="/about">About</DropdownToggle>
+                <DropdownMenu>
+                    <DropdownItem tag="a" href="/learnqs">Learn the Q's</DropdownItem>
+                    <DropdownItem tag="a" href="/twelveprinciples">12 Principles of SQ</DropdownItem>
+                    <DropdownItem tag="a" href="/experienceqs">Experience Q's</DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
             <Dropdown className="" nav isOpen={isShow1}
                       onMouseEnter={() => setShow1(true)}
                       onMouseLeave={() => setShow1(false)}
@@ -110,8 +123,8 @@ const Header = ({siteTitle}) => {
             >
                 <DropdownToggle nav caret>Activities</DropdownToggle>
                 <DropdownMenu>
-                    <DropdownItem tag="a" href="/">Speaking Engagement</DropdownItem>
-                    <DropdownItem tag="a" href="/">Training Programs</DropdownItem>
+                    <DropdownItem tag="a" href="/speaking">Speaking Engagement</DropdownItem>
+                    <DropdownItem tag="a" href="/training">Training Programs</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
             <span className={"nav-link-span drop"}>
@@ -127,9 +140,11 @@ const Header = ({siteTitle}) => {
                 <div className={"collapsed-detail activities"}>
                     <ul className="mt-2 mb-2">
                         <li className="mb-2">
-                            <a href="/energy" title="New Energy Frontier">
+                            <a href="/speaking" title="Speaking Engagement">
                             Speaking Engagement</a></li>
-                        <li className="mb-2"><a href="/jobs">Training Programs</a></li>
+                        <li className="mb-2">
+                            <a href="/training" title="Training Programs">Training Programs</a>
+                        </li>
                     </ul>
                 </div>
             </span>
@@ -168,10 +183,11 @@ const Header = ({siteTitle}) => {
                     </ul>
                 </div>
             </span>
-            <span className="nav-link-span"><a className="nav-a-link" href="">Books</a></span>
-            <span className="nav-link-span"> <a className="nav-a-link" href="">News</a></span>
-            <span className="nav-link-span"> <a className="nav-a-link" href="">Test and Surveys</a></span>
-            <span className="nav-link-span"> <a className="nav-a-link" href="">Contact Us</a></span>
+            <span className="nav-link-span"><a className="nav-a-link text-link" href="/books">Books</a></span>
+            <span className="nav-link-span"> <a className="nav-a-link text-link" href="/news">News</a></span>
+            <span className="nav-link-span"> <a className="nav-a-link text-link"
+                                                href="/test">Test and Surveys</a></span>
+            <span className="nav-link-span"> <a className="nav-a-link text-link" href="/contact">Contact Us</a></span>
         </>
     );
 
@@ -187,7 +203,7 @@ const Header = ({siteTitle}) => {
                 <DropdownToggle nav caret>
                     <img
                         className="flag"
-                        src="https://maxcoach.thememove.com/main/wp-content/themes/maxcoach-child-demo/assets/images/flags/en.png"
+                        src={require("../images/en.png")}
                         alt="en" title="English"/>
                     <span className="ls-native">English</span>
                 </DropdownToggle>
@@ -201,22 +217,22 @@ const Header = ({siteTitle}) => {
                     </DropdownItem>
                 </DropdownMenu>
             </Dropdown>
-            <FormGroup className="header-search" action="//search.usa.gov/search" method="get"
-                       id="search-block-form">
-                <InputGroup className="search-btn">
-                    <Input
-                        className=""
-                        type="text"
-                        name="query"
-                        maxLength="128"
-                        id="query"
-                        placeholder="Search"
-                    />
-                    <InputGroupAddon addonType="append">
-                        <Button className="btn-white"><FontAwesomeIcon icon={faSearch}/></Button>
-                    </InputGroupAddon>
-                </InputGroup>
-            </FormGroup>
+            {/*<FormGroup className="header-search" action="//search.usa.gov/search" method="get"*/}
+            {/*           id="search-block-form">*/}
+            {/*    <InputGroup className="search-btn">*/}
+            {/*        <Input*/}
+            {/*            className=""*/}
+            {/*            type="text"*/}
+            {/*            name="query"*/}
+            {/*            maxLength="128"*/}
+            {/*            id="query"*/}
+            {/*            placeholder="Search"*/}
+            {/*        />*/}
+            {/*        <InputGroupAddon addonType="append">*/}
+            {/*            <Button className="btn-white"><FontAwesomeIcon icon={faSearch}/></Button>*/}
+            {/*        </InputGroupAddon>*/}
+            {/*    </InputGroup>*/}
+            {/*</FormGroup>*/}
         </>
     );
 

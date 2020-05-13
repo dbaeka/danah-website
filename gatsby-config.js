@@ -31,7 +31,7 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                name: `books`,
+                // name: `books`,
                 path: `${__dirname}/src/data/`,
                 // ignore: [`**/\.*`], // ignore files starting with a dot
                 plugins: [
@@ -39,6 +39,18 @@ module.exports = {
                 ]
             },
         },
+        // {
+        //     resolve: `gatsby-source-wordpress`,
+        //     options: {
+        //         // your WordPress source
+        //         baseUrl: `sdgs.org.gh/wp-json/wp/v2`,
+        //         protocol: `https`,
+        //         // is it hosted on wordpress.com, or self-hosted?
+        //         hostingWPCOM: false,
+        //         // does your site use the Advanced Custom Fields Plugin?
+        //         useACF: false
+        //     }
+        // },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

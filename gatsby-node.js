@@ -6,10 +6,14 @@
 
 // You can delete this file if you're not using it
 
+const path = require(`path`)
+const { slash } = require(`gatsby-core-utils`)
+
 exports.createPages = async ({actions, graphql, reporter}) => {
     const {createPage} = actions
 
     const bookTemplate = require.resolve(`./src/templates/bookTemplate.js`);
+    // const postTemplate = path.resolve(`./src/templates/post.js`);
 
     const result = await graphql(`
     {
@@ -22,6 +26,20 @@ exports.createPages = async ({actions, graphql, reporter}) => {
       }
     }
   `)
+
+  //   // query content for WordPress posts
+  //   const wpresult = await graphql(`
+  //   query {
+  //     allWordpressPost {
+  //       edges {
+  //         node {
+  //           id
+  //           slug
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
     // Handle errors
     if (result.errors) {
@@ -39,4 +57,18 @@ exports.createPages = async ({actions, graphql, reporter}) => {
             },
         })
     })
+
+    // wpresult.data.allWordpressPost.edges.forEach(edge => {
+    //     createPage({
+    //         // will be the url for the page
+    //         path: edge.node.slug,
+    //         // specify the component template of your choice
+    //         component: slash(postTemplate),
+    //         // In the ^template's GraphQL query, 'id' will be available
+    //         // as a GraphQL variable to query for this posts's data.
+    //         context: {
+    //             id: edge.node.id,
+    //         },
+    //     })
+    // })
 }
