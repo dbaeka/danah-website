@@ -65,17 +65,17 @@ const Footer = ({siteTitle}) => {
                             <div className="footer_info_social footer-text-color my-2">
                                 <ul>
                                     <li className="footer-text-color">
-                                        <a className="footer-text-color" href="https://www.facebook.com/danah.zohar.1">
+                                        <a className="footer-text-color" target="_blank" href="https://www.facebook.com/danah.zohar.1">
                                             <FontAwesomeIcon icon={faFacebookF}/>
                                         </a>
                                     </li>
                                     <li className="footer-text-color">
-                                        <a className="footer-text-color" href="https://twitter.com/DanahZohar/">
+                                        <a className="footer-text-color" target="_blank" href="https://twitter.com/DanahZohar/">
                                             <FontAwesomeIcon icon={faTwitter}/>
                                         </a>
                                     </li>
                                     <li className="footer-text-color">
-                                        <a className="footer-text-color"
+                                        <a className="footer-text-color" target="_blank"
                                            href="https://www.linkedin.com/in/danah-zohar-6750044/">
                                             <FontAwesomeIcon icon={faLinkedin}/>
                                         </a>

@@ -71,16 +71,16 @@ const Header = ({siteTitle}) => {
             <span className="social-menu">
                 <ul className="menu left pl-4">
                     <li className="first leaf ">
-                        <a href="https://www.linkedin.com/in/danah-zohar-6750044/">
+                        <a target="_blank" href="https://www.linkedin.com/in/danah-zohar-6750044/">
                             <FontAwesomeIcon icon={faLinkedin}/>
                         </a>
                     </li>
                     <li className="leaf">
-                        <a href="https://www.facebook.com/danah.zohar.1"><FontAwesomeIcon
+                        <a target="_blank" href="https://www.facebook.com/danah.zohar.1"><FontAwesomeIcon
                             icon={faFacebookSquare}/></a>
                     </li>
                     <li className="last leaf">
-                        <a href="https://twitter.com/DanahZohar/"><FontAwesomeIcon
+                        <a target="_blank" href="https://twitter.com/DanahZohar/"><FontAwesomeIcon
                             icon={faTwitter}/></a>
                     </li>
                 </ul>

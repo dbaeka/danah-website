@@ -16,7 +16,7 @@ import GallerySection from "../components/sections/gallerySection";
 class IndexPage extends React.Component {
     componentDidMount() {
         const script = document.createElement("script");
-        script.src = "/danah-website/js/popup.js";
+        script.src = "/js/popup.js";
         script.async = true;
         script.onload = () => this.scriptLoaded();
         document.body.appendChild(script);
