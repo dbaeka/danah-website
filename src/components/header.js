@@ -34,6 +34,7 @@ const Header = ({siteTitle}) => {
 
     const [showDetail1, setDetail1] = useState(false);
     const [showDetail2, setDetail2] = useState(false);
+    const [showDetail3, setDetail3] = useState(false);
 
     const handleExpand = (event) => {
         const name = event.target.getAttribute("name");
@@ -41,8 +42,8 @@ const Header = ({siteTitle}) => {
         const target = event.target;
         target.classList.toggle("collapsed");
         if (width < 943) {
-            (name === "activities") ? setDetail1(!showDetail1) : setDetail2(!showDetail2);
-            const selector = (name === "activities") ? '.collapsed-detail.activities' : '.collapsed-detail.projects';
+            (name === "activities") ? setDetail1(!showDetail1) : (name === "projects") ? setDetail2(!showDetail2) : setDetail3(!showDetail3);
+            const selector = (name === "activities") ? '.collapsed-detail.activities' : (name === "projects") ? '.collapsed-detail.projects' : '.collapsed-detail.about';
             var content = document.querySelector(selector);
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
@@ -58,18 +59,18 @@ const Header = ({siteTitle}) => {
     };
 
     const navBrand = <div className="branding__logo">
-        <a href="/" rel="home">
+        <Link to="/" rel="home">
             <img
                 src={require("../images/svg/logo.svg")}
                 alt="DanahZohar"/>
-        </a>
+        </Link>
     </div>;
 
     const leftLinks = (
         <>
             <span className="social-menu">
-                <ul className="menu left">
-                    <li className="first leaf">
+                <ul className="menu left pl-4">
+                    <li className="first leaf ">
                         <a href="https://www.linkedin.com/in/danah-zohar-6750044/">
                             <FontAwesomeIcon icon={faLinkedin}/>
                         </a>
@@ -91,11 +92,11 @@ const Header = ({siteTitle}) => {
                            alt="en" title="English"/>
                     <span className="ls-native">EN</span>
                     </li>
-                    <li className="leaf">
+                    <li className="leaf mr-2">
                        <img
                            className="flag"
                            src={require("../images/china.png")}
-                           alt="en" title="English"/>
+                           alt="en" title="Chinese"/>
                     <span className="ls-native">CN</span>
                     </li>
                 </ul>
@@ -115,6 +116,34 @@ const Header = ({siteTitle}) => {
                     <DropdownItem tag="a" href="/experienceqs">Experience Q's</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
+            <span className={"nav-link-span drop"}>
+                <div
+                    name="about"
+                    className={"children nav-a-link"
+                    + (showDetail3 ? " collapsed" : "")
+                    + (isShow4 ? " active" : "")}
+                    onClick={handleExpand}
+                >
+                    About
+                </div>
+                <div className={"collapsed-detail about"}>
+                    <ul className="mt-2 mb-2">
+                         <li className="mb-2">
+                            <a href="/about">Go to About
+                            </a>
+                         </li>
+                        <li className="mb-2">
+                            <a href="/learnqs">Learn the Q's
+                            </a></li>
+                        <li className="mb-2">
+                            <a href="/twelveprinciples">12 Principles of SQ</a>
+                        </li>
+                         <li className="mb-2">
+                            <a href="/experienceqs">Experience Q's</a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
             <Dropdown className="" nav isOpen={isShow1}
                       onMouseEnter={() => setShow1(true)}
                       onMouseLeave={() => setShow1(false)}

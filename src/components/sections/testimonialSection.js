@@ -11,22 +11,16 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const testimonials = [
     {
-        name: "Clarissa Hoppman",
-        text: "I gained so much confidence in my ability to " +
-            "connect and deepen my relationships with people. " +
-            "It’s amazing how much easier it has been to meet new " +
-            "people and create instant connections. I have the " +
-            "exact same personality, the only thing that has changed " +
-            "is my mindset and a few behaviors."
+        image: "MIT_950.jpg"
     },
     {
-        name: "Clarissa Hoppman",
-        text: "I gained so much confidence in my ability to " +
-            "connect and deepen my relationships with people. " +
-            "It’s amazing how much easier it has been to meet new " +
-            "people and create instant connections. I have the " +
-            "exact same personality, the only thing that has changed " +
-            "is my mindset and a few behaviors."
+        image: "mckinsey_950.jpg"
+    },
+    {
+        image: "quote_1.png"
+    },
+    {
+        image: "quote_2.png"
     }
 ];
 
@@ -35,23 +29,16 @@ const TestimonialSection = () => {
         <div id="latest"
              className="latest-entry mb-5"
         >
-            <h3 className="text-center font-weight-600 mb-3">TESTIMONIALS</h3>
+            <h3 className="pt-5 text-center font-weight-600 mb-3">TESTIMONIALS</h3>
             <Carousel
-                cols={3}
-                autoplay={10000}
+                containerClassName="text-center"
+                cols={1}
+                autoplay={5000}
                 containerStyle={{maxWidth: '1300px', margin: '0 auto'}}
             >
-                {testimonials.map(({name, text}, i) => (
+                {testimonials.map(({image}, i) => (
                     <Carousel.Item key={i}>
-                        <Card style={{
-                            marginTop: "20px",
-                            marginLeft: "8px"
-                        }}>
-                            <CardHeader>
-                                <div className="testimony-title">{name}</div>
-                            </CardHeader>
-                            <CardBody className="testimony-text">{"\"" + text + "\""}</CardBody>
-                        </Card>
+                            <img className="full_image" src={require("../../images/" + image)}/>
                     </Carousel.Item>
                 ))}
             </Carousel>

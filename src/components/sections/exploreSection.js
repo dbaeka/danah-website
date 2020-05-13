@@ -1,6 +1,7 @@
 import React from "react";
 import addedStyle from "../../styles/css/style-react.module.css"
-
+import {Link} from "gatsby"
+import {Redirect} from 'react-router-dom'
 // reactstrap components
 import {Button, Row, Container, Col, Card, CardBody, CardFooter, CardHeader, NavItem, NavLink} from "reactstrap";
 import {faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
@@ -11,23 +12,25 @@ const ExploreSection = () => {
     return (
         <div id="explore"
              className="explore-entry"
+             style={{backgroundColor: "#E8E8E8"}}
         >
             <Container>
-                <div className="pb-5">
+                <div className="pt-5 pb-5">
                     <div className="text-center">
                         <h5 className="text-purple">Learn about the Q's</h5>
                         <h3 className="font-weight-600">Explore SQ and Spiritual Capital</h3>
                     </div>
                     <Row className="explore-entry">
                         <Col xs="12" md="6" lg="4" className="">
-                            <Card className="exploreCard">
+                            <Card className="exploreCard"
+                                  onClick={() => (window.location = "/whatissq")}>
                                 <CardHeader>
                                     <div
                                         className="header-img-container"
                                     >
                                         <img
                                             className="header-img d-block"
-                                            src={require("../../images/danah_profile.jpg")}
+                                            src={require("../../images/spiritual2.png")}
                                         >
                                         </img>
                                     </div>
@@ -44,13 +47,15 @@ const ExploreSection = () => {
                                             <div className="subtext">Spiritual intelligence (SQ) is unfortunately often
                                                 overlooked in coaching and development. It is the trigger and key to
                                                 great leadership, which motivates us to lead from higher motivations.
-                                            <br/><br/>
+                                                <br/><br/>
                                             </div>
                                         </div>
                                     </div>
                                 </CardBody>
                                 <CardFooter>
-                                    <div className="slide-layer-wrap button-wrap">
+                                    <div className="slide-layer-wrap button-wrap"
+                                         onClick={() => (window.location = "/whatissq")}
+                                    >
                                         <div className="slide-layer">
                                             <div className="slide-button right-icon">
                                                 <div className="button-content-wrapper">
@@ -67,14 +72,15 @@ const ExploreSection = () => {
                             </Card>
                         </Col>
                         <Col xs="12" md="6" lg="4">
-                            <Card className="exploreCard">
+                            <Card className="exploreCard"
+                                  onClick={() => (window.location = "/scapital")}>
                                 <CardHeader>
                                     <div
                                         className="header-img-container"
                                     >
                                         <img
                                             className="header-img d-block"
-                                            src={require("../../images/danah_profile.jpg")}
+                                            src={require("../../images/wealth2.png")}
                                         >
                                         </img>
                                     </div>
@@ -98,7 +104,8 @@ const ExploreSection = () => {
                                     </div>
                                 </CardBody>
                                 <CardFooter>
-                                    <div className="slide-layer-wrap button-wrap">
+                                    <div className="slide-layer-wrap button-wrap"
+                                         onClick={() => (window.location = "/scapital")}>
                                         <div className="slide-layer">
                                             <div className="slide-button right-icon">
                                                 <div className="button-content-wrapper">
@@ -115,14 +122,16 @@ const ExploreSection = () => {
                             </Card>
                         </Col>
                         <Col xs="12" md="6" lg="4">
-                            <Card className="exploreCard">
+                            <Card className="exploreCard"
+                                  onClick={() => (window.location = "/experienceqs")}
+                            >
                                 <CardHeader>
                                     <div
                                         className="header-img-container"
                                     >
                                         <img
                                             className="header-img d-block"
-                                            src={require("../../images/danah_profile.jpg")}
+                                            src={require("../../images/blog_placeholder.png")}
                                         >
                                         </img>
                                     </div>
@@ -146,7 +155,9 @@ const ExploreSection = () => {
                                     </div>
                                 </CardBody>
                                 <CardFooter>
-                                    <div className="slide-layer-wrap button-wrap">
+                                    <div className="slide-layer-wrap button-wrap"
+                                         onClick={() => (window.location = "/experienceqs")}
+                                    >
                                         <div className="slide-layer">
                                             <div className="slide-button right-icon">
                                                 <div className="button-content-wrapper">

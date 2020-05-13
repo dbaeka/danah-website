@@ -58,7 +58,8 @@ const GallerySection = () => {
             >
                 {[...Array(14)].map((_, i) => (
                     <Carousel.Item key={i}>
-                        <img src={`https://picsum.photos/200/160?random=${i}`}/>
+                        <a href={`https://picsum.photos/200/160?random=${i}`}
+                        > <img src={`https://picsum.photos/200/160?random=${i}`}/></a>
                     </Carousel.Item>
                 ))}
             </Carousel>

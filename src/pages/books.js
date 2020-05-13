@@ -52,7 +52,7 @@ const Books = () => {
                                 <Row className="ml-auto mr-auto mb-5" key={idx}>
                                     <Col md="2">
                                         <a
-                                            href=""
+                                            href={node.slug}
                                             className="book-short w-inline-block">
                                             <img
                                                 src={node.image && node.image.childImageSharp.fluid.base64}
@@ -60,7 +60,7 @@ const Books = () => {
                                         </a>
                                     </Col>
                                     <Col md="10" className="text-left book-small-text">
-                                        <div className="mt-4 text-title"><a href="">{node.name}</a>
+                                        <div className="mt-4 text-title"><a href={node.slug}>{node.name}</a>
                                         </div>
                                         <div className="mt-1 text-author">{node.author}</div>
                                         <div className="mt-2 mb-2">

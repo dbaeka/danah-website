@@ -11,6 +11,7 @@ const VideoSection = () => {
     return (
         <div id="videos"
              className="videos-entry"
+             style={{backgroundColor: "#fff"}}
         >
             <Container>
                 <div className="py-5">
@@ -19,7 +20,7 @@ const VideoSection = () => {
                         <Col xs="12" md="6" lg="4" className="mb-5" style={{overflow: "hidden"}}>
                             <div className="video-wrapper">
                                 <div className="section-vid">
-                                    <a href="">
+                                    <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" className="popup-youtube" >
                                         <img
                                             className="vid-thumb"
                                             src="https://maxcoach.thememove.com/main/wp-content/uploads/sites/1/2019/11/course-02-443x600.jpg"
@@ -30,8 +31,8 @@ const VideoSection = () => {
                                         <div className="course-caption-main">
                                             <h5 className="course-title text-white font-weight-500">
                                                 <a
-                                                    className="text-white font-weight-500"
-                                                    href="https://maxcoach.thememove.com/main/course/learning-to-write-as-a-professional-author/">Learning
+                                                    className="text-white font-weight-500 popup-youtube"
+                                                    href="http://www.youtube.com/watch?v=0O2aH4XLbto">Learning
                                                     to Write as a Professional Author
                                                 </a>
                                             </h5>
@@ -51,7 +52,7 @@ const VideoSection = () => {
                         <Col xs="12" md="6" lg="4" className="mb-5" style={{overflow: "hidden"}}>
                             <div className="video-wrapper">
                                 <div className="section-vid">
-                                    <a href="">
+                                    <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" className="popup-youtube" >
                                         <img
                                             className="vid-thumb"
                                             src="https://maxcoach.thememove.com/main/wp-content/uploads/sites/1/2019/11/course-02-443x600.jpg"
@@ -62,8 +63,8 @@ const VideoSection = () => {
                                         <div className="course-caption-main">
                                             <h5 className="course-title text-white font-weight-500">
                                                 <a
-                                                    className="text-white font-weight-500"
-                                                    href="https://maxcoach.thememove.com/main/course/learning-to-write-as-a-professional-author/">Learning
+                                                    className="text-white font-weight-500 popup-youtube"
+                                                    href="http://www.youtube.com/watch?v=0O2aH4XLbto">Learning
                                                     to Write as a Professional Author
                                                 </a>
                                             </h5>
@@ -83,7 +84,7 @@ const VideoSection = () => {
                         <Col xs="12" md="6" lg="4" className="mb-5" style={{overflow: "hidden"}}>
                             <div className="video-wrapper">
                                 <div className="section-vid">
-                                    <a href="">
+                                    <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" className="popup-youtube" >
                                         <img
                                             className="vid-thumb"
                                             src="https://maxcoach.thememove.com/main/wp-content/uploads/sites/1/2019/11/course-02-443x600.jpg"
@@ -94,8 +95,8 @@ const VideoSection = () => {
                                         <div className="course-caption-main">
                                             <h5 className="course-title text-white font-weight-500">
                                                 <a
-                                                    className="text-white font-weight-500"
-                                                    href="https://maxcoach.thememove.com/main/course/learning-to-write-as-a-professional-author/">Learning
+                                                    className="text-white font-weight-500 popup-youtube"
+                                                    href="http://www.youtube.com/watch?v=0O2aH4XLbto">Learning
                                                     to Write as a Professional Author
                                                 </a>
                                             </h5>
@@ -113,11 +114,9 @@ const VideoSection = () => {
                             </div>
                         </Col>
                         <Col className="text-center" xs="12">
-                            <a href="/" className="link-purple">View more</a>
+                            <a href="/videos" className="link-purple">View more</a>
                         </Col>
                     </Row>
-
-
                 </div>
             </Container>
         </div>

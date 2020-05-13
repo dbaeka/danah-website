@@ -13,19 +13,36 @@ import LatestSection from "../components/sections/latestSection";
 import TestimonialSection from "../components/sections/testimonialSection";
 import GallerySection from "../components/sections/gallerySection";
 
-const IndexPage = () => (
-    <DefaultLayout>
-        <SEO title="Home"/>
-        {/*<Carousel/>*/}
-        <AboutSection/>
-        <ExploreSection/>
-        <YoutubeSection/>
-        <BookSection/>
-        <VideoSection/>
-        <LatestSection/>
-        <TestimonialSection/>
-        <GallerySection/>
-    </DefaultLayout>
-);
+class IndexPage extends React.Component {
+    componentDidMount() {
+        const script = document.createElement("script");
+        script.src = "/danah-website/js/popup.js";
+        script.async = true;
+        script.onload = () => this.scriptLoaded();
+        document.body.appendChild(script);
+    }
+
+    scriptLoaded() {
+
+    }
+
+    render() {
+        return (
+            <DefaultLayout>
+                <SEO title="Home"/>
+                <Carousel/>
+                {/*<a className="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Open YouTube video</a>*/}
+                <AboutSection/>
+                <LatestSection/>
+                <BookSection/>
+                <VideoSection/>
+                <ExploreSection/>
+                <TestimonialSection/>
+                {/*<YoutubeSection/>*/}
+                <GallerySection/>
+            </DefaultLayout>
+        )
+    }
+};
 
 export default IndexPage

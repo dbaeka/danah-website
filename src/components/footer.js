@@ -25,7 +25,7 @@ import {
     Input
 } from "reactstrap"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faInstagram, faFacebookF, faTwitter} from '@fortawesome/free-brands-svg-icons'
+import {faLinkedin, faFacebookF, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {faCircle, faEnvelope, faPhone, faMapMarker} from '@fortawesome/free-solid-svg-icons'
 
 const Footer = ({siteTitle}) => {
@@ -74,6 +74,12 @@ const Footer = ({siteTitle}) => {
                                             <FontAwesomeIcon icon={faTwitter}/>
                                         </a>
                                     </li>
+                                    <li className="footer-text-color">
+                                        <a className="footer-text-color"
+                                           href="https://www.linkedin.com/in/danah-zohar-6750044/">
+                                            <FontAwesomeIcon icon={faLinkedin}/>
+                                        </a>
+                                    </li>
                                     {/*<li className="footer-text-color">*/}
                                     {/*    <a className="footer-text-color" href="#">*/}
                                     {/*        <FontAwesomeIcon icon={faInstagram}/>*/}
@@ -89,22 +95,22 @@ const Footer = ({siteTitle}) => {
                             <div className="mb-4 links">
                                 <Row>
                                     <Col xs="12" md="6">
-                                        <a href="">News</a>
+                                        <a href="/news">News</a>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="">Books</a>
+                                        <a href="/books">Books</a>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="">Videos</a>
+                                        <a href="/videos">Videos</a>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="">Test and Surveys</a>
+                                        <a href="/test">Test and Surveys</a>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="">Activities</a>
+                                        <a href="/blog">Blog</a>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="">Gallery</a>
+                                        <a href="/speaking">Speaking</a>
                                     </Col>
                                 </Row>
                             </div>
@@ -116,14 +122,14 @@ const Footer = ({siteTitle}) => {
                             <div className="mb-4 links">
                                 <Row>
                                     <Col xs="12">
-                                        <a href="">About</a>
+                                        <a href="/about">About</a>
                                     </Col>
                                     <Col xs="12">
-                                        <a href="">Contact</a>
+                                        <a href="/contact">Contact</a>
                                     </Col>
-                                    <Col xs="12">
-                                        <a href="">Projects</a>
-                                    </Col>
+                                    {/*<Col xs="12">*/}
+                                    {/*    <a href="/projects">Projects</a>*/}
+                                    {/*</Col>*/}
                                 </Row>
                             </div>
                         </div>
