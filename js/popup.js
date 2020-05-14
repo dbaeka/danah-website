@@ -10,7 +10,20 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
+    $('.popup-modal').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        focus: '#username',
+        modal: true
+    });
+    $(document).on('click', '.popup-modal-dismiss', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+    });
+});
+
+$(document).ready(function () {
     $('#gallery').magnificPopup({
         delegate: 'a',
         type: 'image',
@@ -26,7 +39,7 @@ $(document).ready(function() {
         zoom: {
             enabled: true,
             duration: 300, // don't foget to change the duration also in CSS
-            opener: function(element) {
+            opener: function (element) {
                 return element.find('img');
             }
         }
