@@ -154,6 +154,7 @@ const Header = ({siteTitle}) => {
                 <DropdownMenu>
                     <DropdownItem tag="a" href="/speaking">Speaking Engagement</DropdownItem>
                     <DropdownItem tag="a" href="/training">Training Programs</DropdownItem>
+                    <DropdownItem tag="a" href="/videos">Videos</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
             <span className={"nav-link-span drop"}>
@@ -173,6 +174,9 @@ const Header = ({siteTitle}) => {
                             Speaking Engagement</a></li>
                         <li className="mb-2">
                             <a href="/training" title="Training Programs">Training Programs</a>
+                        </li>
+                         <li className="mb-2">
+                            <a href="/videos" title="Training Programs">Videos</a>
                         </li>
                     </ul>
                 </div>
