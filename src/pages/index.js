@@ -39,7 +39,7 @@ class IndexPage extends React.Component {
                 <ExploreSection/>
                 <TestimonialSection/>
                 {/*<YoutubeSection/>*/}
-                <GallerySection/>
+                {/*<GallerySection/>*/}
             </DefaultLayout>
         )
     }

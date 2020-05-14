@@ -12,7 +12,7 @@ const Speaking = () => {
     return (
         <DefaultLayout>
             <SEO title="Speaking Engagement"/>
-            <NormalHeader title="Speaking Engagement"/>
+            <NormalHeader  position="50% 9%" image={require("../images/header2.jpg")} title="Speaking Engagement"/>
             <div className="subpage">
                 <div className="section">
                     <Container>

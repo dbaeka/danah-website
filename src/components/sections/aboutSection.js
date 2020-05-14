@@ -50,7 +50,7 @@ const AboutSection = () => {
                                     <Row className="ml-md-3 mb-2 pb-0 jet-posts__inner-box">
                                         <Col xs="4" className="post-thumbnail pt-4" style={{backgroundColor: "#fff"}}>
                                             <a
-                                                href=""
+                                                href="http://danahzohar.com/www2/?p=838"
                                                 className="post-thumbnail__link">
                                                 <img className="post-thumbnail__img_wp-post-image"
                                                      src={require("../../images/blog_placeholder.png")}
@@ -77,7 +77,7 @@ const AboutSection = () => {
                                             </div>
                                             <div className="jet-more-wrap">
                                                 <a
-                                                    href="http://themes.pixelwars.org/efor/demo-02/stop-ignoring-these-7-inspiring-truths-and-become-your-best-self-today/"
+                                                    href="http://danahzohar.com/www2/?p=838"
                                                     className="btn btn-primary elementor-button elementor-size-md jet-more">
                                                     <span className="btn__text">Read More</span>
                                                 </a>
@@ -91,17 +91,18 @@ const AboutSection = () => {
                                             <h4 className="entry-title pt-0">
                                                 <a
                                                     style={{fontSize: "16px"}}
-                                                    href="">
-                                                    A World Without Trust
+                                                    href="http://danahzohar.com/www2/?p=840">
+                                                    You Can’t Isolate Problems
                                                 </a>
                                             </h4>
                                             <div className="entry-excerpt pb-0">
-                                                I was raised by my grandparents during the 1950’s in the American
-                                                Mid... <a
-                                                href=""
-                                                className="text-link">
-                                                Read More
-                                            </a>
+                                                Praising and justifying himself for his drive to emasculate the state’s
+                                                trades unions...
+                                                <a
+                                                    href="http://danahzohar.com/www2/?p=840"
+                                                    className="text-link">
+                                                    Read More
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -112,19 +113,18 @@ const AboutSection = () => {
                                             <h4 className="entry-title pt-0">
                                                 <a
                                                     style={{fontSize: "16px"}}
-                                                    href="">
-                                                    A World Without Trust
+                                                    href="http://danahzohar.com/www2/?p=687">
+                                                    Changing capitalism from within
                                                 </a>
                                             </h4>
                                             <div className="entry-excerpt pb-0">
-                                                I was raised by my grandparents during the 1950’s in the American
-                                                Mid... <a
-                                                href=""
+                                                To change capitalism in a way that sustains the freedom and creativity
+                                                of the markets,... <a
+                                                href="http://danahzohar.com/www2/?p=687"
                                                 className="text-link">
                                                 Read More
                                             </a>
                                             </div>
-
                                         </div>
                                     </div>
                                 </Col>

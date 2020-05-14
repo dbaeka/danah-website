@@ -7,7 +7,7 @@ import Footer from "./footer";
 
 // core components
 
-function NormalHeader({image, title}) {
+function NormalHeader({image, title, position}) {
     let pageHeader = React.createRef();
 
     React.useEffect(() => {
@@ -32,7 +32,8 @@ function NormalHeader({image, title}) {
                 <div
                     className="page-header-image"
                     style={{
-                        backgroundImage: "url(" + image + ")"
+                        backgroundImage: "url(" + image + ")",
+                        backgroundPosition: position
                     }}
                     ref={pageHeader}
                 >
@@ -62,12 +63,14 @@ function NormalHeader({image, title}) {
 
 NormalHeader.propTypes = {
     title: PropTypes.string,
-    image: PropTypes.string
+    image: PropTypes.string,
+    position: PropTypes.string
 };
 
 NormalHeader.defaultProps = {
     title: ``,
-    image: require("../images/danah_profile.jpg")
+    image: require("../images/danah_profile.jpg"),
+    position: "50% 26%"
 };
 
 export default NormalHeader;

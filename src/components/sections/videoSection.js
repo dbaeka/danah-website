@@ -1,13 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 import addedStyle from "../../styles/css/style-react.module.css"
+import ReactPlayer from 'react-player'
+
 
 // reactstrap components
-import {Button, Row, Container, Col, Card, CardBody, CardFooter, CardHeader, NavItem, NavLink} from "reactstrap";
+import {
+    Button,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader,
+    Row,
+    Container,
+    Col,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    NavItem,
+    NavLink
+} from "reactstrap";
 import {faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 // core components
 
 const VideoSection = () => {
+    const [playing, setPlaying] = useState(true);
+    const [url, setUrl] = useState("");
+
     return (
         <div id="videos"
              className="videos-entry"
@@ -20,10 +41,14 @@ const VideoSection = () => {
                         <Col xs="12" md="6" lg="4" className="mb-5" style={{overflow: "hidden"}}>
                             <div className="video-wrapper">
                                 <div className="section-vid">
-                                    <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" className="popup-youtube" >
+                                    <a href="#test-modal" className="popup-modal"
+                                       onClick={() =>
+                                           setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L8_Scale%20of%20Motivations.mp4?dlink=%222f44616e616820566964656f732f4c385f5363616c65206f66204d6f7469766174696f6e732e6d7034%22&noCache=1589423417678&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")
+                                       }
+                                    >
                                         <img
                                             className="vid-thumb"
-                                            src="https://maxcoach.thememove.com/main/wp-content/uploads/sites/1/2019/11/course-02-443x600.jpg"
+                                            src={require("../../images/video2.png")}
                                         />
                                         <span className="bg-overlay"/>
                                     </a>
@@ -31,17 +56,18 @@ const VideoSection = () => {
                                         <div className="course-caption-main">
                                             <h5 className="course-title text-white font-weight-500">
                                                 <a
-                                                    className="text-white font-weight-500 popup-youtube"
-                                                    href="http://www.youtube.com/watch?v=0O2aH4XLbto">Learning
-                                                    to Write as a Professional Author
+                                                    className="text-white font-weight-500 popup-modal"
+                                                    onClick={() =>
+                                                        setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L8_Scale%20of%20Motivations.mp4?dlink=%222f44616e616820566964656f732f4c385f5363616c65206f66204d6f7469766174696f6e732e6d7034%22&noCache=1589423417678&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")
+                                                    }
+                                                    href="#test-modal">Scales of
+                                                    Motivation
                                                 </a>
                                             </h5>
                                         </div>
                                         <div className="course-caption-collapse">
                                             <div className="course-excerpt">
-                                                <p>The purpose of this course is to provide the advanced writing
-                                                    techniques
-                                                    commonly used for inspiring readers and
+                                                <p>
                                                 </p>
                                             </div>
                                         </div>
@@ -52,10 +78,10 @@ const VideoSection = () => {
                         <Col xs="12" md="6" lg="4" className="mb-5" style={{overflow: "hidden"}}>
                             <div className="video-wrapper">
                                 <div className="section-vid">
-                                    <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" className="popup-youtube" >
+                                    <a href="https://www.youtube.com/watch?v=FaO2aPBJgZA" className="popup-youtube">
                                         <img
                                             className="vid-thumb"
-                                            src="https://maxcoach.thememove.com/main/wp-content/uploads/sites/1/2019/11/course-02-443x600.jpg"
+                                            src={require("../../images/video1.png")}
                                         />
                                         <span className="bg-overlay"/>
                                     </a>
@@ -64,16 +90,15 @@ const VideoSection = () => {
                                             <h5 className="course-title text-white font-weight-500">
                                                 <a
                                                     className="text-white font-weight-500 popup-youtube"
-                                                    href="http://www.youtube.com/watch?v=0O2aH4XLbto">Learning
-                                                    to Write as a Professional Author
+                                                    href="https://www.youtube.com/watch?v=FaO2aPBJgZA">Danah's
+                                                    Corporate
+                                                    Highlights
                                                 </a>
                                             </h5>
                                         </div>
                                         <div className="course-caption-collapse">
                                             <div className="course-excerpt">
-                                                <p>The purpose of this course is to provide the advanced writing
-                                                    techniques
-                                                    commonly used for inspiring readers and
+                                                <p>
                                                 </p>
                                             </div>
                                         </div>
@@ -84,10 +109,14 @@ const VideoSection = () => {
                         <Col xs="12" md="6" lg="4" className="mb-5" style={{overflow: "hidden"}}>
                             <div className="video-wrapper">
                                 <div className="section-vid">
-                                    <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" className="popup-youtube" >
+                                    <a href="#test-modal" className="popup-modal"
+                                       onClick={() =>
+                                           setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L2_PQT_4_Thriving%20on%20Chaos.mp4?dlink=%222f44616e616820566964656f732f4c325f5051545f345f5468726976696e67206f6e204368616f732e6d7034%22&noCache=1589424570081&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")
+                                       }
+                                    >
                                         <img
                                             className="vid-thumb"
-                                            src="https://maxcoach.thememove.com/main/wp-content/uploads/sites/1/2019/11/course-02-443x600.jpg"
+                                            src={require("../../images/video3.png")}
                                         />
                                         <span className="bg-overlay"/>
                                     </a>
@@ -95,17 +124,18 @@ const VideoSection = () => {
                                         <div className="course-caption-main">
                                             <h5 className="course-title text-white font-weight-500">
                                                 <a
-                                                    className="text-white font-weight-500 popup-youtube"
-                                                    href="http://www.youtube.com/watch?v=0O2aH4XLbto">Learning
-                                                    to Write as a Professional Author
+                                                    className="text-white font-weight-500 popup-modal"
+                                                    onClick={() =>
+                                                        setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L2_PQT_4_Thriving%20on%20Chaos.mp4?dlink=%222f44616e616820566964656f732f4c325f5051545f345f5468726976696e67206f6e204368616f732e6d7034%22&noCache=1589424570081&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")
+                                                    }
+                                                    href="#test-modal">Thriving on
+                                                    Chaos
                                                 </a>
                                             </h5>
                                         </div>
                                         <div className="course-caption-collapse">
                                             <div className="course-excerpt">
-                                                <p>The purpose of this course is to provide the advanced writing
-                                                    techniques
-                                                    commonly used for inspiring readers and
+                                                <p>
                                                 </p>
                                             </div>
                                         </div>
@@ -113,6 +143,43 @@ const VideoSection = () => {
                                 </div>
                             </div>
                         </Col>
+                        {/*<Button color="danger" onClick={toggle}>adaada</Button>*/}
+                        <a className="popup-modal" href="#test-modal"
+                           onClick={() => setPlaying(true)}
+                        >
+                        </a>
+
+                        <div id="test-modal" className="white-popup-block mfp-hide">
+                            <p>
+                                <a className="popup-modal-dismiss font-weight-600 pr-3 pb-2 float-right"
+                                   href="#"
+                                   onClick={() => {
+                                       setPlaying(false);
+                                       setUrl("")
+                                   }}
+                                >x
+                                </a>
+                            </p>
+                            <div className='player-wrapper'>
+                                <ReactPlayer
+                                    // ref={this.ref}
+                                    className='react-player'
+                                    width='100%'
+                                    height='100%'
+                                    url={url}
+                                    // pip={pip}
+                                    playing={playing}
+                                    controls={true}
+                                    // light={light}
+                                    loop={false}
+                                    // volume={volume}
+                                    // muted={muted}
+                                    onReady={() => console.log('onReady')}
+                                    onStart={() => console.log('onStart')}
+                                />
+                            </div>
+                        </div>
+
                         <Col className="text-center" xs="12">
                             <a href="/videos" className="link-purple">View more</a>
                         </Col>
@@ -120,7 +187,7 @@ const VideoSection = () => {
                 </div>
             </Container>
         </div>
-    );
+    )
 };
 
 export default VideoSection;

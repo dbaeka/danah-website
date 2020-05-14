@@ -11,7 +11,7 @@ import {graphql, useStaticQuery} from "gatsby";
 const BookSection = () => {
     const {books} = useStaticQuery(graphql`
         {
-            books: allBooksJson(limit: 3) {
+            books: allBooksJson(limit: 3, sort: {order: DESC, fields: date}) {
                 edges {
                     node {
                         info
@@ -20,7 +20,7 @@ const BookSection = () => {
                         slug
                         image {
                             childImageSharp {
-                                fluid(base64Width: 100){
+                                fluid(base64Width: 300){
                                     base64
                                 }
                             }

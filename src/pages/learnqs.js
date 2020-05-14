@@ -12,7 +12,7 @@ const LearnQs = () => {
     return (
         <DefaultLayout>
             <SEO title="Learn the Q's"/>
-            <NormalHeader title="Learn the Q's"/>
+            <NormalHeader position="50% 9%" image={require("../images/header1.jpeg")} title="Learn the Q's"/>
             <div className="subpage">
                 <div className="section">
                     <Container>

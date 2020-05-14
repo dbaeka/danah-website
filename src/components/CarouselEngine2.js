@@ -73,8 +73,8 @@ const items = [
         id: 1,
         altText: 'Slide 1',
         caption: '',
-        html: <Row className="m-auto pt-5 pl-3">
-            <div className="col-sm-10 col-sm-offset-1">
+        html: <Row className="m-auto pt-5">
+            <div className="ml-auto mr-auto">
                 <blockquote className="quote-1 text-uppercase text-left">
                     <p>a leading edge business thinker and leadership educator that uses science to transform the future
                         of business</p>
