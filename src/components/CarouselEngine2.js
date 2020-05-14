@@ -47,7 +47,7 @@ const video = <div id=""
     <Container>
         <div className="">
             <Row className="explore-entry text-center text-md-left">
-                <Col xs="6" md="9" className="">
+                <Col xs="7" md="9" className="">
                     <div className="video-container">
                         <iframe className="video" allowFullScreen
                                 frameBorder="0"
@@ -57,7 +57,7 @@ const video = <div id=""
                         </iframe>
                     </div>
                 </Col>
-                <Col xs="12" md="3" className="mt-auto mb-auto text-center">
+                <Col xs="12" md="3" className="pt-5 pt-md-0 mt-auto mb-auto text-center">
                     {/*<h4 className="font-weight-600 text-white mb-3">Spiritual Capital</h4>*/}
                     <Button className="font-weight-500" color="primary"
                             onClick={() => window.location = "/videos"}

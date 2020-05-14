@@ -41,11 +41,12 @@ const VideoSection = () => {
                         <Col xs="12" md="6" lg="4" className="mb-5" style={{overflow: "hidden"}}>
                             <div className="video-wrapper">
                                 <div className="section-vid">
-                                    <a href="#test-modal" className="popup-modal"
-                                       onClick={() =>
-                                           setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L8_Scale%20of%20Motivations.mp4?dlink=%222f44616e616820566964656f732f4c385f5363616c65206f66204d6f7469766174696f6e732e6d7034%22&noCache=1589423417678&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")
-                                       }
-                                    >
+                                    {/*<a href="#test-modal" className="popup-modal"*/}
+                                    {/*   onClick={() =>*/}
+                                    {/*       setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L8_Scale%20of%20Motivations.mp4?dlink=%222f44616e616820566964656f732f4c385f5363616c65206f66204d6f7469766174696f6e732e6d7034%22&noCache=1589423417678&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")*/}
+                                    {/*   }*/}
+                                    {/*>*/}
+                                    <a href="https://www.youtube.com/watch?v=FaO2aPBJgZA" className="popup-youtube">
                                         <img
                                             className="vid-thumb"
                                             src={require("../../images/video2.png")}
@@ -55,12 +56,16 @@ const VideoSection = () => {
                                     <div className="course-info">
                                         <div className="course-caption-main">
                                             <h5 className="course-title text-white font-weight-500">
+                                                {/*<a*/}
+                                                {/*    className="text-white font-weight-500 popup-modal"*/}
+                                                {/*    onClick={() =>*/}
+                                                {/*        setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L8_Scale%20of%20Motivations.mp4?dlink=%222f44616e616820566964656f732f4c385f5363616c65206f66204d6f7469766174696f6e732e6d7034%22&noCache=1589423417678&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")*/}
+                                                {/*    }*/}
+                                                {/*    href="#test-modal">*/}
                                                 <a
-                                                    className="text-white font-weight-500 popup-modal"
-                                                    onClick={() =>
-                                                        setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L8_Scale%20of%20Motivations.mp4?dlink=%222f44616e616820566964656f732f4c385f5363616c65206f66204d6f7469766174696f6e732e6d7034%22&noCache=1589423417678&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")
-                                                    }
-                                                    href="#test-modal">Scales of
+                                                    className="text-white font-weight-500 popup-youtube"
+                                                    href="https://www.youtube.com/watch?v=FaO2aPBJgZA">
+                                                    Scales of
                                                     Motivation
                                                 </a>
                                             </h5>
@@ -109,11 +114,12 @@ const VideoSection = () => {
                         <Col xs="12" md="6" lg="4" className="mb-5" style={{overflow: "hidden"}}>
                             <div className="video-wrapper">
                                 <div className="section-vid">
-                                    <a href="#test-modal" className="popup-modal"
-                                       onClick={() =>
-                                           setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L2_PQT_4_Thriving%20on%20Chaos.mp4?dlink=%222f44616e616820566964656f732f4c325f5051545f345f5468726976696e67206f6e204368616f732e6d7034%22&noCache=1589424570081&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")
-                                       }
-                                    >
+                                    {/*<a href="#test-modal" className="popup-modal"*/}
+                                    {/*   onClick={() =>*/}
+                                    {/*       setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L2_PQT_4_Thriving%20on%20Chaos.mp4?dlink=%222f44616e616820566964656f732f4c325f5051545f345f5468726976696e67206f6e204368616f732e6d7034%22&noCache=1589424570081&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")*/}
+                                    {/*   }*/}
+                                    {/*>*/}
+                                    <a href="https://www.youtube.com/watch?v=FaO2aPBJgZA" className="popup-youtube">
                                         <img
                                             className="vid-thumb"
                                             src={require("../../images/video3.png")}
@@ -123,12 +129,16 @@ const VideoSection = () => {
                                     <div className="course-info">
                                         <div className="course-caption-main">
                                             <h5 className="course-title text-white font-weight-500">
+                                                {/*<a*/}
+                                                {/*    className="text-white font-weight-500 popup-modal"*/}
+                                                {/*    onClick={() =>*/}
+                                                {/*        setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L2_PQT_4_Thriving%20on%20Chaos.mp4?dlink=%222f44616e616820566964656f732f4c325f5051545f345f5468726976696e67206f6e204368616f732e6d7034%22&noCache=1589424570081&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")*/}
+                                                {/*    }*/}
+                                                {/*    href="#test-modal">*/}
                                                 <a
-                                                    className="text-white font-weight-500 popup-modal"
-                                                    onClick={() =>
-                                                        setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L2_PQT_4_Thriving%20on%20Chaos.mp4?dlink=%222f44616e616820566964656f732f4c325f5051545f345f5468726976696e67206f6e204368616f732e6d7034%22&noCache=1589424570081&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")
-                                                    }
-                                                    href="#test-modal">Thriving on
+                                                    className="text-white font-weight-500 popup-youtube"
+                                                    href="https://www.youtube.com/watch?v=FaO2aPBJgZA">
+                                                    Thriving on
                                                     Chaos
                                                 </a>
                                             </h5>
