@@ -13,6 +13,7 @@ const VideoDetail = (props) => {
 
     const url = video.videoURL;
 
+    const moveNext = props.moveNext;
 
     return (
         <div className="video-detail col-md-8">
@@ -23,16 +24,13 @@ const VideoDetail = (props) => {
                     width='100%'
                     height='100%'
                     url={url}
-                    // pip={pip}
                     playing={playing}
                     controls={true}
-                    // light={light}
                     loop={false}
-                    // volume={volume}
-                    // muted={muted}
                     onPause={() => {
                         isPlaying(false);
                     }}
+                    onEnded={() => moveNext()}
                     // onReady={() => console.log('onReady')}
                     // onStart={() => console.log('onStart')}
                 />

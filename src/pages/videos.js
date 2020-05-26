@@ -63,6 +63,17 @@ class Videos extends React.Component {
                                                 isPlaying={play => this.setState({
                                                     playing: play
                                                 })}
+                                                moveNext={() => {
+                                                    const currentIndex = this.state.selectedIndex;
+                                                    const num = data.videos.edges.length;
+                                                    if ((currentIndex+1) < num) {
+                                                        this.setState({
+                                                            selectedIndex: currentIndex + 1,
+                                                            playing: true,
+                                                            selectedVideo: data.videos.edges[currentIndex + 1].node
+                                                        })
+                                                    }
+                                                }}
                                                 playing={this.state.playing}
                                             />
                                             <VideoList

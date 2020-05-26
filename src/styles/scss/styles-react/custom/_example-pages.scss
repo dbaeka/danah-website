@@ -2364,8 +2364,44 @@ $opacity-8: rgba(255, 255, 255, 0.8) !default;
   border-radius: 4px;
 }
 
+.list-group {
+  height: 61vh;
+  overflow: scroll;
+  padding-right: 0;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-top-left-radius: 0.15rem;
+  border-top-right-radius: 0.15rem;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 6px;
+    background: #1d2124;
+  }
+}
+
 .list-group-item {
   cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-left: none;
+  border-right: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  &:first-of-type {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 .list-group-item:hover {
@@ -2373,7 +2409,7 @@ $opacity-8: rgba(255, 255, 255, 0.8) !default;
 }
 
 .list-group-item.active {
-  background-color: #eee;
+  background-color: #d7d7d7;
 }
 
 .featured {
