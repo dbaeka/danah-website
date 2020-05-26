@@ -18,8 +18,8 @@ const youtube = <div id="youtube"
                     <div className="video-container">
                         <iframe className="video" allowFullScreen
                                 frameBorder="0"
-                                title="youtube Video Player"
-                                src="https://www.youtube.com/embed/FaO2aPBJgZA"
+                                title="Video Player"
+                                src="https://cdn.jwplayer.com/players/4ybpITRW-YyEqzMHy.html"
                                 id="fitvid0">
                         </iframe>
                     </div>
@@ -39,34 +39,48 @@ const youtube = <div id="youtube"
             </Row>
         </div>
     </Container>
-</div>
+</div>;
 
-const video = <div id=""
-                   className=""
->
-    <Container>
-        <div className="">
-            <Row className="explore-entry text-center text-md-left">
-                <Col xs="7" md="9" className="">
-                    <div className="video-container">
-                        <iframe className="video" allowFullScreen
-                                frameBorder="0"
-                                title="youtube Video Player"
-                                src="https://www.youtube.com/embed/FaO2aPBJgZA"
-                                id="fitvid0">
-                        </iframe>
-                    </div>
-                </Col>
-                <Col xs="12" md="3" className="pt-5 pt-md-0 mt-auto mb-auto text-center">
-                    {/*<h4 className="font-weight-600 text-white mb-3">Spiritual Capital</h4>*/}
-                    <Button className="font-weight-500" color="primary"
-                            onClick={() => window.location = "/videos"}
-                    >See More Videos</Button>
-                </Col>
-            </Row>
-        </div>
-    </Container>
-</div>
+const videos = [
+    {
+        link: "https://cdn.jwplayer.com/players/Vtu1dSlp-J84zf9GB.html",
+        title: "Video Player",
+        header: "The Guru and The CPO 1st Talk"
+    },
+
+];
+
+
+const video = videos.map((item, idx) => (
+    <div id=""
+         className=""
+         key={idx}
+    >
+        <Container>
+            <div className="">
+                <Row className="explore-entry text-center text-md-left">
+                    <Col xs="7" md="9" className="">
+                        <div className="video-container">
+                            <iframe className="video" allowFullScreen
+                                    frameBorder="0"
+                                    title={item.title}
+                                    src={item.link}
+                            >
+                            </iframe>
+                        </div>
+                    </Col>
+                    <Col xs="12" md="3" className="pt-5 pt-md-0 mt-auto mb-auto text-center">
+                        <h4 className="font-weight-600 text-white mb-3">{item.header}</h4>
+                        <Button className="font-weight-500" color="primary"
+                                onClick={() => window.location = "/videos"}
+                        >See More Videos</Button>
+                    </Col>
+                </Row>
+            </div>
+        </Container>
+    </div>
+));
+
 
 const items = [
     {
@@ -87,7 +101,7 @@ const items = [
         id: 2,
         altText: 'Slide 2',
         caption: '',
-        html: video
+        html: video[0]
     },
     {
         id: 3,

@@ -1,27 +1,13 @@
 import React, {useState} from "react";
-import addedStyle from "../../styles/css/style-react.module.css"
 import ReactPlayer from 'react-player'
 
 
 // reactstrap components
 import {
-    Button,
-    Modal,
-    ModalBody,
-    ModalFooter,
-    ModalHeader,
     Row,
     Container,
     Col,
-    Card,
-    CardBody,
-    CardFooter,
-    CardHeader,
-    NavItem,
-    NavLink
 } from "reactstrap";
-import {faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 // core components
 
@@ -46,7 +32,8 @@ const VideoSection = () => {
                                     {/*       setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L8_Scale%20of%20Motivations.mp4?dlink=%222f44616e616820566964656f732f4c385f5363616c65206f66204d6f7469766174696f6e732e6d7034%22&noCache=1589423417678&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")*/}
                                     {/*   }*/}
                                     {/*>*/}
-                                    <a href="https://www.youtube.com/watch?v=FaO2aPBJgZA" className="popup-youtube">
+                                    <a href="https://cdn.jwplayer.com/players/4QUBDXSp-YyEqzMHy.html"
+                                       className="popup-youtube">
                                         <img
                                             className="vid-thumb"
                                             src={require("../../images/video2.png")}
@@ -64,7 +51,7 @@ const VideoSection = () => {
                                                 {/*    href="#test-modal">*/}
                                                 <a
                                                     className="text-white font-weight-500 popup-youtube"
-                                                    href="https://www.youtube.com/watch?v=FaO2aPBJgZA">
+                                                    href="https://cdn.jwplayer.com/players/4QUBDXSp-YyEqzMHy.html">
                                                     Scales of
                                                     Motivation
                                                 </a>
@@ -119,7 +106,8 @@ const VideoSection = () => {
                                     {/*       setUrl("https://zeus.omsuk.com:5001/fsdownload/webapi/file_download.cgi/L2_PQT_4_Thriving%20on%20Chaos.mp4?dlink=%222f44616e616820566964656f732f4c325f5051545f345f5468726976696e67206f6e204368616f732e6d7034%22&noCache=1589424570081&_sharing_id=%22Yss95rLR6%22&api=SYNO.FolderSharing.Download&version=2&method=download&mode=download&stdhtml=false")*/}
                                     {/*   }*/}
                                     {/*>*/}
-                                    <a href="https://www.youtube.com/watch?v=FaO2aPBJgZA" className="popup-youtube">
+                                    <a href="https://cdn.jwplayer.com/players/E5so8Szg-YyEqzMHy.html"
+                                       className="popup-youtube">
                                         <img
                                             className="vid-thumb"
                                             src={require("../../images/video3.png")}
@@ -137,7 +125,7 @@ const VideoSection = () => {
                                                 {/*    href="#test-modal">*/}
                                                 <a
                                                     className="text-white font-weight-500 popup-youtube"
-                                                    href="https://www.youtube.com/watch?v=FaO2aPBJgZA">
+                                                    href="https://cdn.jwplayer.com/players/E5so8Szg-YyEqzMHy.html">
                                                     Thriving on
                                                     Chaos
                                                 </a>

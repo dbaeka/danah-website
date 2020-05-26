@@ -1537,7 +1537,7 @@ $danger-color-alert: rgba(255, 54, 54, .8) !default;
   position: relative;
 
   @media (max-width: 768px) {
-    height:100%
+    height: 100%
   }
 }
 
@@ -2372,6 +2372,10 @@ $opacity-8: rgba(255, 255, 255, 0.8) !default;
   background-color: #eee;
 }
 
+.list-group-item.active {
+  background-color: #eee;
+}
+
 .featured {
   .title {
     text-transform: uppercase;
@@ -2510,5 +2514,29 @@ $opacity-8: rgba(255, 255, 255, 0.8) !default;
 
   &:hover {
     text-decoration: none;
+  }
+}
+
+.media {
+  &.video-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .media-first {
+    text-align: center;
+    width: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  img {
+    height: auto;
+    width: 90px
   }
 }
