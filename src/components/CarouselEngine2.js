@@ -43,7 +43,7 @@ const youtube = <div id="youtube"
 
 const videos = [
     {
-        link: "https://cdn.jwplayer.com/players/Vtu1dSlp-J84zf9GB.html",
+        link: "https://cdn.jwplayer.com/players/UFV5fqGO-J84zf9GB.html",
         title: "Video Player",
         header: "The Guru and The CPO 1st Talk"
     },

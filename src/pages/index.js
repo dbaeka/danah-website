@@ -33,9 +33,9 @@ class IndexPage extends React.Component {
                 <Carousel/>
                 {/*<a className="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Open YouTube video</a>*/}
                 <AboutSection/>
-                <LatestSection/>
                 <BookSection/>
                 <VideoSection/>
+                <LatestSection/>
                 <ExploreSection/>
                 <TestimonialSection/>
                 {/*<YoutubeSection/>*/}

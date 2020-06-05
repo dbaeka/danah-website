@@ -34,7 +34,6 @@ const LatestSection = () => {
     return (
         <div id="latest"
              className="latest-entry"
-             style={{backgroundColor: "#eaeaea"}}
         >
             <Container>
                 <div className="py-5">

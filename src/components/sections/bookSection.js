@@ -34,6 +34,7 @@ const BookSection = () => {
     return (
         <div id="books"
              className="books-entry"
+             style={{backgroundColor: "#eaeaea"}}
         >
             <Container>
                 <div className="py-5">
