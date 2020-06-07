@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 
 const path = require(`path`)
-const { slash } = require(`gatsby-core-utils`)
+const {slash} = require(`gatsby-core-utils`)
 
 exports.createPages = async ({actions, graphql, reporter}) => {
     const {createPage} = actions
@@ -27,19 +27,19 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     }
   `)
 
-  //   // query content for WordPress posts
-  //   const wpresult = await graphql(`
-  //   query {
-  //     allWordpressPost {
-  //       edges {
-  //         node {
-  //           id
-  //           slug
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+    //   // query content for WordPress posts
+    //   const wpresult = await graphql(`
+    //   query {
+    //     allWordpressPost {
+    //       edges {
+    //         node {
+    //           id
+    //           slug
+    //         }
+    //       }
+    //     }
+    //   }
+    // `)
 
     // Handle errors
     if (result.errors) {
@@ -71,4 +71,15 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     //         },
     //     })
     // })
+}
+
+exports.onCreatePage = async ({ page, actions }) => {
+    const { createPage } = actions
+    // page.matchPath is a special key that's used for matching pages
+    // only on the client.
+    if (page.path.match(/^\/admin/)) {
+        page.matchPath = "/admin/*"
+        // Update the page.
+        createPage(page)
+    }
 }
