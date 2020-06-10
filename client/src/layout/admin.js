@@ -27,7 +27,7 @@ const AdminLayout = ({children}) => {
                 >
                     <MainNavbar/>
                     {children}
-                    {/*<MainFooter/>*/}
+                    <MainFooter/>
                 </Col>
             </Row>
         </Container>

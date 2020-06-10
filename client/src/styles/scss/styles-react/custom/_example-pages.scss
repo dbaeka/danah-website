@@ -3141,3 +3141,53 @@ $main-sidebar-dropdown-item-font-weight-retina: 300 !default;
     }
   }
 }
+
+// Main footer
+
+.main-footer {
+  height: $main-footer-height;
+
+  .copyright {
+    color: $main-footer-copyright-color;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: block !important;
+    height: auto;
+
+    .nav {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: $spacer / 2;
+    }
+
+    .copyright {
+      display: inline-block;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+.main-footer {
+  .nav {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    display: flex;
+    height: 53px;
+
+    a.nav-link {
+      font-size: .8125rem !important;
+      font-weight: 500 !important;
+      padding: .625rem .625rem !important;
+      color: #007bff !important;
+
+      &:hover {
+        color: #0056b3 !important;
+      }
+    }
+  }
+}

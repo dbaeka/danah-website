@@ -8,7 +8,10 @@ class Hub extends React.Component {
 
     render() {
         return (
-            <SEO title="Admin - Hub"/>
+            <div>
+                <SEO title="Admin - Hub"/>
+                <div>ad</div>
+            </div>
         )
     }
 };
