@@ -7,9 +7,9 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import MainNavbar from "../components/admin/MainNavbar/MainNavbar";
-import MainSidebar from "../components/admin/MainSidebar/MainSidebar";
-import MainFooter from "../components/admin/MainFooter";
+import MainNavbar from "../components/admin/layout/MainNavbar/MainNavbar";
+import MainSidebar from "../components/admin/layout/MainSidebar/MainSidebar";
+import MainFooter from "../components/admin/layout/MainFooter";
 import {Container, Row, Col} from 'shards-react';
 
 const AdminLayout = ({children}) => {
@@ -19,7 +19,7 @@ const AdminLayout = ({children}) => {
             <Row>
                 <MainSidebar/>
                 <Col
-                    className="main-content p-0"
+                    className="main-content admin p-0"
                     lg={{size: 10, offset: 2}}
                     md={{size: 9, offset: 3}}
                     sm="12"

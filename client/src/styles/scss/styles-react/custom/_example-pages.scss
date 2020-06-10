@@ -3191,3 +3191,126 @@ $main-sidebar-dropdown-item-font-weight-retina: 300 !default;
     }
   }
 }
+
+
+.main-content-container.container-fluid {
+  min-height: calc(100vh - 7.5rem);
+}
+
+.shard-page-header {
+  .page-subtitle {
+    letter-spacing: .125rem;
+    color: #818ea3;
+    font-size: .625rem;
+  }
+
+  .page-title {
+    font-size: 1.625rem;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.hub-small {
+  min-height: 8.7rem;
+  overflow: hidden !important;
+  display: flex !important;
+  border-radius: .625rem;
+
+  .hub-small__data {
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    max-width: 100%;
+    z-index: 1;
+
+    .hub-small__label {
+      font-size: .85rem;
+      letter-spacing: .0625rem;
+      color: #818ea3;
+    }
+
+    .hub-small__value {
+      font-size: 2.0625rem;
+      font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-weight: 600;
+    }
+  }
+}
+
+.btn.btn-pill {
+  border-radius: 50px;
+}
+
+.admin {
+  .card {
+    border-radius: 0.625rem;
+    display: flex;
+
+    &.card-post .card-footer, &.card-post .card-header {
+      padding-left: 1.5625rem;
+      padding-right: 1.5625rem;
+    }
+
+    .card-footer {
+      padding: .75rem 1.25rem;
+      margin-top: 0;
+
+      .card-post__author-name {
+        font-weight: 500;
+      }
+
+      .small, small {
+        font-size: 80%;
+        font-weight: 400;
+      }
+
+      .btn.btn-white {
+        border: 1px solid #e1e5eb;
+        color: #3d5170;
+      }
+
+      .btn-group-sm > .btn, .btn-sm {
+        padding: .4286rem .875rem;
+        font-size: .6875rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+      }
+
+      .btn-black:hover, .btn-white:hover {
+        background: #fff;
+        border-color: #fff;
+        box-shadow: 0 0.125rem 0.625rem rgba(129, 142, 163, .2), 0 0.0625rem 0.125rem rgba(129, 142, 163, .3);
+      }
+
+      .card-post__author-avatar {
+        width: 2.1875rem;
+        height: 2.1875rem;
+        box-shadow: 0 0 0 0.125rem #fff, 0 0.1875rem 0.4375rem rgba(90, 97, 105, .5);
+        display: block;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        text-indent: -9999px;
+      }
+    }
+
+    &.card-post .card-body {
+      padding: 1.5625rem 1.5625rem;
+
+      .card-title {
+        font-weight: 600;
+        color: #3d5170;
+        margin-bottom: .75rem;
+      }
+
+      .card-text {
+        font-size: 13px;
+        font-weight: 400;
+      }
+    }
+  }
+}

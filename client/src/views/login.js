@@ -1,7 +1,7 @@
 import React from "react"
 import {navigate} from "gatsby"
 import {handleLogin, isLoggedIn} from "../services/auth"
-import SEO from "./seo";
+import SEO from "../components/seo";
 import {Col, Row, Form, Input, FormGroup, Button} from 'reactstrap';
 
 class Login extends React.Component {

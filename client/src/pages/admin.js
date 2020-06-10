@@ -3,10 +3,11 @@ import {Router} from "@reach/router"
 import AdminLayout from "../layout/admin"
 // import Profile from "../components/Profile"
 // import Details from "../components/Details"
-import Login from "../components/Login"
-import Hub from "../components/Hub"
+import Login from "../views/login"
+import Hub from "../views/hub"
 import {isLoggedIn} from "../services/auth"
 import PrivateRoute from "../components/PrivateRoute";
+import BlogPosts from "../views/posts";
 
 const App = () => {
 
@@ -35,6 +36,7 @@ const App = () => {
                         {/*<Details path="/details" />*/}
                         <Login path="/login"/>
                         <PrivateRoute path="/" component={Hub}/>
+                        <PrivateRoute path="/blog-posts" component={BlogPosts}/>
                     </Router>
                 )
             }
