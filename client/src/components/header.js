@@ -3,24 +3,10 @@ import PropTypes from "prop-types"
 import Navbar from '@ovie/react-navbar'
 import React, {useState} from "react"
 import {
-    Form,
-    Button,
-    InputGroup,
-    InputGroupAddon,
-    Label,
-    Container,
-    Nav,
-    UncontrolledDropdown,
-    NavItem,
     Dropdown,
     DropdownItem,
     DropdownMenu,
     DropdownToggle,
-    Collapse,
-    Row,
-    Col,
-    FormGroup,
-    Input
 } from "reactstrap"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faLinkedin, faFacebookSquare, faTwitter} from '@fortawesome/free-brands-svg-icons'
