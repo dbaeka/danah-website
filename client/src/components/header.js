@@ -1,6 +1,6 @@
 import {Link} from "gatsby"
 import PropTypes from "prop-types"
-import Navbar from '@ovie/react-navbar'
+import Navbar from '@dbaeka/react-navbar'
 import React, {useState} from "react"
 import {
     Dropdown,

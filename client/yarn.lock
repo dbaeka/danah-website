@@ -954,6 +954,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@dbaeka/react-navbar@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@dbaeka/react-navbar/-/react-navbar-1.0.1.tgz#fa6ca4608d90e372768f9c191c3088425b22c6f2"
+  integrity sha512-1//bgNshiXlGw4ysy9khUv8gqDFBg/K8NsCl+OSDomI8pmwVgX/D08b785F6TaLbV6UtJSf5Bd36orogSY9SLg==
+
 "@emotion/is-prop-valid@^0.8.1":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
