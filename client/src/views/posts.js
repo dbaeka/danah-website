@@ -14,13 +14,15 @@ import {faEdit} from '@fortawesome/free-regular-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import axios from 'axios';
 import PageTitle from "../components/admin/PageTitle";
-import {navigate} from "gatsby"
+import {clean} from "../utils/clean"
 
 class BlogPosts extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            posts: [],
+            authorAvatar: require("../images/profile.png"),
             // List of posts.
             PostsListThree: [
                 {
@@ -53,6 +55,38 @@ class BlogPosts extends React.Component {
         };
     }
 
+    componentDidMount() {
+        axios({
+            method: "GET",
+            url: "http://localhost:9090/wp-json/wp/v2/posts",
+        }).then((response) => {
+            if (response.data) {
+                const posts = response.data;
+                const promise = posts.map((post) => {
+                    const author = post.author;
+                    return axios({
+                        method: "GET",
+                        url: "http://localhost:9090/index.php/wp-json/wp/v2/users/" + author,
+                    }).then((response) => {
+                        if (response.data) {
+                            const authorName = response.data.name;
+                            return {
+                                author: authorName,
+                                title: post.title.rendered,
+                                body: clean(post.excerpt.rendered),
+                                date: new Date(post.date).toLocaleString(),
+                                slug: post.slug,
+                                status: post.status,
+                                id: post.id,
+                            }
+                        }
+                    })
+                })
+                Promise.all(promise).then((result) => this.setState({posts: result}))
+            }
+        })
+    }
+
     redirectWP = () => {
         axios({
             method: "POST",
@@ -73,7 +107,7 @@ class BlogPosts extends React.Component {
 
     render() {
         const {
-            PostsListThree,
+            posts,
         } = this.state;
 
         return (
@@ -87,31 +121,51 @@ class BlogPosts extends React.Component {
                 </Row>
                 {/* Row of Posts */}
                 <Row>
-                    {PostsListThree.map((post, idx) => (
+                    {posts && posts.map((post, idx) => (
                         <Col lg="4" key={idx}>
                             <Card small className="card-post mb-4">
                                 <CardBody>
                                     <h5 className="card-title">{post.title}</h5>
-                                    <p className="card-text text-muted">{post.body}</p>
+                                    {console.log(post)}
+                                    <p className="card-text text-muted">{clean(post.body)}</p>
                                 </CardBody>
                                 <CardFooter className="border-top d-flex">
                                     <div className="card-post__author d-flex">
                                         <a
                                             href="#"
                                             className="card-post__author-avatar card-post__author-avatar--small"
-                                            style={{backgroundImage: `url('${post.authorAvatar}')`}}
+                                            style={{backgroundImage: `url('${this.state.authorAvatar}')`}}
                                         >
-                                            Written by James Khan
+                                            Written by
                                         </a>
                                         <div className="d-flex flex-column justify-content-center ml-3">
-                      <span className="card-post__author-name">
-                        {post.author}
-                      </span>
+                                            <span className="card-post__author-name">
+                                                {post.author}
+                                            </span>
                                             <small className="text-muted">{post.date}</small>
+                                            <small>Status: <b>{post.status.toUpperCase()}</b></small>
                                         </div>
                                     </div>
                                     <div className="my-auto ml-auto">
-                                        <Button size="sm" theme="white">
+                                        <Button size="sm" theme="white"
+                                                onClick={() => {
+                                                    axios({
+                                                        method: "POST",
+                                                        url: "http://localhost:9090/wp_post_login.php",
+                                                        data: {username: "admin", action: "wp_login"},
+                                                        withCredentials: true
+                                                    }).then((response) => {
+                                                        if (response.data.state === 200) {
+                                                            const a = document.createElement("a");
+                                                            a.href = "http://localhost:9090/wp-admin/post.php?post=" + post.id + "&action=edit";
+                                                            a.target = "_blank";
+                                                            a.click();
+                                                        } else {
+                                                            console.log("Failed.")
+                                                        }
+                                                    })
+                                                }}
+                                        >
                                             <FontAwesomeIcon className="mr-1" icon={faEdit}/>
                                             Edit
                                         </Button>

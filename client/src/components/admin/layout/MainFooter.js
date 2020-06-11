@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from 'gatsby';
 import PropTypes from "prop-types";
 import {Container, Row, Nav, NavItem, NavLink} from "shards-react";
 
@@ -10,7 +9,7 @@ const MainFooter = ({contained, menuItems, copyright}) => (
                 <Nav>
                     {menuItems.map((item, idx) => (
                         <NavItem key={idx}>
-                            <NavLink tag={Link} to={item.to}>
+                            <NavLink tag={"a"} href={item.to}>
                                 {item.title}
                             </NavLink>
                         </NavItem>

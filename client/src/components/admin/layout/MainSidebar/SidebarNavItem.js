@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import { NavItem, NavLink } from "shards-react";
 
 const SidebarNavItem = ({ item }) => (
   <NavItem>
-    <NavLink tag={Link} to={item.to}>
+    <NavLink tag={"a"} href={item.to}>
       {item.htmlBefore && (
         <div
           className="d-inline-block item-icon-wrapper"
