@@ -8,6 +8,7 @@ import Hub from "../views/hub"
 import {isLoggedIn} from "../services/auth"
 import PrivateRoute from "../components/PrivateRoute";
 import BlogPosts from "../views/posts";
+import Videos from "../views/videos";
 
 const App = () => {
 
@@ -37,6 +38,7 @@ const App = () => {
                         <Login path="/login"/>
                         <PrivateRoute path="/" component={Hub}/>
                         <PrivateRoute path="/blog-posts" component={BlogPosts}/>
+                        <PrivateRoute path="/videos" component={Videos}/>
                     </Router>
                 )
             }

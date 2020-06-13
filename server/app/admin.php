@@ -37,6 +37,21 @@ class Admin
         }
     }
 
+    public function getVideos($num)
+    {
+        global $conn;
+        $query = "SELECT * FROM videos" . ((is_string($num) && empty($num)) ? "" : " LIMIT 0," . $num);
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $num = $stmt->rowCount();
+
+        if ($num == 0) {
+            return array();
+        } else {
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $row;
+        }
+    }
 
     public function user_data($apid)
     {
