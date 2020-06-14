@@ -1,2 +1,2 @@
-export const devURL = "http://localhost:8080";
+export const devURL = "https://danahzohar.com/api";
 export const wpURL = "https://danahzohar.com/__wp/";
