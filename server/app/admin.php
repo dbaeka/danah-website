@@ -37,6 +37,74 @@ class Admin
         }
     }
 
+    public function addVideo($title, $video_url, $thumb_url)
+    {
+        global $conn;
+
+        $title = clean($title);
+        $video_url = clean($video_url);
+        $thumb_url = clean($thumb_url);
+
+        $query = "INSERT INTO videos (title, raw_url, thumb_url) VALUES (:title, :vURL, :tURL)";
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(":title", $title, PDO::PARAM_STR);
+        $stmt->bindValue(":vURL", $video_url, PDO::PARAM_STR);
+        $stmt->bindValue(":tURL", $thumb_url, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $num = $stmt->rowCount();
+
+        if ($num == 0) {
+            return false . '|' . 'Invalid params';
+        } else {
+            return true . '|' . $title . '|' . $video_url . '|' . $thumb_url;
+        }
+    }
+
+    public function editVideo($id, $title, $video_url, $thumb_url)
+    {
+        global $conn;
+
+
+        $id = clean($id);
+        $title = clean($title);
+        $video_url = clean($video_url);
+        $thumb_url = clean($thumb_url);
+
+        $query = "UPDATE videos SET title=:title, raw_url=:vURL, thumb_url=:tURL WHERE id=" . $id;
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(":title", $title, PDO::PARAM_STR);
+        $stmt->bindValue(":vURL", $video_url, PDO::PARAM_STR);
+        $stmt->bindValue(":tURL", $thumb_url, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $num = $stmt->rowCount();
+
+        if ($num == 0) {
+            return false . '|' . 'Invalid params';
+        } else {
+            return true . '|' . $title . '|' . $video_url . '|' . $thumb_url;
+        }
+    }
+
+    public function deleteVideo($id)
+    {
+        global $conn;
+
+        $id = clean($id);
+        $query = "DELETE FROM videos WHERE id=" . $id;
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        $num = $stmt->rowCount();
+
+        if ($num == 0) {
+            return false . '|' . 'Invalid params';
+        } else {
+            return true . '|' . $id;
+        }
+    }
+
     public function getVideos($num)
     {
         global $conn;

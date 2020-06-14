@@ -15,16 +15,17 @@ $admin = new Admin();
 $rest_json = file_get_contents("php://input");
 $_POST = json_decode($rest_json, true);
 
-if (isset($_POST['action']) && $_POST['action'] == 'add_video') {
-    if (isset($_POST['title'], $_POST['video_url'], $_POST['thumb_url'])) {
+if (isset($_POST['action']) && $_POST['action'] == 'edit_video') {
+    if (isset($_POST['id'], $_POST['title'], $_POST['video_url'], $_POST['thumb_url'])) {
         $error = 0;
 
+        $id = clean($_POST['id']);
         $title = clean($_POST['title']);
         $video_url = clean($_POST['video_url']);
         $thumb_url = clean($_POST['thumb_url']);
 
         if ($error == 0) {
-            $udata = $admin->addVideo($title, $video_url, $thumb_url);
+            $udata = $admin->editVideo($id, $title, $video_url, $thumb_url);
             $udatax = explode("|", $udata);
             if ($udatax[0] == true) {
                 $vids = $admin->getVideos("");

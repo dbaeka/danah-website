@@ -12,6 +12,8 @@ require(__DIR__ . '/app/admin.php');
 $admin = new Admin();
 
 $str = $_SERVER["PATH_INFO"];
+if ($str == NULL)
+    $str = "";
 if (isset($_SERVER["PATH_INFO"])) {
     $str = substr($str, 1);
 }
