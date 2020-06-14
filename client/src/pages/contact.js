@@ -52,9 +52,10 @@ class Contact extends React.Component {
         e.preventDefault();
         axios({
             method: "POST",
-            url: "http://localhost:3002/send",
+            url: "https://formspree.io/xnqgvwjw",
             data: this.state
         }).then((response) => {
+            console.log(response);
             if (response.data.status === 'success') {
                 alert("Message Sent.");
                 this.resetForm()

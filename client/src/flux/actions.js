@@ -2,6 +2,7 @@ import Constants from "./constants";
 import AppDispatcher from "./dispatcher";
 import WPAPI from "../services/wordpress";
 import VideosAPI from "../services/videos";
+import BooksAPI from "../services/books";
 
 class Actions {
     addVideo(data) {
@@ -25,6 +26,27 @@ class Actions {
         });
     }
 
+    addBook(data) {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.ADD_BOOK,
+            data: data
+        });
+    }
+
+    editBook(data) {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.EDIT_BOOK,
+            data: data
+        });
+    }
+
+    deleteBook(data) {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.DELETE_BOOK,
+            data: data
+        });
+    }
+
     toggleMenu() {
         AppDispatcher.handleViewAction({
             actionType: Constants.TOGGLE_SIDEBAR,
@@ -36,6 +58,13 @@ class Actions {
             actionType: Constants.GET_VIDEOS,
         });
         VideosAPI.getVideos();
+    }
+
+    getBooks() {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.GET_BOOKS,
+        });
+        BooksAPI.getBooks();
     }
 
     getPosts() {

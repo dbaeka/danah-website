@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 import "./src/styles/css/style-react.css"
 import "./src/styles/css/nucleo-icons-page-styles.css"
+import "./src/lib/magnific-popup/magnific-popup.css"
 
 import WebFont from 'webfontloader';
 

@@ -3,6 +3,8 @@ module.exports = {
         title: `Danah Zohar`,
         description: ``,
         author: `@dbaeka`,
+        twitterHandle: '@DanahZohar',
+        url: 'https://danahazohar.com',
     },
     pathPrefix: "",
     plugins: [

@@ -11,10 +11,9 @@ const VideoDetail = (props) => {
         return <div className="col-md-8">Loading...</div>;
     }
 
-    const url = video.videoURL;
+    const url = video.raw_url;
 
     const moveNext = props.moveNext;
-
     return (
         <div className="video-detail col-md-8">
             <div className="embed-responsive embed-responsive-16by9 player-wrapper">
@@ -36,8 +35,7 @@ const VideoDetail = (props) => {
                 />
             </div>
             <div className="details">
-                <div>{video.snippet.title}</div>
-                <div>{video.snippet.description}</div>
+                <div>{video.title}</div>
             </div>
         </div>
     );

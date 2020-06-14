@@ -75,7 +75,7 @@ export default function HTML(props) {
             {/*</script>*/}
 
             {/*<!-- Magnific Popup core CSS file -->*/}
-            <link rel="stylesheet" href="/assets/css/magnific-popup.css"/>
+            {/*<link rel="stylesheet" href="/assets/css/magnific-popup.css"/>*/}
 
             {/*<!-- Magnific Popup core JS file -->*/}
             <script src="/js/jquery.magnific-popup.js"></script>

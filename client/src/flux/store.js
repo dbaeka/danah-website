@@ -2,6 +2,7 @@ import Constants from "./constants";
 import AppDispatcher from "./dispatcher";
 import {EventEmitter} from "events";
 import VideosAPI from "../services/videos";
+import BooksAPI from "../services/books";
 import getSidebarNavItems from "../data/sidebar-nav-items";
 
 let _store = {
@@ -9,6 +10,7 @@ let _store = {
     navItems: getSidebarNavItems(),
     videos: [],
     posts: [],
+    books:[],
     currentPost: null,
 };
 
@@ -22,6 +24,10 @@ class Store extends EventEmitter {
         this.setPost = this.setPost.bind(this);
         this.updatePosts = this.updatePosts.bind(this);
         this.deleteVideo = this.deleteVideo.bind(this);
+        this.editBook = this.editBook.bind(this);
+        this.addBook = this.addBook.bind(this);
+        this.updateBooks = this.updateBooks.bind(this);
+        this.deleteBook = this.deleteBook.bind(this);
         this.editVideo = this.editVideo.bind(this);
         AppDispatcher.register(this.registerActions.bind(this));
     }
@@ -49,6 +55,18 @@ class Store extends EventEmitter {
             case Constants.SET_POST:
                 this.setPost(action.data);
                 break;
+            case Constants.ADD_BOOK:
+                this.addBook(action.data);
+                break;
+            case Constants.GET_BOOKS_RESPONSE:
+                this.updateBooks(action.response);
+                break;
+            case Constants.DELETE_BOOK:
+                this.deleteBook(action.data);
+                break;
+            case Constants.EDIT_BOOK:
+                this.editBook(action.data);
+                break;
             default:
                 return true;
         }
@@ -75,6 +93,15 @@ class Store extends EventEmitter {
         });
         this.emit(Constants.CHANGE);
     }
+
+    updateBooks(data) {
+        _store.books = [];
+        data.map((item, idx) => {
+            _store.books.push(item);
+        });
+        this.emit(Constants.CHANGE);
+    }
+
 
     updatePosts(data) {
         _store.posts = [];
@@ -130,6 +157,43 @@ class Store extends EventEmitter {
         });
     }
 
+    addBook(data) {
+        //Write to database and then use promise to push to
+        BooksAPI.addBook(data).then((response) => {
+            if (response.data.state === 200) {
+                _store.books = response.data.results;
+                this.emit(Constants.CHANGE);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    editBook(data) {
+        //Write to database and then use promise to push to
+        BooksAPI.editBook(data).then((response) => {
+            if (response.data.state === 200) {
+                _store.books = response.data.results;
+                this.emit(Constants.CHANGE);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    deleteBook(data) {
+        //Write to database and then use promise to push to
+        BooksAPI.deleteBook(data).then((response) => {
+            if (response.data.state === 200) {
+                _store.books = response.data.results;
+                this.emit(Constants.CHANGE);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+
     getMenuState() {
         return _store.menuVisible;
     }
@@ -144,6 +208,10 @@ class Store extends EventEmitter {
 
     getPosts() {
         return _store.posts;
+    }
+
+    getBooks() {
+        return _store.books;
     }
 
     getCurrentPost() {

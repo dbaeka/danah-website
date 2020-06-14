@@ -1,9 +1,9 @@
 import React from 'react';
 
 const VideoListItem = (props) => {
-    const video = props.video.node;
+    const video = props.video;
     const onUserSelected = props.onUserSelected;
-    const imageUrl = video.snippet.thumbnail;
+    const imageUrl = video.thumb_url;
     const setSelectedIndex = props.setSelectedIndex;
     const active = props.id === props.selectedIndex;
     return (
@@ -22,7 +22,7 @@ const VideoListItem = (props) => {
                     <img alt="" className="media-object" src={imageUrl}/>
                 </div>
                 <div className="media-body m-auto">
-                    <div className="media-heading font-weight-bold">{video.snippet.title}</div>
+                    <div className="media-heading font-weight-bold">{video.title}</div>
                 </div>
             </div>
         </li>

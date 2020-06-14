@@ -1,4 +1,6 @@
 + changed 768 to 943 in ovie/react-navbar in node-modules
 + added overflow control for html tag in ovie/react-navbar in node-modules
+- when changed to custom header was fixed
 
 + magnificPopup css add to public
++ keep .htaccess and __wp safe
