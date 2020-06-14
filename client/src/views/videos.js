@@ -10,42 +10,57 @@ import {
     CardHeader,
     Button
 } from "shards-react";
-import {faEdit} from '@fortawesome/free-regular-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 import axios from 'axios';
 import PageTitle from "../components/admin/PageTitle";
-import {clean} from "../utils/clean"
+import SuccessNotificationModal from "../components/admin/SuccessNotificationModal";
+import ModalVideo from "../components/admin/ModalVideo";
+import {devURL} from "../services/urls";
+import Store from "../flux/store";
+import {Actions} from "../flux";
 
 class Videos extends React.Component {
     constructor(props) {
         super(props);
-
+        this.child = React.createRef();
         this.state = {
-            videos: [],
+            videos: Store.getVideos(),
+            isEdit: false,
         };
+
+        this.onChange = this.onChange.bind(this);
+
+    }
+
+    componentWillMount() {
+        Store.addChangeListener(this.onChange);
+    }
+
+    componentWillUnmount() {
+        Store.removeChangeListener(this.onChange);
     }
 
     componentDidMount() {
-        axios({
-            method: "GET",
-            url: "http://localhost:8080/videos.php",
-        }).then((response) => {
-            if (response.data) {
-                this.setState({videos: response.data.data})
-            }
-        })
+        Actions.getVideos();
+    }
+
+    onChange() {
+        this.setState({
+            ...this.state,
+            videos: Store.getVideos(),
+        });
     }
 
     redirectWP = () => {
         axios({
             method: "POST",
-            url: "http://localhost:9090/wp_post_login.php",
+            url: "",
             data: {username: "admin", action: "wp_login"},
             withCredentials: true
         }).then((response) => {
             if (response.data.state === 200) {
                 const a = document.createElement("a");
-                a.href = "http://localhost:9090/wp-admin/edit.php";
+                a.href = "";
                 a.target = "_blank";
                 a.click();
             } else {
@@ -53,6 +68,23 @@ class Videos extends React.Component {
             }
         })
     }
+
+    toggleModal = state => {
+        this.setState({
+            [state]: !this.state[state]
+        });
+    };
+
+    myCallBack = (data, showNotif) => {
+        this.toggleModal(data);
+        if (showNotif)
+            alert("Updated Successfully")
+        // this.successmodal.toggleModal("notificationModal");
+    };
+
+    setChildData = (edit, data) => {
+        this.child.current.editData(edit, data);
+    };
 
     render() {
         const {
@@ -65,9 +97,22 @@ class Videos extends React.Component {
                 <Row noGutters className="shard-page-header py-4" style={{justifyContent: "space-between"}}>
                     <PageTitle sm="4" title="Videos" subtitle="Add/Edit" className="text-sm-left"/>
                     <Button size="sm"
-                            onClick={this.redirectWP}
-                    >Add Video</Button>
+                            onClick={() => {
+                                this.setState({isEdit: false});
+                                this.toggleModal("addModal");
+                            }}
+                    >
+                        Add Video
+                    </Button>
                 </Row>
+                <ModalVideo
+                    ref={this.child}
+                    onExit={this.myCallBack}
+                    edit={this.state.isEdit}
+                    toggleState={this.state.addModal}/>
+                <SuccessNotificationModal
+                    onRef={ref => (this.successmodal = ref)}
+                />
                 <Row>
                     <Col>
                         <Card small className="mb-4">
@@ -109,10 +154,22 @@ class Videos extends React.Component {
                                                     />
                                                 </a>
                                             </td>
-                                            <td>{video.title}</td>
+                                            <td
+                                            >
+                                                <a href={video.raw_url && video.raw_url}
+                                                   target="_blank">{video.title}</a>
+                                            </td>
                                             <td>{video.raw_url && video.raw_url}</td>
                                             <td>
-                                                <Button className="btn-table" theme="white">
+                                                <Button className="btn-table" theme="white"
+                                                        onClick={() => {
+                                                            this.setState({
+                                                                isEdit: true,
+                                                            });
+                                                            this.setChildData(true, videos[idx])
+                                                            this.toggleModal("addModal");
+                                                        }}
+                                                >
                                             <span className="">
                                                 <i className="material-icons">more_vert</i>
                                             </span>{" "}

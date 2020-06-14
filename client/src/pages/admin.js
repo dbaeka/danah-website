@@ -39,6 +39,7 @@ const App = () => {
                         <PrivateRoute path="/" component={Hub}/>
                         <PrivateRoute path="/blog-posts" component={BlogPosts}/>
                         <PrivateRoute path="/videos" component={Videos}/>
+                        <PrivateRoute path="/books" component={Videos}/>
                     </Router>
                 )
             }

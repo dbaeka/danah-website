@@ -3321,9 +3321,14 @@ $main-sidebar-dropdown-item-font-weight-retina: 300 !default;
 
       &:hover {
         background: #fff;
-        box-shadow: 0 0.125rem 0.625rem rgba(129,142,163,.2), 0 0.0625rem 0.125rem rgba(129,142,163,.3);
+        box-shadow: 0 0.125rem 0.625rem rgba(129, 142, 163, .2), 0 0.0625rem 0.125rem rgba(129, 142, 163, .3);
         z-index: 1;
       }
+    }
+
+
+    table {
+      word-break: break-all;
     }
 
     td {
@@ -3360,4 +3365,12 @@ $main-sidebar-dropdown-item-font-weight-retina: 300 !default;
       }
     }
   }
+}
+
+.modal-backdrop {
+  z-index: 9999;
+}
+
+.modal.fade.top {
+  z-index: 9999+1;
 }

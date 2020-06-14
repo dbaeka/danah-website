@@ -1,9 +1,11 @@
 import Constants from "./constants";
-import Dispatcher from "./dispatcher";
+import AppDispatcher from "./dispatcher";
+import Actions from "./actions";
 import Store from "./store";
 
 export {
-  Constants,
-  Dispatcher,
-  Store
+    Constants,
+    AppDispatcher,
+    Store,
+    Actions,
 };

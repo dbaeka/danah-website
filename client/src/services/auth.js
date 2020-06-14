@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {devURL} from "./urls";
 
 export const isBrowser = () => typeof window !== "undefined"
 
@@ -13,7 +14,7 @@ const setUser = user =>
 export const handleLogin = ({username, password}) => {
     return axios({
         method: "POST",
-        url: "http://localhost:8080/login.php",
+        url: devURL + "/login.php",
         data: {action: "login", username: username, password: password}
     }).then((response) => {
         if (response.data.state === 200) {

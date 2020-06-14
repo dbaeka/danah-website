@@ -15,6 +15,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import axios from 'axios';
 import PageTitle from "../components/admin/PageTitle";
 import {clean} from "../utils/clean"
+import {wpURL} from "../services/urls";
 
 class BlogPosts extends React.Component {
     constructor(props) {
@@ -58,7 +59,7 @@ class BlogPosts extends React.Component {
     componentDidMount() {
         axios({
             method: "GET",
-            url: "http://localhost:9090/wp-json/wp/v2/posts",
+            url: wpURL + "/wp-json/wp/v2/posts",
         }).then((response) => {
             if (response.data) {
                 const posts = response.data;
@@ -66,7 +67,7 @@ class BlogPosts extends React.Component {
                     const author = post.author;
                     return axios({
                         method: "GET",
-                        url: "http://localhost:9090/index.php/wp-json/wp/v2/users/" + author,
+                        url: wpURL + "/index.php/wp-json/wp/v2/users/" + author,
                     }).then((response) => {
                         if (response.data) {
                             const authorName = response.data.name;
@@ -90,13 +91,13 @@ class BlogPosts extends React.Component {
     redirectWP = () => {
         axios({
             method: "POST",
-            url: "http://localhost:9090/wp_post_login.php",
+            url: wpURL + "/wp_post_login.php",
             data: {username: "admin", action: "wp_login"},
             withCredentials: true
         }).then((response) => {
             if (response.data.state === 200) {
                 const a = document.createElement("a");
-                a.href = "http://localhost:9090/wp-admin/edit.php";
+                a.href = wpURL + "/wp-admin/edit.php";
                 a.target = "_blank";
                 a.click();
             } else {
@@ -151,13 +152,13 @@ class BlogPosts extends React.Component {
                                                 onClick={() => {
                                                     axios({
                                                         method: "POST",
-                                                        url: "http://localhost:9090/wp_post_login.php",
+                                                        url: wpURL + "/wp_post_login.php",
                                                         data: {username: "admin", action: "wp_login"},
                                                         withCredentials: true
                                                     }).then((response) => {
                                                         if (response.data.state === 200) {
                                                             const a = document.createElement("a");
-                                                            a.href = "http://localhost:9090/wp-admin/post.php?post=" + post.id + "&action=edit";
+                                                            a.href = wpURL + "/wp-admin/post.php?post=" + post.id + "&action=edit";
                                                             a.target = "_blank";
                                                             a.click();
                                                         } else {
