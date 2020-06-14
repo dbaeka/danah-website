@@ -43,7 +43,7 @@ module.exports = {
         //     resolve: `gatsby-source-wordpress`,
         //     options: {
         //         // your WordPress source
-        //         baseUrl: `sdgs.org.gh/wp-json/wp/v2`,
+        //         baseUrl: `danahzohar.com/__wp/wp-json/wp/v2`,
         //         protocol: `https`,
         //         // is it hosted on wordpress.com, or self-hosted?
         //         hostingWPCOM: false,

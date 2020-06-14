@@ -8,6 +8,13 @@ class ActionsServer {
             response: response
         });
     }
+
+    receivePosts(response) {
+        AppDispatcher.handleServerAction({
+            actionType: Constants.GET_POSTS_RESPONSE,
+            response: response
+        });
+    }
 }
 
 

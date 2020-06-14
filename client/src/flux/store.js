@@ -8,6 +8,8 @@ let _store = {
     menuVisible: false,
     navItems: getSidebarNavItems(),
     videos: [],
+    posts: [],
+    currentPost: null,
 };
 
 class Store extends EventEmitter {
@@ -17,6 +19,8 @@ class Store extends EventEmitter {
         this.toggleSidebar = this.toggleSidebar.bind(this);
         this.addVideo = this.addVideo.bind(this);
         this.updateVideos = this.updateVideos.bind(this);
+        this.setPost = this.setPost.bind(this);
+        this.updatePosts = this.updatePosts.bind(this);
         this.deleteVideo = this.deleteVideo.bind(this);
         this.editVideo = this.editVideo.bind(this);
         AppDispatcher.register(this.registerActions.bind(this));
@@ -38,6 +42,12 @@ class Store extends EventEmitter {
                 break;
             case Constants.EDIT_VIDEO:
                 this.editVideo(action.data);
+                break;
+            case Constants.GET_POSTS_RESPONSE:
+                this.updatePosts(action.response);
+                break;
+            case Constants.SET_POST:
+                this.setPost(action.data);
                 break;
             default:
                 return true;
@@ -63,6 +73,24 @@ class Store extends EventEmitter {
         data.map((item, idx) => {
             _store.videos.push(item);
         });
+        this.emit(Constants.CHANGE);
+    }
+
+    updatePosts(data) {
+        _store.posts = [];
+        data.map((item, idx) => {
+            _store.posts.push(item);
+        });
+        this.emit(Constants.CHANGE);
+    }
+
+    setPost(data) {
+        for (let post of _store.posts) {
+            if (post.id === data){
+                _store.currentPost = post;
+                break;
+            }
+        }
         this.emit(Constants.CHANGE);
     }
 
@@ -112,6 +140,14 @@ class Store extends EventEmitter {
 
     getVideos() {
         return _store.videos;
+    }
+
+    getPosts() {
+        return _store.posts;
+    }
+
+    getCurrentPost() {
+        return _store.currentPost;
     }
 
 

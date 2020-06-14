@@ -78,13 +78,13 @@ const Header = ({siteTitle}) => {
                            alt="en" title="English"/>
                     <span className="ls-native">EN</span>
                     </li>
-                    <li className="leaf mr-2">
-                       <img
-                           className="flag"
-                           src={require("../images/china.png")}
-                           alt="en" title="Chinese"/>
-                    <span className="ls-native">CN</span>
-                    </li>
+                    {/*<li className="leaf mr-2">*/}
+                    {/*   <img*/}
+                    {/*       className="flag"*/}
+                    {/*       src={require("../images/china.png")}*/}
+                    {/*       alt="en" title="Chinese"/>*/}
+                    {/*<span className="ls-native">CN</span>*/}
+                    {/*</li>*/}
                 </ul>
             </span>
             <span className="nav-link-span"><a className="nav-a-link text-link" href="/">Home</a></span>
@@ -226,15 +226,15 @@ const Header = ({siteTitle}) => {
                         alt="en" title="English"/>
                     <span className="ls-native">English</span>
                 </DropdownToggle>
-                <DropdownMenu>
-                    <DropdownItem>
-                        <img
-                            className="flag"
-                            src={require("../images/china.png")}
-                            alt="zh-cn" title="Chinese"/>
-                        <span className="ls-native">Chinese</span>
-                    </DropdownItem>
-                </DropdownMenu>
+                {/*<DropdownMenu>*/}
+                {/*    <DropdownItem>*/}
+                {/*        <img*/}
+                {/*            className="flag"*/}
+                {/*            src={require("../images/china.png")}*/}
+                {/*            alt="zh-cn" title="Chinese"/>*/}
+                {/*        <span className="ls-native">Chinese</span>*/}
+                {/*    </DropdownItem>*/}
+                {/*</DropdownMenu>*/}
             </Dropdown>
             {/*<FormGroup className="header-search" action="//search.usa.gov/search" method="get"*/}
             {/*           id="search-block-form">*/}

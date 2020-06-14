@@ -15,7 +15,6 @@ import axios from 'axios';
 import PageTitle from "../components/admin/PageTitle";
 import SuccessNotificationModal from "../components/admin/SuccessNotificationModal";
 import ModalVideo from "../components/admin/ModalVideo";
-import {devURL} from "../services/urls";
 import Store from "../flux/store";
 import {Actions} from "../flux";
 
