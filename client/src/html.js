@@ -79,7 +79,6 @@ export default function HTML(props) {
 
             {/*<!-- Magnific Popup core JS file -->*/}
             <script src="/js/jquery.magnific-popup.js"></script>
-
             {props.headComponents}
         </head>
         <body {...props.bodyAttributes}>
