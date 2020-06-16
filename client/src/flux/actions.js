@@ -60,6 +60,15 @@ class Actions {
         VideosAPI.getVideos();
     }
 
+
+    getImages(index) {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.GET_IMAGES,
+            data: index,
+        });
+        WPAPI.getImages(index);
+    }
+
     getBooks() {
         AppDispatcher.handleViewAction({
             actionType: Constants.GET_BOOKS,

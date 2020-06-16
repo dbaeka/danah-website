@@ -16,6 +16,13 @@ class ActionsServer {
         });
     }
 
+    receiveImages(response) {
+        AppDispatcher.handleServerAction({
+            actionType: Constants.GET_IMAGES_RESPONSE,
+            response: response
+        });
+    }
+
     receiveBooks(response) {
         AppDispatcher.handleServerAction({
             actionType: Constants.GET_BOOKS_RESPONSE,

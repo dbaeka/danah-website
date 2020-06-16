@@ -10,7 +10,12 @@ let _store = {
     navItems: getSidebarNavItems(),
     videos: [],
     posts: [],
-    books:[],
+    books: [],
+    images: [],
+    total_images: 0,
+    num_images_pages: 0,
+    total_posts: 0,
+    num_posts_pages: 0,
     currentPost: null,
 };
 
@@ -29,6 +34,7 @@ class Store extends EventEmitter {
         this.updateBooks = this.updateBooks.bind(this);
         this.deleteBook = this.deleteBook.bind(this);
         this.editVideo = this.editVideo.bind(this);
+        this.updateImages = this.updateImages.bind(this);
         AppDispatcher.register(this.registerActions.bind(this));
     }
 
@@ -66,6 +72,9 @@ class Store extends EventEmitter {
                 break;
             case Constants.EDIT_BOOK:
                 this.editBook(action.data);
+                break;
+            case Constants.GET_IMAGES_RESPONSE:
+                this.updateImages(action.response);
                 break;
             default:
                 return true;
@@ -105,15 +114,27 @@ class Store extends EventEmitter {
 
     updatePosts(data) {
         _store.posts = [];
-        data.map((item, idx) => {
+        data.data.map((item, idx) => {
             _store.posts.push(item);
         });
+        _store.total_posts = parseInt(data.total_items);
+        _store.num_posts_pages = parseInt(data.total_pages);
+        this.emit(Constants.CHANGE);
+    }
+
+    updateImages(data) {
+        _store.images = [];
+        data.data.map((item, idx) => {
+            _store.images.push(item);
+        });
+        _store.total_images = parseInt(data.total_items);
+        _store.num_images_pages = parseInt(data.total_pages);
         this.emit(Constants.CHANGE);
     }
 
     setPost(data) {
         for (let post of _store.posts) {
-            if (post.id === data){
+            if (post.id === data) {
                 _store.currentPost = post;
                 break;
             }
@@ -207,11 +228,23 @@ class Store extends EventEmitter {
     }
 
     getPosts() {
-        return _store.posts;
+        return {
+            items: _store.posts,
+            count: _store.total_posts,
+            pages: _store.num_posts_pages,
+        };
     }
 
     getBooks() {
         return _store.books;
+    }
+
+    getImages() {
+        return {
+            items: _store.images,
+            count: _store.total_images,
+            pages: _store.num_images_pages,
+        };
     }
 
     getCurrentPost() {
