@@ -142,6 +142,7 @@ const Header = ({siteTitle}) => {
                     <DropdownItem tag="a" href="/training">Training Programs</DropdownItem>
                     <DropdownItem tag="a" href="/videos">Videos</DropdownItem>
                     <DropdownItem tag="a" href="/blogs">Blogs</DropdownItem>
+                    <DropdownItem tag="a" href="/gallery">Gallery</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
             <span className={"nav-link-span drop"}>
@@ -166,7 +167,10 @@ const Header = ({siteTitle}) => {
                             <a href="/videos" title="Videos">Videos</a>
                         </li>
                         <li className="mb-2">
-                            <a href="/blogs" title="Blogs">blogs</a>
+                            <a href="/blogs" title="Blogs">Blogs</a>
+                        </li>
+                         <li className="mb-2">
+                            <a href="/gallery" title="Gallery">Gallery</a>
                         </li>
                     </ul>
                 </div>

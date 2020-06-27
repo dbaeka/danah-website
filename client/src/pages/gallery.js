@@ -11,8 +11,6 @@ class GalleryPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.pageSize = 10;
-
         this.state = {
             pagesCount: 1,
             images: Store.getImages().items,

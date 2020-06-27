@@ -12,7 +12,7 @@ class AboutSection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: Store.getPosts(),
+            posts: Store.getPosts().items,
         };
 
         this.onChange = this.onChange.bind(this);
@@ -28,13 +28,13 @@ class AboutSection extends React.Component {
     }
 
     componentDidMount() {
-        Actions.getPosts();
+        Actions.getPosts(1);
     }
 
     onChange() {
         this.setState({
             ...this.state,
-            posts: Store.getPosts(),
+            posts: Store.getPosts().items,
         });
     }
 

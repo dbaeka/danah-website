@@ -14,7 +14,7 @@ class Blogs extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: Store.getPosts(),
+            posts: Store.getPosts().items,
         };
 
         this.onChange = this.onChange.bind(this);
@@ -36,7 +36,7 @@ class Blogs extends React.Component {
     onChange() {
         this.setState({
             ...this.state,
-            posts: Store.getPosts(),
+            posts: Store.getPosts().items,
         });
     }
 

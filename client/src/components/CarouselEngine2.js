@@ -8,6 +8,42 @@ import {
     CarouselCaption, Container, Button
 } from 'reactstrap';
 
+
+const pic = <div id="image"
+                 className=""
+>
+    <Container>
+        <div className="py-5">
+            <Row className="explore-entry text-center text-md-left">
+                <Col xs="6" md="6" className="mb-5">
+                    <div id="gallery" className="video-container">
+                        <a
+                            href="https://danahzohar.com/__wp/wp-content/uploads/2020/06/IMG_1545-rotated.jpg">
+                        >
+                            <img className="video"
+                                 style={{
+                                     height: "auto",
+                                     width: "70%",
+                                 }}
+                                 src="https://danahzohar.com/__wp/wp-content/uploads/2020/06/IMG_1545-rotated.jpg">
+                            </img>
+                        </a>
+                    </div>
+                </Col>
+                <Col xs="12" md="3" className="pt-5 pt-md-0 mt-auto mb-auto text-center">
+                    <h4 className="font-weight-600 text-white mb-3">CHINA'S TOP INNOVATION MANAGEMENT THINKER OF 2018
+                    </h4>
+                    <h6 className="font-weight-600 text-white mb-3">WANT TO KNOW MORE ABOUT DANAH?</h6>
+                    <Button className="font-weight-500" color="primary"
+                            onClick={() => window.location = "/about"}
+                    >View More</Button>
+                </Col>
+            </Row>
+        </div>
+    </Container>
+</div>;
+
+
 const youtube = <div id="youtube"
                      className="youtube-entry"
 >
@@ -108,6 +144,12 @@ const items = [
         altText: 'Slide 3',
         caption: '',
         html: youtube
+    },
+    {
+        id: 4,
+        altText: 'Slide 4',
+        caption: '',
+        html: pic
     }
 ];
 
