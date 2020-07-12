@@ -4,8 +4,8 @@ import {wpURL} from "./urls";
 
 export default {
 
-    getPosts() {
-        const requestURL = wpURL + "/wp-json/wp/v2/posts";
+    getPosts(index) {
+        const requestURL = wpURL + "/wp-json/wp/v2/posts?page=" + index;
         axios({
             method: "GET",
             url: requestURL,
@@ -17,6 +17,23 @@ export default {
                     total_items: response.headers["x-wp-total"],
                 }
                 ActionsServer.receivePosts(results);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    },
+
+    getSinglePost(index) {
+        const requestURL = wpURL + "/wp-json/wp/v2/posts/" + index;
+        axios({
+            method: "GET",
+            url: requestURL,
+        }).then((response) => {
+            if (response.data) {
+                const results = {
+                    data: response.data,
+                }
+                ActionsServer.receiveSinglePost(results);
             }
         }).catch((err) => {
             console.log(err);

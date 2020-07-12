@@ -7,6 +7,7 @@ import {Container, Row} from "reactstrap"
 import {graphql, StaticQuery} from "gatsby";
 import Store from "../flux/store";
 import {Actions} from "../flux";
+import HyvorTalk from "hyvor-talk-react";
 
 
 class Videos extends React.Component {
@@ -87,6 +88,7 @@ class Videos extends React.Component {
                                     videos={this.state.videos}
                                 />
                             </Row>
+                            <HyvorTalk.Embed id="videos" websiteId={1128}/>
                         </Container>
                     </div>
                 </div>

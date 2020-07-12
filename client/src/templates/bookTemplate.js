@@ -33,6 +33,7 @@ export default function Template({data}) {
                                     <br/><br/>
                                     <a href={link_uk} target="_blank">
                                         <img alt="" border="0"
+                                             style={{left: "0", position: "relative"}}
                                              src={require("../images/amazonuk.png")}
                                              width="150"/>
                                         <br/></a>
@@ -41,9 +42,11 @@ export default function Template({data}) {
                                     <br/><br/><br/>
                                     <a href={link_us} target="_blank">
                                         <img alt="" border="0"
+                                             style={{left: "0", position: "relative"}}
                                              src={require("../images/amazon2.png")}
                                              width="150"/>
-                                        <br/></a>
+                                        <br/>
+                                    </a>
                                 </td>
                             </tr>
                             </tbody>
@@ -52,25 +55,25 @@ export default function Template({data}) {
                 </div>
             </div>
         </DefaultLayout>
-)
+    )
 }
 
 export const pageQuery = graphql`
-query($slug: String!) {
-    booksJson(slug: {eq: $slug}) {
-    author
-    name
-    full
-    link_us
-    link_uk
-    info
-    image {
-    childImageSharp {
-    fluid(base64Width: 100){
-    base64
-}
-}
-}
-}
-}
+    query($slug: String!) {
+        booksJson(slug: {eq: $slug}) {
+            author
+            name
+            full
+            link_us
+            link_uk
+            info
+            image {
+                childImageSharp {
+                    fluid(base64Width: 100){
+                        base64
+                    }
+                }
+            }
+        }
+    }
 `

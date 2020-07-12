@@ -9,6 +9,7 @@ import {isLoggedIn} from "../services/auth"
 import PrivateRoute from "../components/PrivateRoute";
 import BlogPosts from "../views/posts";
 import Videos from "../views/videos";
+import Schedule from "../views/schedule";
 
 const App = () => {
 
@@ -39,7 +40,7 @@ const App = () => {
                         <PrivateRoute path="/" component={Hub}/>
                         <PrivateRoute path="/blog-posts" component={BlogPosts}/>
                         <PrivateRoute path="/videos" component={Videos}/>
-                        <PrivateRoute path="/books" component={Videos}/>
+                        <PrivateRoute path="/schedule" component={Schedule}/>
                     </Router>
                 )
             }

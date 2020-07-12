@@ -3,7 +3,7 @@ import {Link} from "gatsby"
 
 import SEO from "../components/seo"
 import DefaultLayout from "../layout/default";
-import {Container, Button, UncontrolledTooltip, Nav, NavItem, Col, NavLink, TabContent, Row, TabPane,} from "reactstrap"
+import {Container, Col, Row, Pagination, PaginationItem, PaginationLink} from "reactstrap"
 import NormalHeader from "../components/normalheader";
 import Store from "../flux/store";
 import {Actions} from "../flux";
@@ -15,6 +15,8 @@ class Blogs extends React.Component {
         super(props);
         this.state = {
             posts: Store.getPosts().items,
+            pagesCount: 1,
+            currentPage: 0,
         };
 
         this.onChange = this.onChange.bind(this);
@@ -30,12 +32,13 @@ class Blogs extends React.Component {
     }
 
     componentDidMount() {
-        Actions.getPosts();
+        Actions.getPosts(1);
     }
 
     onChange() {
         this.setState({
             ...this.state,
+            pagesCount: Store.getPosts().pages,
             posts: Store.getPosts().items,
         });
     }
@@ -45,8 +48,16 @@ class Blogs extends React.Component {
     );
 
 
+    handleClick(e, index) {
+        e.preventDefault();
+        Actions.getPosts(index + 1);
+        this.setState({
+            currentPage: index
+        });
+    }
+
     render() {
-        const {posts} = this.state;
+        const {posts, currentPage} = this.state;
 
         return (
             <DefaultLayout>
@@ -63,7 +74,7 @@ class Blogs extends React.Component {
                                             <Col xs="4" className="post-thumbnail pt-4"
                                                  style={{backgroundColor: "#fff"}}>
                                                 <Link
-                                                    to={"/post?post="+post.id}
+                                                    to={"/post?post=" + post.id}
                                                     className="post-thumbnail__link">
                                                     <img className="post-thumbnail__img_wp-post-image"
                                                          src={require("../images/blog_placeholder.png")}
@@ -74,7 +85,7 @@ class Blogs extends React.Component {
                                             <Col xs="8" className="jet-posts__inner-content">
                                                 <h4 className="entry-title" style={{marginTop: "0"}}>
                                                     <Link
-                                                        to={"/post?post="+post.id}>
+                                                        to={"/post?post=" + post.id}>
                                                         {post.title.rendered}
                                                     </Link>
                                                 </h4>
@@ -92,7 +103,7 @@ class Blogs extends React.Component {
                                                 </div>
                                                 <div className="jet-more-wrap">
                                                     <Link
-                                                        to={"/post?post="+post.id}
+                                                        to={"/post?post=" + post.id}
                                                         className="btn btn-primary elementor-button elementor-size-md jet-more">
                                                         <span className="btn__text">Read More</span>
                                                     </Link>
@@ -101,6 +112,29 @@ class Blogs extends React.Component {
                                         </Row>
                                     </Col>
                                 })}
+                            <Pagination aria-label="Page navigation example">
+                                <PaginationItem disabled={currentPage <= 0}>
+                                    <PaginationLink
+                                        onClick={e => this.handleClick(e, currentPage - 1)}
+                                        previous
+                                        href="#"
+                                    />
+                                </PaginationItem>
+                                {[...Array(this.state.pagesCount)].map((page, i) =>
+                                    <PaginationItem active={i === currentPage} key={i}>
+                                        <PaginationLink onClick={e => this.handleClick(e, i)} href="#">
+                                            {i + 1}
+                                        </PaginationLink>
+                                    </PaginationItem>
+                                )}
+                                <PaginationItem disabled={currentPage >= this.state.pagesCount - 1}>
+                                    <PaginationLink
+                                        onClick={e => this.handleClick(e, currentPage + 1)}
+                                        next
+                                        href="#"
+                                    />
+                                </PaginationItem>
+                            </Pagination>
                         </Container>
                     </div>
                 </div>

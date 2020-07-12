@@ -26,7 +26,7 @@ class Store extends EventEmitter {
         this.toggleSidebar = this.toggleSidebar.bind(this);
         this.addVideo = this.addVideo.bind(this);
         this.updateVideos = this.updateVideos.bind(this);
-        this.setPost = this.setPost.bind(this);
+        this.updateSinglePost = this.updateSinglePost.bind(this);
         this.updatePosts = this.updatePosts.bind(this);
         this.deleteVideo = this.deleteVideo.bind(this);
         this.editBook = this.editBook.bind(this);
@@ -58,8 +58,8 @@ class Store extends EventEmitter {
             case Constants.GET_POSTS_RESPONSE:
                 this.updatePosts(action.response);
                 break;
-            case Constants.SET_POST:
-                this.setPost(action.data);
+            case Constants.GET_SINGLE_POST_RESPONSE:
+                this.updateSinglePost(action.response);
                 break;
             case Constants.ADD_BOOK:
                 this.addBook(action.data);
@@ -132,13 +132,8 @@ class Store extends EventEmitter {
         this.emit(Constants.CHANGE);
     }
 
-    setPost(data) {
-        for (let post of _store.posts) {
-            if (post.id === data) {
-                _store.currentPost = post;
-                break;
-            }
-        }
+    updateSinglePost(data) {
+        _store.currentPost = data.data;
         this.emit(Constants.CHANGE);
     }
 

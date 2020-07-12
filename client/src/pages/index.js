@@ -12,6 +12,7 @@ import VideoSection from "../components/sections/videoSection";
 import LatestSection from "../components/sections/latestSection";
 import TestimonialSection from "../components/sections/testimonialSection";
 import GallerySection from "../components/sections/gallerySection";
+import ScheduleSection from "../components/sections/scheduleSection";
 
 class IndexPage extends React.Component {
     componentDidMount() {
@@ -37,6 +38,7 @@ class IndexPage extends React.Component {
                 <VideoSection/>
                 <LatestSection/>
                 <ExploreSection/>
+                <ScheduleSection/>
                 <TestimonialSection/>
                 {/*<YoutubeSection/>*/}
                 {/*<GallerySection/>*/}

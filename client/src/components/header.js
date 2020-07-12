@@ -142,7 +142,6 @@ const Header = ({siteTitle}) => {
                     <DropdownItem tag="a" href="/training">Training Programs</DropdownItem>
                     <DropdownItem tag="a" href="/videos">Videos</DropdownItem>
                     <DropdownItem tag="a" href="/blogs">Blogs</DropdownItem>
-                    <DropdownItem tag="a" href="/gallery">Gallery</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
             <span className={"nav-link-span drop"}>
@@ -168,9 +167,6 @@ const Header = ({siteTitle}) => {
                         </li>
                         <li className="mb-2">
                             <a href="/blogs" title="Blogs">Blogs</a>
-                        </li>
-                         <li className="mb-2">
-                            <a href="/gallery" title="Gallery">Gallery</a>
                         </li>
                     </ul>
                 </div>
@@ -211,10 +207,11 @@ const Header = ({siteTitle}) => {
                 </div>
             </span>
             <span className="nav-link-span"><a className="nav-a-link text-link" href="/books">Books</a></span>
+            <span className="nav-link-span"><a className="nav-a-link text-link" href="/gallery">Gallery</a></span>
             <span className="nav-link-span"> <a className="nav-a-link text-link" href="/news">News</a></span>
             <span className="nav-link-span"> <a className="nav-a-link text-link"
                                                 href="/test">Test and Surveys</a></span>
-            <span className="nav-link-span"> <a className="nav-a-link text-link" href="/contact">Contact Us</a></span>
+            <span className="nav-link-span"> <a className="nav-a-link text-link" href="/contact">Contact</a></span>
         </>
     );
 
@@ -232,7 +229,7 @@ const Header = ({siteTitle}) => {
                         className="flag"
                         src={require("../images/en.png")}
                         alt="en" title="English"/>
-                    <span className="ls-native">English</span>
+                    {/*<span className="ls-native">English</span>*/}
                 </DropdownToggle>
                 {/*<DropdownMenu>*/}
                 {/*    <DropdownItem>*/}

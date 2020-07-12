@@ -10,7 +10,7 @@ import {
 
 
 const pic = <div id="image"
-                 className=""
+                 className="youtube-entry"
 >
     <Container>
         <div className="py-5">
@@ -18,7 +18,7 @@ const pic = <div id="image"
                 <Col xs="6" md="6" className="mb-5">
                     <div id="gallery" className="video-container">
                         <a
-                            href="https://danahzohar.com/__wp/wp-content/uploads/2020/06/IMG_1545-rotated.jpg">
+                            href="https://danahzohar.com/__wp/wp-content/uploads/2020/06/IMG_1545-rotated.jpg"
                         >
                             <img className="video"
                                  style={{
@@ -69,8 +69,8 @@ const youtube = <div id="youtube"
                         us to break old paradigms and to invent new ones, to reframe problems and situations, to
                         dissolve old patterns and to be open to finding new ones.
                     </p>
-                    <Button className="font-weight-500" color="primary" onClick={() => window.location = "/test"}>TAKE
-                        SQ TEST</Button>
+                    <Button className="font-weight-500" color="primary" onClick={() => window.location = "/test"}>Click to Test Your SQ & Quantum Leadership Quotient
+                    </Button>
                 </Col>
             </Row>
         </div>
@@ -89,7 +89,7 @@ const videos = [
 
 const video = videos.map((item, idx) => (
     <div id=""
-         className=""
+         className="youtube-entry"
          key={idx}
     >
         <Container>
@@ -213,9 +213,8 @@ const CarouselEngine2 = (props) => {
                     `
                     .custom-tag-1 {
               max-width: 100%;
-        
               filter: grayscale;
-              background: url(${require("../images/danah_fullbg.jpeg")}) no-repeat center center;
+              background: url(${require("../images/danah_bg.jpeg")}) no-repeat 50% 20%;
             }
             `
                 }

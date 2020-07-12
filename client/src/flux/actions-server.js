@@ -16,6 +16,13 @@ class ActionsServer {
         });
     }
 
+    receiveSinglePost(response) {
+        AppDispatcher.handleServerAction({
+            actionType: Constants.GET_SINGLE_POST_RESPONSE,
+            response: response
+        });
+    }
+
     receiveImages(response) {
         AppDispatcher.handleServerAction({
             actionType: Constants.GET_IMAGES_RESPONSE,

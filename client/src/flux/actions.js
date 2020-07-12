@@ -76,18 +76,20 @@ class Actions {
         BooksAPI.getBooks();
     }
 
-    getPosts() {
+    getPosts(index) {
         AppDispatcher.handleViewAction({
             actionType: Constants.GET_POSTS,
+            data: index,
         });
-        WPAPI.getPosts();
+        WPAPI.getPosts(index);
     }
 
-    setPost(data) {
+    getSinglePost(index) {
         AppDispatcher.handleViewAction({
-            actionType: Constants.SET_POST,
-            data: data
+            actionType: Constants.GET_SINGLE_POST,
+            data: index
         });
+        WPAPI.getSinglePost(index);
     }
 
 }

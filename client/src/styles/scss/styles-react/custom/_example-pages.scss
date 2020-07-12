@@ -2438,6 +2438,7 @@ $opacity-8: rgba(255, 255, 255, 0.8) !default;
   width: 80%;
 }
 
+
 .mfp-fade.mfp-bg {
   opacity: 0;
   -webkit-transition: all 0.15s ease-out;
@@ -3373,4 +3374,10 @@ $main-sidebar-dropdown-item-font-weight-retina: 300 !default;
 
 .modal.fade.top {
   z-index: 9999+1;
+}
+
+
+.rbc-calendar {
+  //flex: 1;
+  height: 400px;
 }

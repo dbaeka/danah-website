@@ -16,9 +16,14 @@ export default function() {
       to: "/admin/videos",
     },
     {
-      title: "Books",
-      htmlBefore: '<i class="material-icons">local_library</i>',
-      to: "/admin/books",
+      title: "Schedule",
+      htmlBefore: '<i class="material-icons">event</i>',
+      to: "/admin/schedule",
     },
+    // {
+    //   title: "Books",
+    //   htmlBefore: '<i class="material-icons">local_library</i>',
+    //   to: "/admin/books",
+    // },
   ];
 }
