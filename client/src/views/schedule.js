@@ -8,144 +8,177 @@ import {
     Card,
     CardBody,
     CardFooter,
-    Button
+    Button, CardHeader
 } from "shards-react";
-import {faEdit} from '@fortawesome/free-regular-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import axios from 'axios';
 import PageTitle from "../components/admin/PageTitle";
-import {clean} from "../utils/clean"
-import {wpURL} from "../services/urls";
+import Store from "../flux/store";
+import {Actions} from "../flux";
+import ModalEvent from "../components/admin/ModalEvent";
+import SuccessNotificationModal from "../components/admin/SuccessNotificationModal";
 
 class Schedule extends React.Component {
     constructor(props) {
         super(props);
-
+        this.child = React.createRef();
         this.state = {
-            posts: [],
-            authorAvatar: require("../images/profile.png"),
+            events: Store.getEvents(),
+            isEdit: false,
         };
+
+        this.onChange = this.onChange.bind(this);
+
+    }
+
+    componentWillMount() {
+        Store.addChangeListener(this.onChange);
+    }
+
+    componentWillUnmount() {
+        Store.removeChangeListener(this.onChange);
     }
 
     componentDidMount() {
-        axios({
-            method: "GET",
-            url: wpURL + "/wp-json/wp/v2/posts",
-        }).then((response) => {
-            if (response.data) {
-                const posts = response.data;
-                const promise = posts.map((post) => {
-                    const author = post.author;
-                    return axios({
-                        method: "GET",
-                        url: wpURL + "/index.php/wp-json/wp/v2/users/" + author,
-                    }).then((response) => {
-                        if (response.data) {
-                            const authorName = response.data.name;
-                            return {
-                                author: authorName,
-                                title: post.title.rendered,
-                                body: clean(post.excerpt.rendered),
-                                date: new Date(post.date).toLocaleString(),
-                                slug: post.slug,
-                                status: post.status,
-                                id: post.id,
-                            }
-                        }
-                    })
-                })
-                Promise.all(promise).then((result) => this.setState({posts: result}))
-            }
-        })
+        Actions.getEvents();
     }
 
-    redirectWP = () => {
-        axios({
-            method: "POST",
-            url: wpURL + "/wp_post_login.php",
-            data: {username: "admin", action: "wp_login"},
-            withCredentials: true
-        }).then((response) => {
-            if (response.data.state === 200) {
-                const a = document.createElement("a");
-                a.href = wpURL + "/wp-admin/edit.php";
-                a.target = "_blank";
-                a.click();
-            } else {
-                console.log("Failed.")
-            }
-        })
+    onChange() {
+        this.setState({
+            ...this.state,
+            events: Store.getEvents(),
+        });
     }
+
+    toggleModal = state => {
+        this.setState({
+            [state]: !this.state[state]
+        });
+    };
+
+    myCallBack = (data, showNotif) => {
+        this.toggleModal(data);
+        if (showNotif)
+            alert("Updated Successfully")
+        // this.successmodal.toggleModal("notificationModal");
+    };
+
+    setChildData = (edit, data) => {
+        this.child.current.editData(edit, data);
+    };
 
     render() {
         const {
-            posts,
+            events,
         } = this.state;
 
         return (
             <Container fluid className="main-content-container px-4">
                 {/* Page Header */}
                 <Row noGutters className="shard-page-header py-4" style={{justifyContent: "space-between"}}>
-                    <PageTitle sm="4" title="Blog Posts" subtitle="Add/Edit" className="text-sm-left"/>
+                    <PageTitle sm="4" title="Events" subtitle="Add/Edit" className="text-sm-left"/>
                     <Button size="sm"
-                            onClick={this.redirectWP}
-                    >Add Post</Button>
+                            onClick={() => {
+                                this.setState({isEdit: false});
+                                this.toggleModal("addModal");
+                            }}
+                    >
+                        Add Event
+                    </Button>
                 </Row>
-                {/* Row of Posts */}
+                <ModalEvent
+                    ref={this.child}
+                    onExit={this.myCallBack}
+                    edit={this.state.isEdit}
+                    toggleState={this.state.addModal}/>
+                <SuccessNotificationModal
+                    onRef={ref => (this.successmodal = ref)}
+                />
                 <Row>
-                    {posts && posts.map((post, idx) => (
-                        <Col lg="4" key={idx}>
-                            <Card small className="card-post mb-4">
-                                <CardBody>
-                                    <h5 className="card-title">{post.title}</h5>
-                                    {console.log(post)}
-                                    <p className="card-text text-muted">{clean(post.body)}</p>
-                                </CardBody>
-                                <CardFooter className="border-top d-flex">
-                                    <div className="card-post__author d-flex">
-                                        <a
-                                            href="#"
-                                            className="card-post__author-avatar card-post__author-avatar--small"
-                                            style={{backgroundImage: `url('${this.state.authorAvatar}')`}}
+                    <Col>
+                        <Card small className="mb-4">
+                            <CardHeader className="border-bottom">
+                                <h6 className="m-0">EVENTS LIST</h6>
+                            </CardHeader>
+                            <CardBody className="p-0 pb-3">
+                                <table className="table mb-0">
+                                    <thead className="bg-light">
+                                    <tr>
+                                        <th scope="col" className="border-0">
+                                            #
+                                        </th>
+                                        <th scope="col" className="border-0"
+                                            style={{minWidth: "220px"}}
                                         >
-                                            Written by
-                                        </a>
-                                        <div className="d-flex flex-column justify-content-center ml-3">
-                                            <span className="card-post__author-name">
-                                                {post.author}
-                                            </span>
-                                            <small className="text-muted">{post.date}</small>
-                                            <small>Status: <b>{post.status.toUpperCase()}</b></small>
-                                        </div>
-                                    </div>
-                                    <div className="my-auto ml-auto">
-                                        <Button size="sm" theme="white"
-                                                onClick={() => {
-                                                    axios({
-                                                        method: "POST",
-                                                        url: wpURL + "/wp_post_login.php",
-                                                        data: {username: "admin", action: "wp_login"},
-                                                        withCredentials: true
-                                                    }).then((response) => {
-                                                        if (response.data.state === 200) {
-                                                            const a = document.createElement("a");
-                                                            a.href = wpURL + "/wp-admin/post.php?post=" + post.id + "&action=edit";
-                                                            a.target = "_blank";
-                                                            a.click();
-                                                        } else {
-                                                            console.log("Failed.")
-                                                        }
-                                                    })
-                                                }}
+                                            Title
+                                        </th>
+                                        <th scope="col" className="border-0"
+                                            style={{width: "220px"}}
                                         >
-                                            <FontAwesomeIcon className="mr-1" icon={faEdit}/>
-                                            Edit
-                                        </Button>
-                                    </div>
-                                </CardFooter>
-                            </Card>
-                        </Col>
-                    ))}
+                                            Start
+                                        </th>
+                                        <th scope="col" className="border-0"
+                                            style={{width: "220px"}}
+                                        >
+                                            End
+                                        </th>
+                                        <th scope="col" className="border-0"
+                                            style={{width: "80px"}}
+                                        >
+                                            All Day
+                                        </th>
+                                        <th
+                                            style={{width: "80px"}}
+                                        >
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {events && events.map((event, idx) => (
+                                        <tr key={idx}>
+                                            <td>{idx + 1}</td>
+                                            <td
+                                            >
+                                                {event.title}
+                                            </td>
+                                            <td>{event.start && new Date(event.start).toLocaleDateString("en-US", {
+                                                year: 'numeric',
+                                                month: 'long',
+                                                day: 'numeric',
+                                                hour: "numeric",
+                                                minute: "numeric"
+                                            })}</td>
+                                            <td>
+                                                {event.start && new Date(event.end).toLocaleDateString("en-US", {
+                                                    year: 'numeric',
+                                                    month: 'long',
+                                                    day: 'numeric',
+                                                    hour: "numeric",
+                                                    minute: "numeric"
+                                                })}
+                                            </td>
+                                            <td>{event.all_day === "1" ? "True" : "False"}</td>
+                                            <td>
+                                                <Button className="btn-table" theme="white"
+                                                        onClick={() => {
+                                                            this.setState({
+                                                                isEdit: true,
+                                                            });
+                                                            this.setChildData(true, events[idx])
+                                                            this.toggleModal("addModal");
+                                                        }}
+                                                >
+                                            <span className="">
+                                                <i className="material-icons">more_vert</i>
+                                            </span>{" "}
+                                                    Edit
+                                                </Button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                    </tbody>
+                                </table>
+                            </CardBody>
+                        </Card>
+                    </Col>
                 </Row>
             </Container>
         );

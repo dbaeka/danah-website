@@ -3,6 +3,7 @@ import AppDispatcher from "./dispatcher";
 import WPAPI from "../services/wordpress";
 import VideosAPI from "../services/videos";
 import BooksAPI from "../services/books";
+import EventsAPI from "../services/events";
 
 class Actions {
     addVideo(data) {
@@ -92,6 +93,33 @@ class Actions {
         WPAPI.getSinglePost(index);
     }
 
+    addEvent(data) {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.ADD_EVENT,
+            data: data
+        });
+    }
+
+    editEvent(data) {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.EDIT_EVENT,
+            data: data
+        });
+    }
+
+    deleteEvent(data) {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.DELETE_EVENT,
+            data: data
+        });
+    }
+
+    getEvents() {
+        AppDispatcher.handleViewAction({
+            actionType: Constants.GET_EVENTS,
+        });
+        EventsAPI.getEvents();
+    }
 }
 
 

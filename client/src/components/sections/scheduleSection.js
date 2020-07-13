@@ -13,7 +13,7 @@ class ScheduleSection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // events: Store.getEvents(),
+            events: Store.getEvents(),
         };
 
         this.onChange = this.onChange.bind(this);
@@ -28,18 +28,18 @@ class ScheduleSection extends React.Component {
     }
 
     componentDidMount() {
-        // Actions.getEvents();
+        Actions.getEvents();
     }
 
     onChange() {
         this.setState({
             ...this.state,
-            // events: Store.getEvents().items,
+            events: Store.getEvents(),
         });
     }
 
     render() {
-        // const {events} = this.state;
+        const {events} = this.state;
 
         const localizer = momentLocalizer(moment);
 
@@ -62,22 +62,7 @@ class ScheduleSection extends React.Component {
                 <h3 className="pt-5 text-center font-weight-600 mb-3">SCHEDULE AND EVENTS</h3>
                 <div className="px-5">
                     <Calendar
-                        events={[]}
-                        // events={[
-                        //     {
-                        //         id: 0,
-                        //         title: 'All Day Event very long title',
-                        //         allDay: true,
-                        //         start: new Date(2020, 6, 14),
-                        //         end: new Date(2020, 6, 26),
-                        //     },
-                        //     {
-                        //         id: 1,
-                        //         title: 'Long Event',
-                        //         start: new Date(2020, 6, 9, 9, 40),
-                        //         end: new Date(2020, 6, 15),
-                        //     }
-                        // ]}
+                        events={events}
                         views={["agenda", "month"]}
                         popup
                         defaultView="agenda"

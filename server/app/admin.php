@@ -137,4 +137,92 @@ class Admin
             return null;
         }
     }
+
+    public function addEvent($title, $start, $end, $all_day)
+    {
+        global $conn;
+
+        $title = clean($title);
+        $start = clean($start);
+        $end = clean($end);
+        $all_day = clean($all_day);
+
+        $query = "INSERT INTO events (title, start, end, all_day) VALUES (:title, :start, :end, :all_day)";
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(":title", $title, PDO::PARAM_STR);
+        $stmt->bindValue(":start", $start, PDO::PARAM_STR);
+        $stmt->bindValue(":end", $end, PDO::PARAM_STR);
+        $stmt->bindValue(":all_day", $all_day, PDO::PARAM_BOOL);
+        $stmt->execute();
+
+        $num = $stmt->rowCount();
+
+        if ($num == 0) {
+            return false . '|' . 'Invalid params';
+        } else {
+            return true . '|' . $title . '|' . $start . '|' . $end . '|' . $all_day;
+        }
+    }
+
+    public function editEvent($id, $title, $start, $end, $all_day)
+    {
+        global $conn;
+
+
+        $id = clean($id);
+        $title = clean($title);
+        $start = clean($start);
+        $end = clean($end);
+        $all_day = clean($all_day);
+
+        $query = "UPDATE events SET title=:title, start=:start, end=:end, all_day=:all_day WHERE id=" . $id;
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(":title", $title, PDO::PARAM_STR);
+        $stmt->bindValue(":start", $start, PDO::PARAM_STR);
+        $stmt->bindValue(":end", $end, PDO::PARAM_STR);
+        $stmt->bindValue(":all_day", $all_day, PDO::PARAM_BOOL);
+        $stmt->execute();
+
+        $num = $stmt->rowCount();
+
+        if ($num == 0) {
+            return false . '|' . 'Invalid params';
+        } else {
+            return true . '|' . $title . '|' . $start . '|' . $end . '|' . $all_day;
+        }
+    }
+
+    public function deleteEvent($id)
+    {
+        global $conn;
+
+        $id = clean($id);
+        $query = "DELETE FROM events WHERE id=" . $id;
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        $num = $stmt->rowCount();
+
+        if ($num == 0) {
+            return false . '|' . 'Invalid params';
+        } else {
+            return true . '|' . $id;
+        }
+    }
+
+    public function getEvents($num)
+    {
+        global $conn;
+        $query = "SELECT * FROM events" . ((is_string($num) && empty($num)) ? "" : " LIMIT 0," . $num) . " WHERE end >= NOW()";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $num = $stmt->rowCount();
+
+        if ($num == 0) {
+            return array();
+        } else {
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $row;
+        }
+    }
 }

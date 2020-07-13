@@ -30,6 +30,13 @@ class ActionsServer {
         });
     }
 
+    receiveEvents(response) {
+        AppDispatcher.handleServerAction({
+            actionType: Constants.GET_EVENTS_RESPONSE,
+            response: response
+        });
+    }
+
     receiveBooks(response) {
         AppDispatcher.handleServerAction({
             actionType: Constants.GET_BOOKS_RESPONSE,

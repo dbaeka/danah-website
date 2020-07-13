@@ -3,6 +3,7 @@ import AppDispatcher from "./dispatcher";
 import {EventEmitter} from "events";
 import VideosAPI from "../services/videos";
 import BooksAPI from "../services/books";
+import EventsAPI from "../services/events";
 import getSidebarNavItems from "../data/sidebar-nav-items";
 
 let _store = {
@@ -12,6 +13,7 @@ let _store = {
     posts: [],
     books: [],
     images: [],
+    events: [],
     total_images: 0,
     num_images_pages: 0,
     total_posts: 0,
@@ -35,6 +37,10 @@ class Store extends EventEmitter {
         this.deleteBook = this.deleteBook.bind(this);
         this.editVideo = this.editVideo.bind(this);
         this.updateImages = this.updateImages.bind(this);
+        this.editEvent = this.editEvent.bind(this);
+        this.addEvent = this.addEvent.bind(this);
+        this.updateEvents = this.updateEvents.bind(this);
+        this.deleteEvent = this.deleteEvent.bind(this);
         AppDispatcher.register(this.registerActions.bind(this));
     }
 
@@ -76,6 +82,18 @@ class Store extends EventEmitter {
             case Constants.GET_IMAGES_RESPONSE:
                 this.updateImages(action.response);
                 break;
+            case Constants.ADD_EVENT:
+                this.addEvent(action.data);
+                break;
+            case Constants.GET_EVENTS_RESPONSE:
+                this.updateEvents(action.response);
+                break;
+            case Constants.DELETE_EVENT:
+                this.deleteEvent(action.data);
+                break;
+            case Constants.EDIT_EVENT:
+                this.editEvent(action.data);
+                break;
             default:
                 return true;
         }
@@ -107,6 +125,14 @@ class Store extends EventEmitter {
         _store.books = [];
         data.map((item, idx) => {
             _store.books.push(item);
+        });
+        this.emit(Constants.CHANGE);
+    }
+
+    updateEvents(data) {
+        _store.events = [];
+        data.map((item, idx) => {
+            _store.events.push(item);
         });
         this.emit(Constants.CHANGE);
     }
@@ -210,6 +236,43 @@ class Store extends EventEmitter {
     }
 
 
+    addEvent(data) {
+        //Write to database and then use promise to push to
+        EventsAPI.addEvent(data).then((response) => {
+            if (response.data.state === 200) {
+                _store.events = response.data.results;
+                this.emit(Constants.CHANGE);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    editEvent(data) {
+        //Write to database and then use promise to push to
+        EventsAPI.editEvent(data).then((response) => {
+            if (response.data.state === 200) {
+                _store.events = response.data.results;
+                this.emit(Constants.CHANGE);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    deleteEvent(data) {
+        //Write to database and then use promise to push to
+        EventsAPI.deleteEvent(data).then((response) => {
+            if (response.data.state === 200) {
+                _store.events = response.data.results;
+                this.emit(Constants.CHANGE);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+
     getMenuState() {
         return _store.menuVisible;
     }
@@ -220,6 +283,10 @@ class Store extends EventEmitter {
 
     getVideos() {
         return _store.videos;
+    }
+
+    getEvents() {
+        return _store.events;
     }
 
     getPosts() {
