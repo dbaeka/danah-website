@@ -7,52 +7,12 @@ require_once __DIR__ . '/wp-load.php';
 //send_origin_headers();
 
 
-header( "Access-Control-Allow-Origin: http://localhost:8000" );
+header( "Access-Control-Allow-Origin: http://localhost:8000");
 header( "Content-Type: application/json; charset=UTF-8" );
 header( "Access-Control-Allow-Methods: POST" );
 header( 'Access-Control-Allow-Credentials: true' );
 header( "Access-Control-Max-Age: 3600" );
 header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With" );
-
-$rest_json = file_get_contents( "php://input" );
-$_POST     = json_decode( $rest_json, true );
-
-
-if ( isset( $_POST['action'] ) && $_POST['action'] == 'wp_login' ) {
-	if ( isset( $_POST['username'] ) ) {
-		$error = 0;
-
-		if ( $error == 0 ) {
-			$username = $_POST['username'];
-			$signon   = programmatic_login( $username );
-			if ( $signon == true ) {
-				$data['state'] = 200;
-				echo json_encode( $data );
-				exit();
-			} else {
-				$data['state'] = 400;
-				echo json_encode( $data );
-				exit();
-			}
-		} else {
-			$data['state']        = 400;
-			$data['response_msg'] = 'invalid parameters';
-			echo json_encode( $data );
-			exit();
-		}
-	} else {
-		$data['state']        = 400;
-		$data['response_msg'] = 'invalid parameters';
-		echo json_encode( $data );
-		exit();
-	}
-} else {
-	$data['state']        = 400;
-	$data['response_msg'] = 'required parameters missing';
-	echo json_encode( $data );
-	exit();
-}
-
 
 /**
  * Programmatically logs a user in
@@ -95,4 +55,45 @@ function programmatic_login( $username ) {
  */
 function allow_programmatic_login( $user, $username, $password ) {
 	return get_user_by( 'login', $username );
+}
+
+$rest_json = file_get_contents( "php://input" );
+$_POST     = json_decode( $rest_json, true );
+
+
+if ( isset( $_POST['action'] ) && $_POST['action'] == 'wp_login' ) {
+    if ( isset( $_POST['username'] ) ) {
+        $error = 0;
+
+        if ( $error == 0 ) {
+            $username = $_POST['username'];
+            $signon   = programmatic_login( $username );
+            if ( $signon == true ) {
+                $data['state'] = 200;
+                $data['response_msg'] = 'success';
+                echo json_encode( $data );
+                exit();
+            } else {
+                $data['state'] = 400;
+                $data['response_msg'] = 'failed';
+                echo json_encode( $data );
+                exit();
+            }
+        } else {
+            $data['state']        = 400;
+            $data['response_msg'] = 'invalid parameters';
+            echo json_encode( $data );
+            exit();
+        }
+    } else {
+        $data['state']        = 400;
+        $data['response_msg'] = 'invalid parameters';
+        echo json_encode( $data );
+        exit();
+    }
+} else {
+    $data['state']        = 400;
+    $data['response_msg'] = 'required parameters missing';
+    echo json_encode( $data );
+    exit();
 }

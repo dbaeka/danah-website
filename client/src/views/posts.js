@@ -73,7 +73,7 @@ class BlogPosts extends React.Component {
         axios({
             method: "POST",
             url: wpURL + "/wp_post_login.php",
-            data: {username: "admin", action: "wp_login"},
+            data: {username: "d.zohar", action: "wp_login"},
             withCredentials: true
         }).then((response) => {
             if (response.data.state === 200) {
@@ -132,7 +132,7 @@ class BlogPosts extends React.Component {
                                                     axios({
                                                         method: "POST",
                                                         url: wpURL + "/wp_post_login.php",
-                                                        data: {username: "admin", action: "wp_login"},
+                                                        data: {username: "d.zohar", action: "wp_login"},
                                                         withCredentials: true
                                                     }).then((response) => {
                                                         if (response.data.state === 200) {
