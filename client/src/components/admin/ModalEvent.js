@@ -179,7 +179,7 @@ export default class ModalEvent extends React.Component {
                     toggle={() => this.props.onExit("addModal", false)}
                 >
                     <ModalHeader className="border-0 m-auto">
-                        {(edit) ? "Edit Video" : "Add Video"}
+                        {(edit) ? "Edit Event" : "Add Evennt"}
                     </ModalHeader>
                     <ModalBody className="border-top">
                         <Form role="form">

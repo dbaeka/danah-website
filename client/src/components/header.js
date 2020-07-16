@@ -100,6 +100,7 @@ const Header = ({siteTitle}) => {
                     <DropdownItem tag="a" href="/learnqs">Learn the Q's</DropdownItem>
                     <DropdownItem tag="a" href="/twelveprinciples">12 Principles of SQ</DropdownItem>
                     <DropdownItem tag="a" href="/experienceqs">Experience Q's</DropdownItem>
+                    <DropdownItem tag="a" href="/qmanagement">Quantum Management</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
             <span className={"nav-link-span drop"}>
@@ -126,6 +127,9 @@ const Header = ({siteTitle}) => {
                         </li>
                          <li className="mb-2">
                             <a href="/experienceqs">Experience Q's</a>
+                        </li>
+                         <li className="mb-2">
+                            <a href="/qmanagement">Quantum Management</a>
                         </li>
                     </ul>
                 </div>

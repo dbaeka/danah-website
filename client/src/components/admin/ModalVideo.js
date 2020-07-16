@@ -146,11 +146,8 @@ export default class ModalVideo extends React.Component {
             thumb_url.value = data.thumb_url;
             for (let inputIdentifier in updatedControls) {
                 const temp = updatedControls[inputIdentifier];
-                console.log(temp)
                 updatedControls[inputIdentifier].valid = validate(temp.value, temp.validationRules);
-                console.log( updatedControls[inputIdentifier].valid)
             }
-            console.log(updatedControls)
             let formIsValid = video_url.valid && title.valid && thumb_url.valid;
             this.setState({id: data.id, edit: edit, formIsValid: formIsValid, formControls: updatedControls});
         } else

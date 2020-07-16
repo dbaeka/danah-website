@@ -55,7 +55,6 @@ class Contact extends React.Component {
             url: "https://formspree.io/xnqgvwjw",
             data: this.state
         }).then((response) => {
-            console.log(response);
             if (response.data.status === 'success') {
                 alert("Message Sent.");
                 this.resetForm()

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Container, Row, Nav, NavItem, NavLink} from "shards-react";
+import {navigate} from "gatsby";
 
 const MainFooter = ({contained, menuItems, copyright}) => (
     <footer className="main-footer d-flex p-2 px-3 bg-white border-top">
@@ -9,7 +10,7 @@ const MainFooter = ({contained, menuItems, copyright}) => (
                 <Nav>
                     {menuItems.map((item, idx) => (
                         <NavItem key={idx}>
-                            <NavLink tag={"a"} href={item.to}>
+                            <NavLink tag={"a"} onClick={() => navigate("/")}>
                                 {item.title}
                             </NavLink>
                         </NavItem>
@@ -42,7 +43,7 @@ MainFooter.defaultProps = {
     menuItems: [
         {
             title: "Home",
-            to: "#"
+            to: "/"
         },
 
     ]
