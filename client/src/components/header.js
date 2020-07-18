@@ -1,4 +1,4 @@
-import {Link} from "gatsby"
+import {Link, navigate} from "gatsby"
 import PropTypes from "prop-types"
 import Navbar from '@dbaeka/react-navbar'
 import React, {useState} from "react"
@@ -87,7 +87,9 @@ const Header = ({siteTitle}) => {
                     {/*</li>*/}
                 </ul>
             </span>
-            <span className="nav-link-span"><a className="nav-a-link text-link" href="/">Home</a></span>
+            <span className="nav-link-span">
+                <span className="nav-a-link span-link text-link" onClick={() => navigate("/")}
+                >Home</span></span>
             {/*<span className="nav-link-span"><a className="nav-a-link text-link" href="/about">About</a></span>*/}
             <Dropdown className="" nav isOpen={isShow4}
                       onMouseEnter={() => setShow4(true)}
@@ -95,12 +97,13 @@ const Header = ({siteTitle}) => {
                       toggle={() => {
                       }}
             >
-                <DropdownToggle nav caret tag="a" href="/about">About</DropdownToggle>
+                <DropdownToggle nav caret tag="a" onClick={() => navigate("/about")}>About</DropdownToggle>
                 <DropdownMenu>
-                    <DropdownItem tag="a" href="/learnqs">Learn the Q's</DropdownItem>
-                    <DropdownItem tag="a" href="/twelveprinciples">12 Principles of SQ</DropdownItem>
-                    <DropdownItem tag="a" href="/experienceqs">Experience Q's</DropdownItem>
-                    <DropdownItem tag="a" href="/qmanagement">Quantum Management</DropdownItem>
+                    <DropdownItem tag="a" onClick={() => navigate("/learnqs")}>Learn the Q's</DropdownItem>
+                    <DropdownItem tag="a" onClick={() => navigate("/twelveprinciples")}>12 Principles of
+                        SQ</DropdownItem>
+                    <DropdownItem tag="a" onClick={() => navigate("/experienceqs")}>Experience Q's</DropdownItem>
+                    <DropdownItem tag="a" onClick={() => navigate("/qmanagement")}>Quantum Management</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
             <span className={"nav-link-span drop"}>
@@ -116,20 +119,20 @@ const Header = ({siteTitle}) => {
                 <div className={"collapsed-detail about"}>
                     <ul className="mt-2 mb-2">
                          <li className="mb-2">
-                            <a href="/about">Go to About
-                            </a>
+                            <span onClick={() => navigate("/about")}>Go to About
+                            </span>
                          </li>
                         <li className="mb-2">
-                            <a href="/learnqs">Learn the Q's
-                            </a></li>
+                            <span onClick={() => navigate("/learnqs")}>Learn the Q's
+                            </span></li>
                         <li className="mb-2">
-                            <a href="/twelveprinciples">12 Principles of SQ</a>
+                            <span onClick={() => navigate("/twelveprinciples")}>12 Principles of SQ</span>
                         </li>
                          <li className="mb-2">
-                            <a href="/experienceqs">Experience Q's</a>
+                            <span onClick={() => navigate("/experienceqs")}>Experience Q's</span>
                         </li>
                          <li className="mb-2">
-                            <a href="/qmanagement">Quantum Management</a>
+                            <span onClick={() => navigate("/qmanagement")}>Quantum Management</span>
                         </li>
                     </ul>
                 </div>
@@ -142,10 +145,12 @@ const Header = ({siteTitle}) => {
             >
                 <DropdownToggle nav caret>Activities</DropdownToggle>
                 <DropdownMenu>
-                    <DropdownItem tag="a" href="/speaking">Speaking Engagement</DropdownItem>
-                    <DropdownItem tag="a" href="/training">Training Programs</DropdownItem>
-                    <DropdownItem tag="a" href="/videos">Videos</DropdownItem>
-                    <DropdownItem tag="a" href="/blogs">Blogs</DropdownItem>
+                    <DropdownItem tag="a" onClick={() => navigate("/speaking")}>Speaking
+                        Engagement</DropdownItem>
+                    <DropdownItem tag="a" onClick={() => navigate("/training")}>Training
+                        Programs</DropdownItem>
+                    <DropdownItem tag="a" onClick={() => navigate("/videos")}>Videos</DropdownItem>
+                    <DropdownItem tag="a" onClick={() => navigate("/blogs")}>Blogs</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
             <span className={"nav-link-span drop"}>
@@ -161,16 +166,17 @@ const Header = ({siteTitle}) => {
                 <div className={"collapsed-detail activities"}>
                     <ul className="mt-2 mb-2">
                         <li className="mb-2">
-                            <a href="/speaking" title="Speaking Engagement">
-                            Speaking Engagement</a></li>
+                            <span onClick={() => navigate("/speaking")} title="Speaking Engagement">
+                            Speaking Engagement</span></li>
                         <li className="mb-2">
-                            <a href="/training" title="Training Programs">Training Programs</a>
+                            <span onClick={() => navigate("/training")}
+                                  title="Training Programs">Training Programs</span>
                         </li>
                          <li className="mb-2">
-                            <a href="/videos" title="Videos">Videos</a>
+                            <span onClick={() => navigate("/videos")} title="Videos">Videos</span>
                         </li>
                         <li className="mb-2">
-                            <a href="/blogs" title="Blogs">Blogs</a>
+                            <span onClick={() => navigate("/blogs")} title="Blogs">Blogs</span>
                         </li>
                     </ul>
                 </div>
@@ -202,20 +208,29 @@ const Header = ({siteTitle}) => {
                 <div className={"collapsed-detail projects"}>
                     <ul className="mt-2 mb-2">
                         <li className="mb-2">
-                            <a href="/energy" title="New Energy Frontier">
+                            <a href="#" title="New Energy Frontier">
                              The Quantum Society of Science, Art, Culture, and
                         Business </a></li>
-                        <li className="mb-2"><a href="/jobs">The Global Quantum Leader Network</a></li>
-                        <li className="mb-2"><a href="/jobs">The Quantum Management Research Institute</a></li>
+                        <li className="mb-2"><a href="#">The Global Quantum Leader Network</a></li>
+                        <li className="mb-2"><a href="#">The Quantum Management Research Institute</a></li>
                     </ul>
                 </div>
             </span>
-            <span className="nav-link-span"><a className="nav-a-link text-link" href="/books">Books</a></span>
-            <span className="nav-link-span"><a className="nav-a-link text-link" href="/gallery">Gallery</a></span>
-            <span className="nav-link-span"> <a className="nav-a-link text-link" href="/news">News</a></span>
-            <span className="nav-link-span"> <a className="nav-a-link text-link"
-                                                href="/test">Test and Surveys</a></span>
-            <span className="nav-link-span"> <a className="nav-a-link text-link" href="/contact">Contact</a></span>
+            <span className="nav-link-span"><span className="nav-a-link span-link text-link"
+                                                  onClick={() => navigate("/books")}
+            >Books</span></span>
+            <span className="nav-link-span"><span className="nav-a-link span-link text-link"
+                                                  onClick={() => navigate("/gallery")}
+            >Gallery</span></span>
+            <span className="nav-link-span"> <span className="nav-a-link span-link text-link"
+                                                   onClick={() => navigate("/news")}
+            >News</span></span>
+            <span className="nav-link-span"> <span className="nav-a-link span-link text-link"
+                                                   onClick={() => navigate("/test")}
+            >Test and Surveys</span></span>
+            <span className="nav-link-span"> <span className="nav-a-link span-link text-link"
+                                                   onClick={() => navigate("/contact")}
+            >Contact</span></span>
         </>
     );
 

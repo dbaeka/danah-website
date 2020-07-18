@@ -4,7 +4,8 @@ import {Row, Container, Col} from "reactstrap";
 import Store from "../../flux/store";
 import {Actions} from "../../flux";
 import {clean} from "../../utils/clean"
-import {Link} from 'gatsby';
+import {Link, navigate} from 'gatsby';
+
 
 // core components
 
@@ -80,7 +81,7 @@ class AboutSection extends React.Component {
                                             understanding of human consciousness, psychology and social organization,
                                             particularly the organization of companies.</p>
                                     </div>
-                                    <a href="/about" className="link-purple">Learn more</a>
+                                    <span onClick={() => navigate("/about")} className="link-purple">Learn more</span>
                                 </section>
                             </Col>
                             <Col className="featured" xs="12" md="6">
@@ -95,7 +96,7 @@ class AboutSection extends React.Component {
                                                         <Col xs="4" className="post-thumbnail pt-4"
                                                              style={{backgroundColor: "#fff"}}>
                                                             <Link
-                                                                to={"/post?post="+post.id}
+                                                                to={"/post?post=" + post.id}
                                                                 className="post-thumbnail__link">
                                                                 <img className="post-thumbnail__img_wp-post-image"
                                                                      src={require("../../images/blog_placeholder.png")}
@@ -107,7 +108,7 @@ class AboutSection extends React.Component {
                                                             <h4 className="entry-title">
                                                                 <Link
                                                                     onClick={() => Actions.setPost(post)}
-                                                                    to={"/post?post="+post.id}>
+                                                                    to={"/post?post=" + post.id}>
                                                                     {post.title.rendered}
                                                                 </Link>
                                                             </h4>
@@ -125,7 +126,7 @@ class AboutSection extends React.Component {
                                                             </div>
                                                             <div className="jet-more-wrap">
                                                                 <Link
-                                                                    to={"/post?post="+post.id}
+                                                                    to={"/post?post=" + post.id}
                                                                     onClick={() => Actions.setPost(post)}
                                                                     className="btn btn-primary elementor-button elementor-size-md jet-more">
                                                                     <span className="btn__text">Read More</span>
@@ -141,14 +142,14 @@ class AboutSection extends React.Component {
                                                             <h4 className="entry-title pt-0">
                                                                 <Link
                                                                     style={{fontSize: "16px"}}
-                                                                    to={"/post?post="+post.id}>
+                                                                    to={"/post?post=" + post.id}>
                                                                     {post.title.rendered}
                                                                 </Link>
                                                             </h4>
                                                             <div className="entry-excerpt pb-0">
                                                                 {this.trimText(clean(post.content.rendered), 120)}
                                                                 <Link
-                                                                    to={"/post?post="+post.id}
+                                                                    to={"/post?post=" + post.id}
                                                                     className="text-link">
                                                                     Read More
                                                                 </Link>

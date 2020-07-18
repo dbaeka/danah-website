@@ -6,7 +6,7 @@ import {Button, Row, Container, Col, Card, CardBody, CardFooter, CardHeader, Nav
 // import {faBookmark} from '@fortawesome/free-solid-svg-icons'
 import {faBookmark} from '@fortawesome/free-regular-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {graphql, useStaticQuery} from "gatsby";
+import {graphql, useStaticQuery, navigate} from "gatsby";
 // core components
 
 const LatestSection = () => {
@@ -79,7 +79,7 @@ const LatestSection = () => {
                             </Col>
                         ))}
                         <Col className="text-center" xs="12">
-                            <a href="/news" className="link-purple">View more</a>
+                            <span onClick={() => navigate("/news")} className="link-purple">View more</span>
                         </Col>
                     </Row>
 

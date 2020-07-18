@@ -5,7 +5,7 @@ import addedStyle from "../../styles/css/style-react.module.css"
 import {Button, Row, Container, Col, Card, CardBody, CardFooter, CardHeader, NavItem, NavLink} from "reactstrap";
 import {faLongArrowAltRight} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {graphql, useStaticQuery} from "gatsby";
+import {graphql, useStaticQuery, Link, navigate} from "gatsby";
 // core components
 
 const BookSection = () => {
@@ -43,22 +43,22 @@ const BookSection = () => {
                         {books.edges.map(({node}, idx) => (
                             <Col xs="12" md="6" lg="4" key={idx} className="mb-5">
                                 <div className="book-block text-center">
-                                    <a
-                                        href={node.slug}
+                                    <Link
+                                        to={node.slug}
                                         className="book-short w-inline-block">
                                         <img
                                             src={node.image && node.image.childImageSharp.fluid.base64}
                                             alt="" className="book-image"/>
-                                    </a>
+                                    </Link>
                                     <div className="mt-4 text-block">{node.name}</div>
                                     <Button outline
-                                            onClick={() => (window.location = node.slug)}
+                                            onClick={() => navigate(node.slug)}
                                             className="mt-1">Learn More</Button>
                                 </div>
                             </Col>
                         ))}
                         <Col className="text-center" xs="12">
-                            <a href="/books" className="link-purple">View more</a>
+                            <span onClick={() => navigate("/books")} className="link-purple">View more</span>
                         </Col>
                     </Row>
 

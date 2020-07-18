@@ -8,6 +8,7 @@ import {
     Container,
     Col,
 } from "reactstrap";
+import {navigate} from "gatsby";
 
 // core components
 
@@ -179,7 +180,7 @@ const VideoSection = () => {
                         </div>
 
                         <Col className="text-center" xs="12">
-                            <a href="/videos" className="link-purple">View more</a>
+                            <span onClick={() => navigate("/videos")} className="link-purple">View more</span>
                         </Col>
                     </Row>
                 </div>

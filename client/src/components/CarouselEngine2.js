@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {navigate} from "gatsby";
 import {
     Carousel,
     CarouselItem,
@@ -35,7 +36,7 @@ const pic = <div id="image"
                     </h4>
                     <h6 className="font-weight-600 text-white mb-3">WANT TO KNOW MORE ABOUT DANAH?</h6>
                     <Button className="font-weight-500" color="primary"
-                            onClick={() => window.location = "/about"}
+                            onClick={() => navigate("/about")}
                     >View More</Button>
                 </Col>
             </Row>
@@ -69,7 +70,8 @@ const youtube = <div id="youtube"
                         us to break old paradigms and to invent new ones, to reframe problems and situations, to
                         dissolve old patterns and to be open to finding new ones.
                     </p>
-                    <Button className="font-weight-500" color="primary" onClick={() => window.location = "/test"}>Click to Test Your SQ & Quantum Leadership Quotient
+                    <Button className="font-weight-500" color="primary" onClick={() => navigate("/test")}>Click to Test
+                        Your SQ & Quantum Leadership Quotient
                     </Button>
                 </Col>
             </Row>
@@ -108,7 +110,7 @@ const video = videos.map((item, idx) => (
                     <Col xs="12" md="3" className="pt-5 pt-md-0 mt-auto mb-auto text-center">
                         <h4 className="font-weight-600 text-white mb-3">{item.header}</h4>
                         <Button className="font-weight-500" color="primary"
-                                onClick={() => window.location = "/videos"}
+                                onClick={() => navigate("/videos")}
                         >See More Videos</Button>
                     </Col>
                 </Row>

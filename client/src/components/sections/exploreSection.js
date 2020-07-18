@@ -1,6 +1,6 @@
 import React from "react";
 import addedStyle from "../../styles/css/style-react.module.css"
-import {Link} from "gatsby"
+import {navigate} from "gatsby"
 import {Redirect} from 'react-router-dom'
 // reactstrap components
 import {Button, Row, Container, Col, Card, CardBody, CardFooter, CardHeader, NavItem, NavLink} from "reactstrap";
@@ -23,7 +23,7 @@ const ExploreSection = () => {
                     <Row className="explore-entry">
                         <Col xs="12" md="6" lg="4" className="">
                             <Card className="exploreCard"
-                                  onClick={() => (window.location = "/whatissq")}>
+                                  onClick={() => navigate("/whatissq")}>
                                 <CardHeader>
                                     <div
                                         className="header-img-container"
@@ -54,7 +54,7 @@ const ExploreSection = () => {
                                 </CardBody>
                                 <CardFooter>
                                     <div className="slide-layer-wrap button-wrap"
-                                         onClick={() => (window.location = "/whatissq")}
+                                         onClick={() => navigate("/whatissq")}
                                     >
                                         <div className="slide-layer">
                                             <div className="slide-button right-icon">
@@ -73,7 +73,7 @@ const ExploreSection = () => {
                         </Col>
                         <Col xs="12" md="6" lg="4">
                             <Card className="exploreCard"
-                                  onClick={() => (window.location = "/scapital")}>
+                                  onClick={() => navigate("/scapital")}>
                                 <CardHeader>
                                     <div
                                         className="header-img-container"
@@ -105,7 +105,7 @@ const ExploreSection = () => {
                                 </CardBody>
                                 <CardFooter>
                                     <div className="slide-layer-wrap button-wrap"
-                                         onClick={() => (window.location = "/scapital")}>
+                                         onClick={() => navigate("/scapital")}>
                                         <div className="slide-layer">
                                             <div className="slide-button right-icon">
                                                 <div className="button-content-wrapper">
@@ -123,7 +123,7 @@ const ExploreSection = () => {
                         </Col>
                         <Col xs="12" md="6" lg="4">
                             <Card className="exploreCard"
-                                  onClick={() => (window.location = "/experienceqs")}
+                                  onClick={() => navigate("/experienceqs")}
                             >
                                 <CardHeader>
                                     <div
@@ -156,7 +156,7 @@ const ExploreSection = () => {
                                 </CardBody>
                                 <CardFooter>
                                     <div className="slide-layer-wrap button-wrap"
-                                         onClick={() => (window.location = "/experienceqs")}
+                                         onClick={() => navigate("/experienceqs")}
                                     >
                                         <div className="slide-layer">
                                             <div className="slide-button right-icon">

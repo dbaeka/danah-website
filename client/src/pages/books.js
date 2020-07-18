@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby"
+import {navigate} from "gatsby"
 
 import SEO from "../components/seo"
 import DefaultLayout from "../layout/default";
@@ -51,22 +51,24 @@ const Books = () => {
                             {books.edges.map(({node}, idx) => (
                                 <Row className="ml-auto mr-auto mb-5" key={idx}>
                                     <Col md="2">
-                                        <a
-                                            href={node.slug}
-                                            className="book-short w-inline-block">
+                                        <span
+                                            onClick={() => navigate(node.slug)}
+                                            className="book-short pointer w-inline-block">
                                             <img
                                                 src={node.image && node.image.childImageSharp.fluid.base64}
                                                 alt="" className="book-small-image"/>
-                                        </a>
+                                        </span>
                                     </Col>
                                     <Col md="10" className="text-left book-small-text">
-                                        <div className="mt-4 text-title"><a href={node.slug}>{node.name}</a>
+                                        <div className="mt-4 span-link text-title"><span
+                                            onClick={() => navigate(node.slug)}>{node.name}</span>
                                         </div>
                                         <div className="mt-1 text-author">{node.author}</div>
                                         <div className="mt-2 mb-2">
                                             {node.info}
                                         </div>
-                                        <a href={node.slug} className="text-link">Learn more</a>
+                                        <span onClick={() => navigate(node.slug)}
+                                              className="text-link">Learn more</span>
                                     </Col>
                                 </Row>
                             ))}

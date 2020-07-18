@@ -1330,6 +1330,7 @@ $fontOnThemeColor: #fff;
 
 .link-purple {
   color: #000;
+  cursor: pointer;
   font-weight: 500;
   text-decoration: underline;
 
@@ -2431,6 +2432,7 @@ $opacity-8: rgba(255, 255, 255, 0.8) !default;
 
 .text-link {
   color: #b70067;
+  cursor: pointer;
 }
 
 .full_image {
@@ -3380,4 +3382,26 @@ $main-sidebar-dropdown-item-font-weight-retina: 300 !default;
 .rbc-calendar {
   //flex: 1;
   height: 400px;
+}
+
+.span-link {
+  color: #000;
+  cursor: pointer;
+
+  &:hover {
+    color: #b70067;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.footer-link {
+  color: #747479;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff
+  }
 }

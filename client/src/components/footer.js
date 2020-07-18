@@ -2,31 +2,15 @@ import {Link} from "gatsby"
 import PropTypes from "prop-types"
 import React, {useState} from "react"
 import {
-    Form,
-    Button,
-    InputGroup,
-    InputGroupAddon,
-    Label,
+
     Container,
-    Nav,
-    UncontrolledDropdown,
-    DropdownItem,
-    DropdownMenu,
-    DropdownToggle,
-    Navbar,
-    NavbarToggler,
-    NavItem,
-    NavLink,
-    NavbarText,
-    Collapse,
     Row,
     Col,
-    FormGroup,
-    Input
+
 } from "reactstrap"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faLinkedin, faFacebookF, faTwitter} from '@fortawesome/free-brands-svg-icons'
-import {faCircle, faEnvelope, faPhone, faMapMarker} from '@fortawesome/free-solid-svg-icons'
+import {navigate} from "gatsby";
 
 const Footer = ({siteTitle}) => {
     return (
@@ -65,12 +49,14 @@ const Footer = ({siteTitle}) => {
                             <div className="footer_info_social footer-text-color my-2">
                                 <ul>
                                     <li className="footer-text-color">
-                                        <a className="footer-text-color" target="_blank" href="https://www.facebook.com/danah.zohar.1">
+                                        <a className="footer-text-color" target="_blank"
+                                           href="https://www.facebook.com/danah.zohar.1">
                                             <FontAwesomeIcon icon={faFacebookF}/>
                                         </a>
                                     </li>
                                     <li className="footer-text-color">
-                                        <a className="footer-text-color" target="_blank" href="https://twitter.com/DanahZohar/">
+                                        <a className="footer-text-color" target="_blank"
+                                           href="https://twitter.com/DanahZohar/">
                                             <FontAwesomeIcon icon={faTwitter}/>
                                         </a>
                                     </li>
@@ -95,25 +81,31 @@ const Footer = ({siteTitle}) => {
                             <div className="mb-4 links">
                                 <Row>
                                     <Col xs="12" md="6">
-                                        <a href="/news">News</a>
+                                        <span className="footer-link" onClick={() => navigate("/news")}>News</span>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="/books">Books</a>
+                                        <span className="footer-link" onClick={() => navigate("/books")}
+                                        >Books</span>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="/videos">Videos</a>
+                                        <span className="footer-link" onClick={() => navigate("/videos")}
+                                        >Videos</span>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="/test">Test and Surveys</a>
+                                        <span className="footer-link"
+                                              onClick={() => navigate("/test")}>Test and Surveys</span>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="/blogs">Blogs</a>
+                                        <span className="footer-link" onClick={() => navigate("/blogs")}
+                                        >Blogs</span>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="/gallery">Gallery</a>
+                                        <span className="footer-link" onClick={() => navigate("/gallery")}
+                                        >Gallery</span>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <a href="/speaking">Speaking</a>
+                                        <span className="footer-link" onClick={() => navigate("/speaking")}
+                                        >Speaking</span>
                                     </Col>
                                 </Row>
                             </div>
@@ -125,10 +117,12 @@ const Footer = ({siteTitle}) => {
                             <div className="mb-4 links">
                                 <Row>
                                     <Col xs="12">
-                                        <a href="/about">About</a>
+                                        <span className="footer-link" onClick={() => navigate("/about")}
+                                        >About</span>
                                     </Col>
                                     <Col xs="12">
-                                        <a href="/contact">Contact</a>
+                                        <span className="footer-link" onClick={() => navigate("/contact")}
+                                        >Contact</span>
                                     </Col>
                                     {/*<Col xs="12">*/}
                                     {/*    <a href="/projects">Projects</a>*/}
