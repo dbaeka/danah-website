@@ -82,6 +82,9 @@ class Test extends React.Component {
                                 <br/><br/>
                                 Simply follow the link below to purchase and complete your own individual SQ assessment
                                 in 10-15 minutes. <br/><br/>
+                                <div className="text-center">
+                                    <h5><b>Cost: GBP (£) 35.00</b></h5>
+                                </div>
                                 <div id="paypal-button-container1"></div>
                                 {/*<table align="center" border="0" cellPadding="0" cellSpacing="0">*/}
                                 {/*    <tbody>*/}
@@ -114,6 +117,7 @@ class Test extends React.Component {
                                 {/*    </tr>*/}
                                 {/*    </tbody>*/}
                                 {/*</table>*/}
+
                             </h5>
                             <h3 className="title">Scale of Motivations?</h3>
                             <h5 className="description">
@@ -146,7 +150,12 @@ class Test extends React.Component {
                                 (i.e. fear, greed, ego) and how to transform them to higher motivations that are more
                                 sustainable (i.e. creativity, serving the community, etc.).<br/><br/>
                                 Simply follow the link below to purchase and complete your own individual SQ assessment
-                                in 10-15 minutes. <br/><br/>
+                                in 10-15 minutes.
+
+                                <br/><br/>
+                                <div className="text-center">
+                                    <h5><b>Cost: GBP (£) 35.00</b></h5>
+                                </div>
                                 <div id="paypal-button-container2"></div>
                                 {/*<table align="center" border="0" cellPadding="0" cellSpacing="0">*/}
                                 {/*    <tbody>*/}
