@@ -11,8 +11,9 @@ import NormalHeader from "../components/normalheader";
 class Test extends React.Component {
     componentDidMount() {
         const script = document.createElement("script");
-        script.src = "https://www.paypal.com/sdk/js?client-id=sb&currency=GBP";
+        script.src = "https://www.paypal.com/sdk/js?client-id=AReQTKD8IwAas4v6oBPgEQAsksSnwDyHlcCYhdJGvYPcXoP6ffrNmU-I0VSvtyRD0qpp6NseOh8Xj1eq&currency=USD";
         script.async = true;
+        script.setAttribute("data-sdk-integration-source", "button-factory");
         script.onload = () => this.scriptLoaded();
         document.body.appendChild(script);
     }
@@ -83,7 +84,7 @@ class Test extends React.Component {
                                 Simply follow the link below to purchase and complete your own individual SQ assessment
                                 in 10-15 minutes. <br/><br/>
                                 <div className="text-center">
-                                    <h5><b>Cost: GBP (£) 35.00</b></h5>
+                                    <h5><b>Cost: USD ($) 100.00</b></h5>
                                 </div>
                                 <div id="paypal-button-container1"></div>
                                 {/*<table align="center" border="0" cellPadding="0" cellSpacing="0">*/}
@@ -154,7 +155,7 @@ class Test extends React.Component {
 
                                 <br/><br/>
                                 <div className="text-center">
-                                    <h5><b>Cost: GBP (£) 35.00</b></h5>
+                                    <h5><b>Cost: USD ($) 100.00</b></h5>
                                 </div>
                                 <div id="paypal-button-container2"></div>
                                 {/*<table align="center" border="0" cellPadding="0" cellSpacing="0">*/}
