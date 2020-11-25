@@ -1,0 +1,120 @@
+Self Awareness;I say or do things that I later regret.
+Self Awareness;I don't know why I do the things I do.    
+Self Awareness;I like to know what is expected of me when I relate to others.   
+Self Awareness;People tell me I am insensitive.                                                                                    
+Self Awareness;I experience an inner “me” beyond my emotions and actions.                                                
+Self Awareness;I am able to relate to others as my true self.   
+Self Awareness;I frequently reflect on things I’ve said or done.
+Self Awareness;I stop myself before I just blurt out something inappropriate.
+Self Awareness;I have a rich inner life.
+Self Awareness;I know when I am angry or upset and avoid damaging actions or decisions at these times.
+Spontaneity;Suspicion of other people’s motives makes me defensive.
+Spontaneity;I like to have a clear plan before starting to act.  
+Spontaneity;I prefer a lot of order and regularity in my life.
+Spontaneity;I feel it easiest to deal with people when I can put them into types or categories.
+Spontaneity;I tend to be judgemental.
+Spontaneity;I say what is on my mind.   
+Spontaneity;I like my life to be full of surprises.
+Spontaneity;I think quickly and am good at taking questions on the spot.
+Spontaneity;I try to live each day at a time, dealing with events as they happen.
+Spontaneity;I can see things and people without preconception.
+Vision and value led;I find it difficult to act according to my values.                                                                      
+Vision and value led;If you want to succeed, you sometimes have to compromise on your principles.
+Vision and value led;When I want to achieve something, I don’t let anything stand in my way.
+Vision and value led;My short-term objectives act against my long-term interests.
+Vision and value led;I try to live up to my values even if it means personal sacrifice.                                                      
+Vision and value led;I am most strongly motivated when I can help others or serve some higher cause.   
+Vision and value led;I need to believe in what I am doing.
+Vision and value led;Feeling that my work has some meaning is more important to me than a high salary.
+Vision and value led;I feel there is too much inequality in society.
+Vision and value led;I want to contribute what I can to making the world a better place.
+Holism;I can get caught up in the details of a situation or problem, sometimes losing the big picture.
+Holism;It is important to isolate problems so you can focus on them.
+Holism;If you want to understand a complex situation, it is best to understand it one piece at a time.
+Holism;The rights of the individual should never be sacrificed for those of the group.
+Holism;My experience is permeated by the presence of something infinite or sacred.
+Holism;Before  acting or make a decision, I think of the consequences.
+Holism;I sometimes feel at one with everything around me.
+Holism;My life is influenced by a vast network of relationships and events.
+Holism;I feel some responsibility for the state of the world.
+Holism;I owe it to myself and others to contribute as best I can
+Compassion;People create their own “bad luck”. 
+Compassion;I support the death penalty for people who commit capital crimes.  
+Compassion;The main purpose of prison should be punishment. 
+Compassion;Other people’s problems are not my concern.                                         
+Compassion;People can make mistakes. Everyone deserves a second chance.
+Compassion;I feel concern about all the suffering in the world and feel motivated to do something about it.
+Compassion;I find it possible to forgive those who have hurt me.
+Compassion;I don’t think it is right to sit in judgement of people.
+Compassion;I don’t bear grudges.
+Compassion;I think society should protect the vulnerable.
+Celebration of diversity;Tried and trusted methods are the best way to solve a problem.                                                          
+Celebration of diversity;I am most comfortable with people who think like I do.
+Celebration of diversity;I have trouble adjusting to unfamiliar things.
+Celebration of diversity;When I travel, I like to be surrounded by familiar things.
+Celebration of diversity;I prefer discussions that contain many points of view.   
+Celebration of diversity;I need the stimulation of new activities and new ideas.                                                              
+Celebration of diversity;In disagreements with other people, I learn from their perspectives.  
+Celebration of diversity;When I travel abroad, I immerse myself in local customs.
+Celebration of diversity;My tastes in music and food are quite varied.
+Celebration of diversity;I would prefer to live in a multi-cultural society
+Field Independence;Being a member of the group is important to me. 
+Field Independence;Keeping in line with popular trends is important to me.  
+Field Independence;I need people to like me.
+Field Independence;I’m afraid that people will form a bad impression of me.
+Field Independence;I maintain my convictions even if it makes me unpopular.
+Field Independence;I’m not easily swayed by the opinions of others.
+Field Independence;I tend to ask questions that others think are controversial or subversive. 
+Field Independence;I’m unconventional in my habits and tastes.
+Field Independence;I enjoy spending time alone.
+Field Independence;I listen to others, but I like to think things through for myself.
+Ask fundamental questions;I am reluctant to appear uncertain in front of other people.                                                            
+Ask fundamental questions;I rely on those in authority to guide my behaviour.   
+Ask fundamental questions;I don’t question experts and the advice they can offer.
+Ask fundamental questions;Asking too many questions makes me uncomfortable.
+Ask fundamental questions;I sometimes dwell on life’s “Big Questions”.
+Ask fundamental questions;I like to get to the heart or bottom of things.
+Ask fundamental questions;I am curious about the thinking and behaviour of others.
+Ask fundamental questions;I reflect on whether I am making the most of my life.
+Ask fundamental questions;I have an inquisitive nature.
+Ask fundamental questions;It is important for me to understand the meaning and reasons behind rules and customs if I am to follow them.
+Ability to reframe;I find it difficult to step outside of myself and view how others may perceive me.   
+Ability to reframe;I don’t like to experiment with or change traditional customs and practices.
+Ability to reframe;I am most comfortable with familiar things, ideas, & people  
+Ability to reframe;I am uncomfortable when something makes me doubt myself or my ideas.
+Ability to Reframe;I easily adapt to new ways of doing things.
+Ability to reframe;When people disagree with my point of view, I try to get inside their thinking.
+Ability to reframe;I find it easy to change my mind about something after reflecting on it.
+Ability to reframe;When faced with a problem or decision,  I naturally ask, “What is the bigger picture here?”
+Ability to reframe;I like to do things that I have not done before.                                                                   
+Ability to reframe;It is useful to consider problems from a variety of viewpoints.  
+Positive use of adversity;Past failures have damaged my confidence. 
+Positive use of adversity;I am a victim of bad luck.   
+Positive use of adversity;I am afraid of making mistakes.   
+Positive Use of Adversity;Given my circumstances, I have little chance of making something of myself. 
+Positive use of adversity;When a problem presents itself, I think about what can be done about it rather than feeling overwhelmed. 
+Positive use of adversity;I am not easily discouraged. 
+Positive use of adversity;I’ve learned a lot from past mistakes.
+Positive Use of Adversity;The problems I’ve had to overcome have partly made me who I am.
+Positive Use of Adversity;I am sometimes able to laugh at my own misfortunes.
+Positive use of adversity;What does not kill me makes me strong.                                                       
+Humility;I think most people are quite stupid.
+Humility;I take credit for my own achievments and success.
+Humility;I like to be the centre of attention.   
+Humility;I don’t like to be criticized.                                                                                  
+Humility;I welcome suggestions from other people.
+Humility;I have a lot to learn from others.
+Humility;I don’t like promoting myself.
+Humility;When people disagree with me, I reflect on what they have said.
+Humility;I am happy to admit when I am wrong, and apologize if  called for.
+Humility;I am one of many, and my own interests can’t always come first.
+Sense of vocation;I feel it is enough to do what is required of me in any situation.
+Sense of vocation;I often feel bored
+Sense of vocation;I feel I’m just drifting through life.
+Sense of vocation;I want an easy life.
+Sense of vocation;My actions aim towards making a positive difference in the world.                                                       
+Sense of vocation;I feel a sense of purpose to my life.   
+Sense of vocation;I am someone who goes that extra mile, makes that extra effort.
+Sense of vocation;I need to make something meaningful of my life.
+Sense of vocation;I feel a need to serve something or someone.
+Sense of vocation;I am a very committed sort of person.
