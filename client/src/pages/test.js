@@ -84,7 +84,7 @@ class Test extends React.Component {
                                 Simply follow the link below to purchase and complete your own individual SQ assessment
                                 in 10-15 minutes. <br/><br/>
                                 <div className="text-center">
-                                    <h5><b>Cost: USD ($) 100.00</b></h5>
+                                    <h5><b>Cost: USD ($) 10.00</b></h5>
                                 </div>
                                 <div id="paypal-button-container1"></div>
                                 {/*<table align="center" border="0" cellPadding="0" cellSpacing="0">*/}
@@ -155,7 +155,7 @@ class Test extends React.Component {
 
                                 <br/><br/>
                                 <div className="text-center">
-                                    <h5><b>Cost: USD ($) 100.00</b></h5>
+                                    <h5><b>Cost: USD ($) 10.00</b></h5>
                                 </div>
                                 <div id="paypal-button-container2"></div>
                                 {/*<table align="center" border="0" cellPadding="0" cellSpacing="0">*/}
