@@ -47,9 +47,9 @@ class Test extends React.Component {
                                 enables us to assess the situation we are in and then to behave appropriately within it,
                                 particularly to respond appropriately to the emotions of others. <br/><br/>
                                 What is common to both IQ and EQ is that both intelligences enable us to play within the
-                                boundaries—to play “finite games”. The work of Danah Zohar and Ian Marshall demonstrates
-                                the importance of spiritual intelligence (SQ), which enables us to think “outside of the
-                                box” and to play with the boundaries—to play an “infinite game”. SQ is a transformative
+                                boundaries-to play "finite games". The work of Danah Zohar and Ian Marshall demonstrates
+                                the importance of spiritual intelligence (SQ), which enables us to think "outside of the
+                                box" and to play with the boundaries-to play an "infinite game". SQ is a transformative
                                 intelligence that allows us to break old paradigms and to invent new ones, to reframe
                                 problems and situations, to dissolve old patterns and to be open to finding new ones. SQ
                                 also represents our access to and need for deep meaning, fundamental values and a sense
@@ -135,18 +135,18 @@ class Test extends React.Component {
                                 result in more sustainable and profitable organizations.<br/><br/>
                                 The only thing that can change behavior driven by negative motivations is behavior
                                 driven
-                                by higher, positive motivations—exploration, cooperation, personal and situational
+                                by higher, positive motivations-exploration, cooperation, personal and situational
                                 mastery, creativity and higher service. Business leaders must become servant leaders
                                 that serve employees, customers, the community, the planet, humanity, future
                                 generations, and life itself. This new leadership ethic will require a revolution. Not a
                                 revolution with guns and bullets, and, God forbid, not a regulatory revolution, but a
                                 revolution in thought, and a consequent revolution in moral behavior.<br/><br/>
                                 Business must become a vocation, like the higher professions, and capitalists’ sense of
-                                wealth creation must expand to include spiritual capital—wealth accrued by leaders that
+                                wealth creation must expand to include spiritual capital-wealth accrued by leaders that
                                 act on their highest aspirations and deepest values.<br/><br/>
                                 <span id="more-152"></span><br/><br/>
-                                Take the <strong>"Q&nbsp;Quiz" (SQ Assessment)</strong> on this website, which will help
-                                you&nbsp;become
+                                Take the <strong>"Q Quiz" (SQ Assessment)</strong> on this website, which will help
+                                you become
                                 more conscious of your lower motivations
                                 (i.e. fear, greed, ego) and how to transform them to higher motivations that are more
                                 sustainable (i.e. creativity, serving the community, etc.).<br/><br/>
