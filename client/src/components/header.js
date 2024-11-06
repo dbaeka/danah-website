@@ -226,9 +226,6 @@ const Header = ({siteTitle}) => {
                                                    onClick={() => navigate("/news")}
             >News</span></span>
             <span className="nav-link-span"> <span className="nav-a-link span-link text-link"
-                                                   onClick={() => navigate("/test")}
-            >Test and Surveys</span></span>
-            <span className="nav-link-span"> <span className="nav-a-link span-link text-link"
                                                    onClick={() => navigate("/contact")}
             >Contact</span></span>
         </>
