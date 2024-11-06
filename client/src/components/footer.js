@@ -92,10 +92,6 @@ const Footer = ({siteTitle}) => {
                                         >Videos</span>
                                     </Col>
                                     <Col xs="12" md="6">
-                                        <span className="footer-link"
-                                              onClick={() => navigate("/test")}>Test and Surveys</span>
-                                    </Col>
-                                    <Col xs="12" md="6">
                                         <span className="footer-link" onClick={() => navigate("/blogs")}
                                         >Blogs</span>
                                     </Col>
