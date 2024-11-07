@@ -204,4 +204,5 @@ class Test extends React.Component {
     };
 }
 
-export default Test
+//export default Test
+export {}
