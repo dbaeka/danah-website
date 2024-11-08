@@ -8,14 +8,14 @@ Please use Node Version: 12.xx
 1. Clone the repository
 2. Run `npm install -g gatsby-cli@2`
 3. Run `npm install -g yarn`
-3. cd into `client` directory
-4. Run `sudo rm -rf node_modules`
-5. Run `rm yarn.lock`
-6. Run `yarn install --ignore-engines`
-7. Run `npm run compile-sass`
-8. Run `npm run compile-sass2`
-9. Run `npm run minify-sass`
-10. Run `npm run develop` for development or `npm run build` for production. Build files for prod are located in `client/public` folder
+4. cd into `client` directory
+5. Run `sudo rm -rf node_modules`
+6. Run `rm yarn.lock`
+7. Run `yarn install --ignore-engines`
+8. Run `npm run compile-sass`
+9. Run `npm run compile-sass2`
+10. Run `npm run minify-sass`
+11. Run `npm run develop` for development or `npm run build` for production. Build files for prod are located in `client/public` folder
 
 ## Folder Structure
 - `client/src` - Contains all the source code for the website

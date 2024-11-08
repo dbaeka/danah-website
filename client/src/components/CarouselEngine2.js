@@ -70,9 +70,9 @@ const youtube = <div id="youtube"
                         us to break old paradigms and to invent new ones, to reframe problems and situations, to
                         dissolve old patterns and to be open to finding new ones.
                     </p>
-                    <Button className="font-weight-500" color="primary" onClick={() => navigate("/test")}>Click to Test
-                        Your SQ & Quantum Leadership Quotient
-                    </Button>
+                    {/*<Button className="font-weight-500" color="primary" onClick={() => navigate("/test")}>Click to Test*/}
+                    {/*    Your SQ & Quantum Leadership Quotient*/}
+                    {/*</Button>*/}
                 </Col>
             </Row>
         </div>
